@@ -18,8 +18,9 @@ const ConsultationForm = () => {
   return (
     <Box
       as="form"
-      bg="white"
+      bg='rgba(255, 252, 247, 1)'
       ml="auto"
+      boxShadow={'xl'}
       borderRadius={"20px"}
       onSubmit={handleSubmit(onSubmit)}
       maxW={{ base: "100%", lg: "80%" }}

@@ -43,12 +43,21 @@ const DetailFormat = ({
         fontWeight={"400"}
       >
         Migraid is a dedicated team of experienced paralegals, business
-        consultants & life couches that are committed to providing expert
+        consultants & life coaches that are committed to providing expert
         support and guidance to individuals navigating the complexities of
         immigration and resettlement processes. With a deep understanding of
         local US resources, we strive to empower our clients with accurate
         information and efficient assistance to achieve their relocation goals
-        with confidence. Immigration and resettlement processes. With a deep.
+        with confidence.
+        <Text
+          as="span"
+          color="rgba(34, 185, 116, 1)"
+          cursor="pointer"
+          onClick={() => console.log("See more clicked")}
+        >
+          {" "}
+          See more...
+        </Text>
       </Text>
 
       {showValues ? (
