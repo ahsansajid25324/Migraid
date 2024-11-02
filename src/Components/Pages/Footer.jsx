@@ -10,6 +10,7 @@ import {
   Button,
   Image,
   Grid,
+  Stack,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import {
@@ -17,20 +18,26 @@ import {
   AiOutlinePhone,
   AiOutlineEnvironment,
 } from "react-icons/ai";
+import FLine from "../../assets/images/FooterLine.png"
 import Logo from "../../assets/images/Logo.png";
 
 const Footer = () => {
   return (
-    <Box bg="gray.900" color="white" py="10" px={{ base: "5", md: "20" }}>
+    <Box
+      bg="gray.900"
+      color="white"
+      py={{ base: "10", xl: "14" }}
+      px={{ base: "5", xl: "20" }}
+    >
       <Grid
         direction={{ base: "column", md: "row" }}
         justify="space-between"
         align="start"
         wrap="wrap"
-        templateColumns={{ base: "repeat(1,1fr)", lg: "repeat(4,1fr)" }}
+        templateColumns={{ base: "repeat(1,1fr)",lg:'repeat(2,1fr)', xl: "repeat(4,1fr)" }}
       >
         {/* Brand and Description */}
-        <Box align="start" spacing="4">
+        <Box align="start" spacing="4" >
           <Image src={Logo} alt="Logo" />
           <Text fontSize={{ base: "14px", lg: "16px" }} w={"300px"} mt={4}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -54,7 +61,7 @@ const Footer = () => {
         </Box>
 
         {/* Useful Links */}
-        <Box mt={{ base: "6", md: "0" }} m={{ base: "normal", lg: "auto" }}>
+        <Box mt={{ base: "6", md: "0" }} m={{ base: "normal", xl: "auto" }}>
           <Heading fontSize={{ base: "20px", lg: "24px" }} mb={4}>
             Useful Links
           </Heading>
@@ -70,7 +77,7 @@ const Footer = () => {
         </Box>
 
         {/* Contact Us */}
-        <Box mt={{ base: "6", md: "0" }}>
+        <Box mt={{ base: "6", xl: "0" }}>
           <Heading fontSize={{ base: "20px", lg: "24px" }} mb={4}>
             Contact Us
           </Heading>
@@ -96,7 +103,7 @@ const Footer = () => {
           </Flex>
         </Box>
 
-        <Box align="start" spacing="4" mt={{ base: "6", md: "0" }}>
+        <Box align="start" spacing="4" mt={{ base: "6", xl: "0" }}>
           <Heading fontSize={{ base: "20px", lg: "24px" }} mb={4}>
             Newsletter
           </Heading>
@@ -126,6 +133,10 @@ const Footer = () => {
         </Box>
       </Grid>
 
+      <Box mt="10">
+        <Image src={FLine}></Image>
+      </Box>
+
       <Flex
         justifyContent="space-between"
         mt="10"
@@ -136,12 +147,17 @@ const Footer = () => {
         <Text>©2024 Law Aid. All Rights Reserved.</Text>
         <Flex
           mt={{ base: "4", md: "0" }}
-          gap={{base:2,lg:4}}
+          gap={{ base: 2, lg: 4 }}
           flexDirection={{ base: "column", lg: "row" }}
-        >
-          <Link href="#">Term & Conditions</Link>{" "}
-          <Link href="#">Privacy Policy</Link>{" "}
-          <Link href="#">PCI Compliance Policy</Link>
+          align={{base:'normal',lg:'center'}}        >
+          <Stack direction={{base:'column',lg:'row'}} spacing={{base:2,lg:4}} align={{base:'normal',lg:'center'}}>
+            
+            <Link href="#">Terms & Conditions</Link>
+            <Text display={{base:'none',lg:'flex'}}  color='rgba(34, 185, 116, 1)'>|</Text> {/* Vertical Divider */}
+            <Link href="#">Privacy Policy</Link>
+            <Text display={{base:'none',lg:'flex'}}  color='rgba(34, 185, 116, 1)'>|</Text> {/* Vertical Divider */}
+            <Link href="#">PCI Compliance Policy</Link>
+          </Stack>
         </Flex>
       </Flex>
     </Box>

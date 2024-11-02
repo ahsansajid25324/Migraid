@@ -16,7 +16,7 @@ function Home() {
       <ServicesSection />
       <TestimonialsSection />
       <BlogSection />
-      <Footer/>
+      <Footer />
     </>
   );
 }
