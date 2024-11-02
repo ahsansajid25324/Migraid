@@ -13,10 +13,8 @@ function AboutSection() {
       justifyContent={"space-between"}
       flexDirection={{ base: "column-reverse", lg: "row" }}
     >
-      
-
       <Grid
-        templateColumns={ "repeat(2, 1fr)" }
+        templateColumns={"repeat(2, 1fr)"}
         w={{ base: "100%", lg: "42%" }}
         mt={{ base: 8, lg: 0 }}
         gap={4}
@@ -39,7 +37,11 @@ function AboutSection() {
             textAlign="center"
           >
             <Image w="52px" h="52px" src={Consult} />
-            <Text fontSize={{ base: "1rem", lg: "1.2rem" }} fontWeight="500">
+            <Text
+              fontFamily="'Poppins'"
+              fontSize={{ base: "1rem", lg: "1.2rem" }}
+              fontWeight="500"
+            >
               Consultation Services
             </Text>
           </Box>
@@ -62,7 +64,7 @@ function AboutSection() {
             color="white"
             bg="rgba(34, 185, 116, 1)"
           >
-            <Text fontWeight="500">
+            <Text fontWeight="500" fontFamily="'Plus Jakarta Sans'">
               <Text
                 as="span"
                 fontSize={{ base: "2rem", lg: "3rem" }}

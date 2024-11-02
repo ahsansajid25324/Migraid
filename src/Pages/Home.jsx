@@ -5,6 +5,7 @@ import AnswerQuestionSection from "../Components/Pages/AnswersQuestionSection";
 import ServicesSection from "../Components/Pages/ServicesSection";
 import TestimonialsSection from "../Components/Pages/TestimonialsSection";
 import BlogSection from "../Components/Pages/BlogSection";
+import Footer from "../Components/Pages/Footer";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <ServicesSection />
       <TestimonialsSection />
       <BlogSection />
+      <Footer/>
     </>
   );
 }

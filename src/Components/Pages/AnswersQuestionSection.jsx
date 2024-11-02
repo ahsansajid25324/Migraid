@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Flex, Grid, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import img from "./../../assets/images/HeroBg.png";
 
-import Line from "./../../assets/images/Line.png";
 import DetailFormat from "./DetailFormat";
 import SectionHeading from "./SectionHeading";
 

@@ -13,6 +13,7 @@ const NavLink = ({ href, children }) => {
       <Link
         href={href}
         color="white"
+        fontFamily={'Poppins'}
         fontSize="16px"
         _hover={{
           color: "white",
@@ -67,7 +68,7 @@ function Navbar() {
         position="sticky"
         top={0}
         zIndex={1000}
-        display={{ base: "none", lg: "flex" }}
+        display={{ base: "none", xl: "flex" }}
         justifyContent={"space-between"}
       >
         <Box>
@@ -108,7 +109,7 @@ function Navbar() {
         position="sticky"
         top={0}
         zIndex={1000}
-        display={{ base: "flex", lg: "none" }}
+        display={{ base: "flex", xl: "none" }}
       >
         <Box>
           <Image src={logo} w="92px" h="16px"></Image>

@@ -11,7 +11,7 @@ const Testimonials = () => {
 
   return (
     <Box as="section" pt={8}>
-      <Box className="slider-container" mx="auto">
+    <Box className="slider-container" mx="auto">
         <Splide
           ref={splideRef}
           options={{
@@ -37,7 +37,7 @@ const Testimonials = () => {
           }}
         >
           {reviews.map((review) => (
-            <SplideSlide key={review.id}>
+            <SplideSlide key={review.id} >
               <Flex
                 gap={8}
                 p={6}
@@ -58,17 +58,23 @@ const Testimonials = () => {
                   <Image
                     mx={{ base: "auto", md: "0" }}
                     src={TestLogo}
-                    w="64px"
-                    h="64px"
+                    w="52px"
+                    h="52px"
                     mb={2}
                   ></Image>
-                  <Text fontSize="md" mb={2}>
+                  <Text fontFamily={"Poppins"} fontSize="md" mb={2}>
                     {review.text}
                   </Text>
-                  <Text mt="2" fontSize="lg" fontWeight={"600"}>
+                  <Text
+                    fontFamily={"Poppins"}
+                    mt="2"
+                    fontSize="lg"
+                    fontWeight={"600"}
+                  >
                     {review.name}
                   </Text>
                   <Text
+                    fontFamily={"Poppins"}
                     color="rgba(127, 127, 127, 1)"
                     fontSize="md"
                     fontWeight={"600"}
@@ -84,23 +90,23 @@ const Testimonials = () => {
         <Flex justifyContent="center" mt={8} mb={{ base: 8, lg: 20 }}>
           <IconButton
             aria-label="Previous"
-            icon={<FaChevronLeft fontSize={"28px"} />} // Set the font size for the icon
-            onClick={() => splideRef.current.splide.go("-1")} // Decrease slide by 1
+            icon={<FaChevronLeft fontSize={{ base: "24px", lg: "28px" }} />}
+            onClick={() => splideRef.current.splide.go("-1")}
             mr={4}
             borderRadius="full"
-            boxSize="60px"
-            bg="white"
-            color="rgba(34, 185, 116, 1)"
-            _hover={{ bg: "rgba(34, 185, 116, 1)", color: "white" }}
+            boxSize={{ base: "40px", lg: "60px" }}
+            bg="rgba(2, 2, 38, 1)"
+            color="white"
+            _hover={{ bg: "rgba(2, 2, 38, 20)", color: "white" }}
           />
           <IconButton
             aria-label="Next"
-            icon={<FaChevronRight fontSize={"28px"} />}
-            onClick={() => splideRef.current.splide.go("+1")} // Increase slide by 1
+            icon={<FaChevronRight fontSize={{ base: "24px", lg: "28px" }} />}
+            onClick={() => splideRef.current.splide.go("+1")}
             borderRadius="full"
-            bg="white"
-            boxSize="60px"
-            color="rgba(34, 185, 116, 1)"
+            color="white"
+            boxSize={{ base: "40px", lg: "60px" }}
+            bg="rgba(34, 185, 116, 1)"
             _hover={{ bg: "rgba(34, 185, 116, 1)", color: "white" }}
           />
         </Flex>

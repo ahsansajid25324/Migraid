@@ -6,7 +6,11 @@ const SectionHeading = ({ color, subcolor, heading, subHeading }) => {
     <Box>
       <Flex alignItems={"center"} gap={2} justifyContent={"center"}>
         <Image w="30px" h="3px" src={Line}></Image>
-        <Text color={color} fontSize={{ base: "16px", lg: "18px" }}>
+        <Text
+          fontFamily={"Poppins"}
+          color={color}
+          fontSize={{ base: "16px", lg: "18px" }}
+        >
           {heading}
         </Text>
         <Image w="30px" h="3px" src={Line}></Image>
@@ -16,7 +20,9 @@ const SectionHeading = ({ color, subcolor, heading, subHeading }) => {
         color={subcolor}
         fontSize={{ base: "1.6rem", lg: "2.2rem" }}
         fontWeight={"600"}
+        mt={2}
         textAlign={"center"}
+        fontFamily="'Plus Jakarta Sans'"
       >
         Get Answers to your questions
       </Heading>
@@ -26,6 +32,7 @@ const SectionHeading = ({ color, subcolor, heading, subHeading }) => {
           mx="auto"
           mt="8px"
           textAlign={"center"}
+          fontFamily="'Poppins'"
           color=" rgba(17, 17, 17, 1)"
           fontSize={{ base: "18px", lg: "16px" }}
           fontWeight={"400"}

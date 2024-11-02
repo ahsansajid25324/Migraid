@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Box } from "@chakra-ui/react";
-import SectionHeading from "./SectionHeading";
 import Blogs from "./Blogs";
+import ContactSection from "./ContactSection";
 const BlogSection = () => {
   return (
     <Flex
@@ -12,14 +12,10 @@ const BlogSection = () => {
       flexDirection="column"
     >
       <Box>
-        <SectionHeading
-          subcolor="black"
-          heading="Blogs"
-          color="rgba(34, 185, 116, 1)"
-        ></SectionHeading>
+        <Blogs></Blogs>
       </Box>
       <Box>
-        <Blogs></Blogs>
+        <ContactSection></ContactSection>
       </Box>
     </Flex>
   );

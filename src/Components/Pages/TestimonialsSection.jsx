@@ -9,6 +9,7 @@ const TestimonialsSection = () => {
       pt={{ base: 8, lg: 20 }}
       bg="rgba(246, 246, 246, 1)"
       px={{ base: 4, lg: 12 }}
+
       justifyContent={"center"}
       flexDirection="column"
     >

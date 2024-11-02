@@ -16,7 +16,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import logo from "../../assets/images/Logo.png";
-import { links } from "../../data/NavbarItems"; 
+import { links } from "../../data/NavbarItems";
+import CustomButton from "../UI/CustomButton";
 
 function NavbarDrawer({ isOpen, onClose, openNavbar }) {
   return (
@@ -33,7 +34,7 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
               position="sticky"
               top={0}
               zIndex={1000}
-              display={{ base: "flex", lg: "none" }}
+              display={{ base: "flex", xl: "none" }}
             >
               <Box ml={4}>
                 <Image src={logo} w="92px" h="16px" />
@@ -51,14 +52,26 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
             <VStack spacing={4} align="stretch">
               {links.map((link, index) => (
                 <Box key={index} w="100%">
-                 
-                  <Link href={link.href} color="white" fontSize="20px" >
+                  <Link
+                    href={link.href}
+                    color="white"
+                    fontSize="18px"
+                    fontFamily="Poppins"
+                  >
                     {link.label}
                   </Link>
-                  <Divider mt='4' borderColor="white" />
+                  <Divider mt="4" borderColor="white" />
                 </Box>
               ))}
             </VStack>
+            <Box mt={8}>
+              <CustomButton mb={6} color="white" width="100%" height="56px">
+                Login
+              </CustomButton>
+              <CustomButton color="white" width="100%" height="56px">
+                Sing Up
+              </CustomButton>
+            </Box>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

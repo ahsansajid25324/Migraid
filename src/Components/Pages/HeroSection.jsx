@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import CustomButton from "../UI/CustomButton";
 import ConsultationForm from "./ConsultationForm";
 import GlobalImage from "./../../assets/images/Global.png";
+import "./../../App.css";
 function HeroSection() {
   return (
     <Box
@@ -29,34 +30,48 @@ function HeroSection() {
         py={{ base: 4 }}
         px={{ base: 4, lg: 12 }}
       >
-        <Box w="100%" borderRadius="md" mt={{ base: "4px", lg: "0px" }}>
+        <Box w="100%" borderRadius="md" mt={{ base: "20px", lg: "0px" }}>
           <Flex gap={2} alignItems={"center"}>
             <Image src={GlobalImage}></Image>
             <Text
-              fontSize={{ base: "20px", lg: "24px" }}
+              fontSize={{ base: "16px", lg: "24px" }}
               color="white"
+              fontFamily={"Poppins"}
               fontWeight={"400"}
             >
-              Global Solutions
+              GLOBAL SOLUTIONS
             </Text>
           </Flex>
 
           <Heading
-            fontSize={{ base: "38px", lg: "42px",xl:'52px' }}
+            mt={{ base: "12px", lg: "0" }}
+            lineHeight={"60px"}
+            fontSize={{ base: "48px", lg: "42px", xl: "52px" }}
             fontWeight={"600"}
             color={"white"}
           >
-            Migration Consultancy That Aims to Bring the World Close
+            Migration Consultancy That Aims to Bring the World Closer
           </Heading>
-          <Text mt={2} fontSize={"16px"} color="white" fontWeight={"400"}>
+          <Text
+            lineHeight={"26px"}
+            mt={2}
+            fontFamily={"Poppins"}
+            fontSize={"16px"}
+            color="white"
+            fontWeight={"400"}
+          >
             At Migraid, we provide expert consultation services to help
             individuals and businesses navigate the complexities of global
             migration.
           </Text>
 
           <Flex gap={4} mt={4} flexWrap={"wrap"}>
-            <CustomButton color='white' showIcon={true} height="58px">Book a Consultation</CustomButton>
-            <CustomButton color='white' showIcon={true} height="58px">Learn More</CustomButton>
+            <CustomButton color="white" showIcon={true} height="58px">
+              Book a Consultation
+            </CustomButton>
+            <CustomButton color="white" showIcon={true} height="58px">
+              Learn More
+            </CustomButton>
           </Flex>
         </Box>
 
