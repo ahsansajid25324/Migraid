@@ -156,7 +156,6 @@ export default function Blogs() {
                 mt={2}
                 fontWeight="bold"
                 fontSize="26px"
-                isTruncated
               >
                 {blog.title}
               </Text>
@@ -201,7 +200,6 @@ export default function Blogs() {
           icon={<ChevronRightIcon fontSize={{ base: "24px", lg: "28px" }} />}
           onClick={() => sliderRef.current.slickNext()}
           borderRadius="full"
-          // bg="white"
           boxSize={{ base: "40px", lg: "60px" }}
           color="rgba(34, 185, 116, 1)"
           bg="white"

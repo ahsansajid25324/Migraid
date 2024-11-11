@@ -13,7 +13,7 @@ const NavLink = ({ href, children }) => {
       <Link
         href={href}
         color="white"
-        fontFamily={'Poppins'}
+        fontFamily={"Poppins"}
         fontSize="16px"
         _hover={{
           color: "white",
@@ -76,10 +76,10 @@ function Navbar() {
         </Box>
 
         <Box
-          w="100%"
+          w="70%"
           display="flex"
           alignItems="center"
-          justifyContent="flex-end"
+          justifyContent="space-around"
         >
           <Box display="flex" alignItems="center" mr={{ lg: 6, xl: 12 }}>
             {links.map((link, index) => (
@@ -91,7 +91,7 @@ function Navbar() {
           </Box>
 
           <Box display="flex" gap={4}>
-            <CustomButton color="white" width="120px" height="45px">
+            <CustomButton  color="white" width="120px" height="45px">
               Login
             </CustomButton>
             <CustomButton color="white" width="120px" height="45px">
@@ -104,8 +104,8 @@ function Navbar() {
       <Box
         p={4}
         alignItems={"center"}
-        bg={scrollNav ? "rgba(2, 2, 38, 1)" : "transparent"} 
-        transition="background-color 0.3s ease" 
+        bg={scrollNav ? "rgba(2, 2, 38, 1)" : "transparent"}
+        transition="background-color 0.3s ease"
         position="sticky"
         top={0}
         zIndex={1000}

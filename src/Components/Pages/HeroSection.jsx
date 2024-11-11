@@ -6,19 +6,47 @@ import CustomButton from "../UI/CustomButton";
 import ConsultationForm from "./ConsultationForm";
 import GlobalImage from "./../../assets/images/Global.png";
 import "./../../App.css";
+import HeroLine from "../../assets/images/HeroLine.png";
+
+import HeroPhoneLine from "../../assets/images/HeroPhoneLine.png";
+
 function HeroSection() {
   return (
     <>
       <Box
-        py={{ base: 12, lg: 8 }}
+        py={{ base: 20, lg: 8 }}
         bgImage={img}
         bgSize="cover"
         h={{ base: "auto", lg: "100vh" }}
         bgPosition="center"
         bgRepeat="no-repeat"
+        position={"relative"}
         display="flex"
         flexDirection="column"
       >
+        <Image
+          w="fit-content"
+          src={HeroLine}
+          h={{ base: "auto", lg: "100vh" }}
+          alt="Hero Line"
+          display={{ base: "none", lg: "block" }}
+          position="absolute"
+          top={0}
+          right={{ base: 0, lg: 20 }}
+          zIndex={1} // Ensures it is above the background image
+        />
+
+        <Image
+          w="fit-content"
+          src={HeroPhoneLine}
+          h={{ base: "auto", lg: "100vh" }}
+          alt="Hero Line"
+          display={{ base: "block", lg: "none" }}
+          position="absolute"
+          top={0}
+          right={{ base: 0, lg: 20 }}
+          zIndex={1} // Ensures it is above the background image
+        />
         <Box position="fixed" top={0} left={0} right={0} zIndex={1000}>
           <Navbar />
         </Box>
@@ -46,7 +74,7 @@ function HeroSection() {
 
             <Heading
               mt={{ base: "12px", lg: "0" }}
-              lineHeight={"60px"}
+              lineHeight={"66px"}
               fontSize={{ base: "48px", lg: "42px", xl: "52px" }}
               fontWeight={"600"}
               color={"white"}
@@ -54,7 +82,7 @@ function HeroSection() {
               Migration Consultancy That Aims to Bring the World Closer
             </Heading>
             <Text
-              lineHeight={"26px"}
+              lineHeight={{ base: "32px", lg: "26px" }}
               mt={2}
               fontFamily={"Poppins"}
               fontSize={"16px"}

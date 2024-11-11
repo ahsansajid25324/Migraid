@@ -18,26 +18,44 @@ import {
   AiOutlinePhone,
   AiOutlineEnvironment,
 } from "react-icons/ai";
-import FLine from "../../assets/images/FooterLine.png"
+import FLine from "../../assets/images/FooterLine.png";
 import Logo from "../../assets/images/Logo.png";
 
+import FooterImage from "../../assets/images/FooterImage.png";
 const Footer = () => {
   return (
     <Box
-      bg="gray.900"
+      position="relative"
+      bg="rgba(2, 2, 38, 1)"
       color="white"
       py={{ base: "10", xl: "14" }}
       px={{ base: "5", xl: "20" }}
     >
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bgImage={FooterImage}
+        bgSize="cover"
+        bgPosition="center"
+        bgRepeat="no-repeat"
+        zIndex="1" // Places the image behind the footer content
+      />
       <Grid
         direction={{ base: "column", md: "row" }}
         justify="space-between"
         align="start"
         wrap="wrap"
-        templateColumns={{ base: "repeat(1,1fr)",lg:'repeat(2,1fr)', xl: "repeat(4,1fr)" }}
+        templateColumns={{
+          base: "repeat(1,1fr)",
+          lg: "repeat(2,1fr)",
+          xl: "repeat(4,1fr)",
+        }}
       >
         {/* Brand and Description */}
-        <Box align="start" spacing="4" >
+        <Box align="start" spacing="4">
           <Image src={Logo} alt="Logo" />
           <Text fontSize={{ base: "14px", lg: "16px" }} w={"300px"} mt={4}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -149,13 +167,29 @@ const Footer = () => {
           mt={{ base: "4", md: "0" }}
           gap={{ base: 2, lg: 4 }}
           flexDirection={{ base: "column", lg: "row" }}
-          align={{base:'normal',lg:'center'}}        >
-          <Stack direction={{base:'column',lg:'row'}} spacing={{base:2,lg:4}} align={{base:'normal',lg:'center'}}>
-            
+          align={{ base: "normal", lg: "center" }}
+        >
+          <Stack
+            direction={{ base: "column", lg: "row" }}
+            spacing={{ base: 2, lg: 4 }}
+            align={{ base: "normal", lg: "center" }}
+          >
             <Link href="#">Terms & Conditions</Link>
-            <Text display={{base:'none',lg:'flex'}}  color='rgba(34, 185, 116, 1)'>|</Text> {/* Vertical Divider */}
+            <Text
+              display={{ base: "none", lg: "flex" }}
+              color="rgba(34, 185, 116, 1)"
+            >
+              |
+            </Text>{" "}
+            {/* Vertical Divider */}
             <Link href="#">Privacy Policy</Link>
-            <Text display={{base:'none',lg:'flex'}}  color='rgba(34, 185, 116, 1)'>|</Text> {/* Vertical Divider */}
+            <Text
+              display={{ base: "none", lg: "flex" }}
+              color="rgba(34, 185, 116, 1)"
+            >
+              |
+            </Text>{" "}
+            {/* Vertical Divider */}
             <Link href="#">PCI Compliance Policy</Link>
           </Stack>
         </Flex>
