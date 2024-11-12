@@ -170,7 +170,7 @@ export default function Blogs() {
               </Text>
 
               <Box mt={4}>
-                <CustomButton color="black" showIcon={true} height="42px">
+                <CustomButton color="black" showIcon={true} height="50px">
                   Read More
                 </CustomButton>
               </Box>

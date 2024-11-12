@@ -54,7 +54,7 @@ const ContactSection = () => {
           Iusto, soluta nobis?
         </Text>
         <Box mt={4}>
-          <CustomButton w={{base:'50%',lg:'25%'}} showBorder={true} color="white" showIcon={true} height="56px">
+          <CustomButton showBorder={true} color="white" showIcon={true} height="50px">
             Contact Us
           </CustomButton>
         </Box>

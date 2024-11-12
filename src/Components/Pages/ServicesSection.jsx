@@ -25,7 +25,7 @@ const ServicesSection = () => {
       <Box
         ml={{ base: "auto" }}
         w={{ base: "70%", lg: "42%" }}
-        mt={{ base: 6, lg: 0 }}
+        my={{ base: 6, lg: 0 }}
         position="relative"
       >
         <Image src={Services} />

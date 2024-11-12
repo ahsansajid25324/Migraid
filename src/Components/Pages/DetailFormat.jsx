@@ -120,7 +120,6 @@ const DetailFormat = ({
     with confidence.
   `;
 
-  // Define truncated text lengths for base and lg screen sizes
   const truncatedTextBase = `${fullText.substring(0, 200)}...`; // For smaller screens
   const truncatedTextLg = `${fullText.substring(0, 400)}...`; // For larger screens
 
@@ -173,7 +172,7 @@ const DetailFormat = ({
             bottom="0"
             left="0"
             right="0"
-            height={{ base: "30px", lg: "50px" }} // Adjust height to cover more lines on larger screens
+            height={{ base: "30px", lg: "50px" }}
             bgGradient="linear(to-t, white, rgba(255, 255, 255, 0))"
           />
         )}

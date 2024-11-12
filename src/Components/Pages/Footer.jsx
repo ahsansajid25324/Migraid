@@ -41,7 +41,7 @@ const Footer = () => {
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
-        zIndex="1" // Places the image behind the footer content
+        zIndex="1" 
       />
       <Grid
         direction={{ base: "column", md: "row" }}
