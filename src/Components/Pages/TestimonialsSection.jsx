@@ -1,10 +1,11 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import SectionHeading from "./SectionHeading";
 import Testimonials from "./Testimonials";
 import tower from "./../../assets/images/tower.png";
 
 import Ptower from "./../../assets/images/Group.png";
+import Rtower from "./../../assets/images/RightTowe.png";
 
 const TestimonialsSection = () => {
   return (
@@ -26,7 +27,7 @@ const TestimonialsSection = () => {
         right={0}
         bottom={0}
         bgImage={Ptower}
-        bgSize={'contain'}
+        bgSize={"contain"}
         bgRepeat="no-repeat"
         zIndex="0"
       />
@@ -37,12 +38,12 @@ const TestimonialsSection = () => {
         display={{ base: "none", lg: "block" }}
         right={0}
         bottom={0}
-        bgSize={'contain'}
-
+        bgSize={"contain"}
         bgImage={tower}
         bgRepeat="no-repeat"
         zIndex="0"
       />
+
       <Box>
         <SectionHeading
           subcolor="black"

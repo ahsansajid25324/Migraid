@@ -7,6 +7,8 @@ import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
 
+import PLogo from "../../assets/images/PLogo.png";
+
 const NavLink = ({ href, children }) => {
   return (
     <Box position="relative" display="inline-block" mx={3}>
@@ -112,12 +114,12 @@ function Navbar() {
         display={{ base: "flex", xl: "none" }}
       >
         <Box>
-          <Image src={logo} w="92px" h="16px"></Image>
+          <Image src={scrollNav?logo:PLogo} w="92px" h="16px"></Image>
         </Box>
         <Spacer></Spacer>
         <Box>
           <Button onClick={openNavbar} variant="ghost">
-            <HamburgerIcon color="white" />
+            <HamburgerIcon color="black" />
           </Button>{" "}
         </Box>
 

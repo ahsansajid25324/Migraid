@@ -7,15 +7,17 @@ import ConsultationForm from "./ConsultationForm";
 import GlobalImage from "./../../assets/images/Global.png";
 import "./../../App.css";
 import HeroLine from "../../assets/images/HeroLine.png";
+import Pround from "../../assets/images/Pround.png";
 
-import HeroPhoneLine from "../../assets/images/HeroPhoneLine.png";
+import HeroBg from "../../assets/images/HeroPBg.png";
 
 function HeroSection() {
   return (
     <>
       <Box
-        py={{ base: 20, lg: 8 }}
-        bgImage={img}
+        py={{ base: 12, lg: 8 }}
+        bg={{ base: "white", lg: "transparent" }} 
+        bgImage={{ base: HeroBg, lg: img }} 
         bgSize="cover"
         h={{ base: "auto", lg: "100vh" }}
         bgPosition="center"
@@ -33,20 +35,9 @@ function HeroSection() {
           position="absolute"
           top={0}
           right={{ base: 0, lg: 20 }}
-          zIndex={1} // Ensures it is above the background image
+          zIndex={1}
         />
 
-        <Image
-          w="fit-content"
-          src={HeroPhoneLine}
-          h={{ base: "auto", lg: "100vh" }}
-          alt="Hero Line"
-          display={{ base: "block", lg: "none" }}
-          position="absolute"
-          top={0}
-          right={{ base: 0, lg: 20 }}
-          zIndex={1} // Ensures it is above the background image
-        />
         <Box position="fixed" top={0} left={0} right={0} zIndex={1000}>
           <Navbar />
         </Box>
@@ -61,10 +52,18 @@ function HeroSection() {
         >
           <Box w="100%" borderRadius="md" mt={{ base: "20px", lg: "0px" }}>
             <Flex gap={2} alignItems={"center"}>
-              <Image src={GlobalImage}></Image>
+              <Image
+                src={GlobalImage}
+                display={{ base: "none", lg: "block" }}
+              />
+              <Image
+                src={Pround}
+                display={{ base: "block", lg: "none" }} 
+              />
+
               <Text
                 fontSize={{ base: "16px", lg: "24px" }}
-                color="white"
+                color={{ base: "black", lg: "white" }} // Text color change for better visibility
                 fontFamily={"Poppins"}
                 fontWeight={"400"}
               >
@@ -77,16 +76,24 @@ function HeroSection() {
               lineHeight={"66px"}
               fontSize={{ base: "48px", lg: "42px", xl: "52px" }}
               fontWeight={"600"}
-              color={"white"}
+              color={{ base: "black", lg: "white" }}
             >
-              Migration Consultancy That Aims to Bring the World Closer
+              Migration{" "}
+              <Text
+                as="span"
+                color={{ base: "rgba(34, 185, 116, 1)", lg: "white" }}
+              >
+                Consultation
+              </Text>{" "}
+              That Aims to Bring the World Closer
             </Heading>
+
             <Text
               lineHeight={{ base: "32px", lg: "26px" }}
               mt={2}
               fontFamily={"Poppins"}
               fontSize={"16px"}
-              color="white"
+              color={{ base: "black", lg: "white" }} // Paragraph text color change
               fontWeight={"400"}
             >
               At Migraid, we provide expert consultation services to help
@@ -95,10 +102,18 @@ function HeroSection() {
             </Text>
 
             <Flex gap={4} mt={4} flexWrap={"wrap"}>
-              <CustomButton color="white" showIcon={true} height="58px">
+              <CustomButton
+                color={{ base: "rgba(34, 185, 116, 1)", lg: "white" }}
+                showIcon={true}
+                height="58px"
+              >
                 Book a Consultation
               </CustomButton>
-              <CustomButton color="white" showIcon={true} height="58px">
+              <CustomButton
+                color={{ base: "rgba(34, 185, 116, 1)", lg: "white" }}
+                showIcon={true}
+                height="58px"
+              >
                 Learn More
               </CustomButton>
             </Flex>
@@ -116,11 +131,11 @@ function HeroSection() {
       </Box>
 
       <Box
-        p={{ base: 4, lg: 0 }}
-        borderRadius="md"
+        bg="rgba(2, 2, 38, 0.91)"
+        py={{ base: 12, lg: 0 }}
+        px={4}
         display={{ base: "block", lg: "none" }}
         w="100%"
-        mt={{ base: 8, lg: 0 }}
       >
         <ConsultationForm></ConsultationForm>
       </Box>
