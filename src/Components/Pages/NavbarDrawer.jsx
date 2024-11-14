@@ -11,9 +11,11 @@ import {
   Spacer,
   Button,
   Divider,
-  Link,
   VStack,
+  Text,
 } from "@chakra-ui/react";
+
+import { Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import logo from "../../assets/images/Logo.png";
 import { links } from "../../data/NavbarItems";
@@ -52,14 +54,15 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
             <VStack spacing={4} align="stretch">
               {links.map((link, index) => (
                 <Box key={index} w="100%">
-                  <Link
-                    href={link.href}
+                  <Text
+                    to={link.href}
                     color="white"
+                    as={Link}
                     fontSize="18px"
                     fontFamily="Poppins"
                   >
                     {link.label}
-                  </Link>
+                  </Text>
                   <Divider mt="4" borderColor="white" />
                 </Box>
               ))}

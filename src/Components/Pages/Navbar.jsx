@@ -6,7 +6,7 @@ import useDrawer from "../../hooks/useDrawer";
 import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import PLogo from "../../assets/images/PLogo.png";
 
@@ -46,6 +46,7 @@ function Navbar() {
     closeDrawer: closeNavbar,
   } = useDrawer();
 
+  const location = useLocation();
   const [scrollNav, setScrollNav] = useState(false);
 
   useEffect(() => {
@@ -84,8 +85,11 @@ function Navbar() {
           w="70%"
           display="flex"
           alignItems="center"
-          // justifyContent="space-around"
-          justifyContent={{base:'space-around',lg:'space-between',xl:'space-around'}}
+          justifyContent={{
+            base: "space-around",
+            lg: "space-between",
+            xl: "space-around",
+          }}
         >
           <Box display="flex" alignItems="center" mr={{ lg: 6, xl: 12 }}>
             {links.map((link, index) => (
@@ -124,12 +128,22 @@ function Navbar() {
         display={{ base: "flex", lg: "none" }}
       >
         <Box>
-          <Image src={scrollNav ? logo : PLogo} w="92px" h="16px"></Image>
+          <Image
+            src={
+              location.pathname === "/home" ? (scrollNav ? logo : PLogo) : logo
+            }
+            w="92px"
+            h="16px"
+          ></Image>
         </Box>
         <Spacer></Spacer>
         <Box>
           <Button onClick={openNavbar} variant="ghost">
-            <HamburgerIcon color="black" />
+            <HamburgerIcon
+              color={
+                location.pathname === "/home" ? (scrollNav ? 'white' : 'black') : 'white'
+              }
+            />
           </Button>{" "}
         </Box>
 

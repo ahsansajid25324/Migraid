@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import img from "./../../assets/images/HeroBg.png";
 import Navbar from "./Navbar";
@@ -16,10 +16,9 @@ function HeroSection() {
     <>
       <Box
         py={{ base: 12, lg: 20 }}
-        bg={{ base: "white", lg: "transparent" }} 
-        bgImage={{ base: HeroBg, lg: img }} 
+        bg={{ base: "white", lg: "transparent" }}
+        bgImage={{ base: HeroBg, lg: img }}
         bgSize="cover"
-        // h={{ base: "auto", lg: "100vh" }}
         bgPosition="center"
         bgRepeat="no-repeat"
         position={"relative"}
@@ -56,10 +55,7 @@ function HeroSection() {
                 src={GlobalImage}
                 display={{ base: "none", lg: "block" }}
               />
-              <Image
-                src={Pround}
-                display={{ base: "block", lg: "none" }} 
-              />
+              <Image src={Pround} display={{ base: "block", lg: "none" }} />
 
               <Text
                 fontSize={{ base: "16px", lg: "24px" }}
@@ -143,4 +139,6 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+// export default HeroSection;
+export default React.memo(HeroSection);
+

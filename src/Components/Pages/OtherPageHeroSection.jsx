@@ -3,17 +3,15 @@ import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import img from "./../../assets/images/HeroBg.png";
 import Navbar from "./Navbar";
 import CustomButton from "../UI/CustomButton";
-import ConsultationForm from "./ConsultationForm";
-import GlobalImage from "./../../assets/images/Global.png";
+import Line from "./../../assets/images/Line.png";
 import "./../../App.css";
 import HeroLine from "../../assets/images/HeroLine.png";
-import Pround from "../../assets/images/Pround.png";
 
-function OtherPageHeroSection() {
+function OtherPageHeroSection({ title, subtitle }) {
   return (
     <>
       <Box
-        py={{ base: 12, lg: 8 }}
+        py={{ base: 20, lg: 8 }}
         bgImage={img}
         bgSize="cover"
         h={{ base: "auto", lg: "100vh" }}
@@ -42,26 +40,25 @@ function OtherPageHeroSection() {
         <Flex
           flexDirection={{ base: "column", lg: "row" }}
           flex="1"
-        //   justifyContent={"center"}
           alignItems={"center"}
           py={{ base: 4 }}
           px={{ base: 4, lg: 12 }}
         >
-          <Box w={{base:'100%',lg:'60%'}} borderRadius="md" mt={{ base: "20px", lg: "0px" }}>
+          <Box
+            w={{ base: "100%", lg: "60%" }}
+            borderRadius="md"
+            mt={{ base: "20px", lg: "0px" }}
+          >
             <Flex gap={2} alignItems={"center"}>
-              <Image
-                src={GlobalImage}
-                display={{ base: "none", lg: "block" }}
-              />
-              <Image src={Pround} display={{ base: "block", lg: "none" }} />
+              <Image src={Line} />
 
               <Text
                 fontSize={{ base: "16px", lg: "24px" }}
-                color={{ base: "black", lg: "white" }} // Text color change for better visibility
                 fontFamily={"Poppins"}
                 fontWeight={"400"}
+                color="rgba(34, 185, 116, 1)"
               >
-                GLOBAL SOLUTIONS
+                {title}
               </Text>
             </Flex>
 
@@ -70,9 +67,9 @@ function OtherPageHeroSection() {
               lineHeight={"66px"}
               fontSize={{ base: "48px", lg: "42px", xl: "52px" }}
               fontWeight={"600"}
-              color={{ base: "black", lg: "white" }}
+              color="white"
             >
-              We Are Migraid
+              {subtitle}
             </Heading>
 
             <Text
@@ -80,7 +77,7 @@ function OtherPageHeroSection() {
               mt={2}
               fontFamily={"Poppins"}
               fontSize={"16px"}
-              color={{ base: "black", lg: "white" }} // Paragraph text color change
+              color="white"
               fontWeight={"400"}
             >
               At Migraid, we provide expert consultation services to help
@@ -89,28 +86,16 @@ function OtherPageHeroSection() {
             </Text>
 
             <Flex gap={4} mt={4} flexWrap={"wrap"}>
-              <CustomButton
-                color={{ base: "rgba(34, 185, 116, 1)", lg: "white" }}
-                showIcon={true}
-                height="58px"
-              >
+              <CustomButton color="white" showIcon={true} height="58px">
                 Book a Consultation
               </CustomButton>
-              <CustomButton
-                color={{ base: "rgba(34, 185, 116, 1)", lg: "white" }}
-                showIcon={true}
-                height="58px"
-              >
+              <CustomButton color="white" showIcon={true} height="58px">
                 Learn More
               </CustomButton>
             </Flex>
           </Box>
-
-        
         </Flex>
       </Box>
-
-     
     </>
   );
 }
