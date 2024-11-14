@@ -1,4 +1,4 @@
-import { Box, Link, Image, Text, Button, Flex, Spacer } from "@chakra-ui/react";
+import { Box, Image, Text, Button, Flex, Spacer } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/images/Logo.png";
 import CustomButton from "../UI/CustomButton";
@@ -6,15 +6,18 @@ import useDrawer from "../../hooks/useDrawer";
 import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
+import { Link } from "react-router-dom";
 
 import PLogo from "../../assets/images/PLogo.png";
 
 const NavLink = ({ href, children }) => {
   return (
     <Box position="relative" display="inline-block" mx={3}>
-      <Link
-        href={href}
+      <Text
+        as={Link}
+        to={href}
         color="white"
+        cursor={"pointer"}
         fontFamily={"Poppins"}
         fontSize="16px"
         _hover={{
@@ -31,7 +34,7 @@ const NavLink = ({ href, children }) => {
         }}
       >
         {children}
-      </Link>
+      </Text>
     </Box>
   );
 };
@@ -93,7 +96,7 @@ function Navbar() {
           </Box>
 
           <Box display="flex" gap={4}>
-            <CustomButton  color="white" width="120px" height="45px">
+            <CustomButton color="white" width="120px" height="45px">
               Login
             </CustomButton>
             <CustomButton color="white" width="120px" height="45px">
@@ -114,7 +117,7 @@ function Navbar() {
         display={{ base: "flex", xl: "none" }}
       >
         <Box>
-          <Image src={scrollNav?logo:PLogo} w="92px" h="16px"></Image>
+          <Image src={scrollNav ? logo : PLogo} w="92px" h="16px"></Image>
         </Box>
         <Spacer></Spacer>
         <Box>
