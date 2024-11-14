@@ -73,7 +73,7 @@ function Navbar() {
         position="sticky"
         top={0}
         zIndex={1000}
-        display={{ base: "none", xl: "flex" }}
+        display={{ base: "none", lg: "flex" }}
         justifyContent={"space-between"}
       >
         <Box>
@@ -84,7 +84,8 @@ function Navbar() {
           w="70%"
           display="flex"
           alignItems="center"
-          justifyContent="space-around"
+          // justifyContent="space-around"
+          justifyContent={{base:'space-around',lg:'space-between',xl:'space-around'}}
         >
           <Box display="flex" alignItems="center" mr={{ lg: 6, xl: 12 }}>
             {links.map((link, index) => (
@@ -95,13 +96,19 @@ function Navbar() {
             ))}
           </Box>
 
-          <Box display="flex" gap={4}>
+          <Box gap={4} display={{ base: "none", lg: "none", xl: "flex" }}>
             <CustomButton color="white" width="120px" height="45px">
               Login
             </CustomButton>
             <CustomButton color="white" width="120px" height="45px">
               Signup
             </CustomButton>
+          </Box>
+
+          <Box display={{ base: "none", lg: "flex", xl: "none" }}>
+            <Button onClick={openNavbar} variant="ghost">
+              <HamburgerIcon color="white" />
+            </Button>{" "}
           </Box>
         </Box>
       </Box>
@@ -114,7 +121,7 @@ function Navbar() {
         position="sticky"
         top={0}
         zIndex={1000}
-        display={{ base: "flex", xl: "none" }}
+        display={{ base: "flex", lg: "none" }}
       >
         <Box>
           <Image src={scrollNav ? logo : PLogo} w="92px" h="16px"></Image>

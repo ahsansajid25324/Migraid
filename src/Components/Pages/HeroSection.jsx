@@ -15,11 +15,11 @@ function HeroSection() {
   return (
     <>
       <Box
-        py={{ base: 12, lg: 8 }}
+        py={{ base: 12, lg: 20 }}
         bg={{ base: "white", lg: "transparent" }} 
         bgImage={{ base: HeroBg, lg: img }} 
         bgSize="cover"
-        h={{ base: "auto", lg: "100vh" }}
+        // h={{ base: "auto", lg: "100vh" }}
         bgPosition="center"
         bgRepeat="no-repeat"
         position={"relative"}
@@ -29,7 +29,7 @@ function HeroSection() {
         <Image
           w="fit-content"
           src={HeroLine}
-          h={{ base: "auto", lg: "100vh" }}
+          h={{ base: "auto", xl: "100vh" }}
           alt="Hero Line"
           display={{ base: "none", lg: "block" }}
           position="absolute"
