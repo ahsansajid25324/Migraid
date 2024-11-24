@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
-import { Route, Routes } from "react-router-dom";
 import About from "./Pages/About";
 import Services from "./Pages/Services";
+
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top whenever the route changes
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div>
       <Routes>
