@@ -7,7 +7,7 @@ import Line from "./../../assets/images/Line.png";
 import "./../../App.css";
 import HeroLine from "../../assets/images/HeroLine.png";
 
-function OtherPageHeroSection({ title, subtitle }) {
+function OtherPageHeroSection({ title, subtitle, descript }) {
   return (
     <>
       <Box
@@ -80,9 +80,7 @@ function OtherPageHeroSection({ title, subtitle }) {
               color="white"
               fontWeight={"400"}
             >
-              At Migraid, we provide expert consultation services to help
-              individuals and businesses navigate the complexities of global
-              migration.
+              {descript}
             </Text>
 
             <Flex gap={4} mt={4} flexWrap={"wrap"}>

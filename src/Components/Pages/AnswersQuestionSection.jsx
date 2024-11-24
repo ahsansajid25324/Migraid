@@ -22,6 +22,7 @@ function AnswerQuestionSection() {
           subcolor="white"
           heading="CONNECT WITH US"
           color="white"
+          subHeadingTitle='Get answers to your questions'
         ></SectionHeading>
       </Flex>
       <Flex mx="auto">

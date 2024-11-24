@@ -2,22 +2,22 @@ import React from "react";
 import Footer from "../Components/Pages/Footer";
 import OtherPageHeroSection from "../Components/Pages/OtherPageHeroSection";
 import ServicesSection from "../Components/Pages/ServicesSection";
-import TeamSection from "../Components/Pages/TeamSection";
 import ContactSection from "../Components/Pages/ContactSection";
-function About() {
+import AnswerQuestionSection from "../Components/Pages/AnswersQuestionSection";
+function Services() {
   return (
     <>
       <OtherPageHeroSection
-        title="ABOUT US"
-        subtitle="We Are Migraid"
-        descript="Get with us today to experience a seamless process for your migration!"
+        title="Services"
+        subtitle="What We Do"
+        descript="Helping businesses & individuals make the American dream a reality!"
       />
       <ServicesSection />
-      <TeamSection />
+      <AnswerQuestionSection />
       <ContactSection showY={true} />
       <Footer />
     </>
   );
 }
 
-export default About;
+export default Services;

@@ -11,12 +11,14 @@ import { Link, useLocation } from "react-router-dom";
 import PLogo from "../../assets/images/PLogo.png";
 
 const NavLink = ({ href, children }) => {
+  const location = useLocation();
+  const isActive = location.pathname === href;
   return (
     <Box position="relative" display="inline-block" mx={3}>
       <Text
         as={Link}
+        color={isActive ? "rgba(34, 185, 116, 1)" : "white"}
         to={href}
-        color="white"
         cursor={"pointer"}
         fontFamily={"Poppins"}
         fontSize="16px"
@@ -141,7 +143,11 @@ function Navbar() {
           <Button onClick={openNavbar} variant="ghost">
             <HamburgerIcon
               color={
-                location.pathname === "/home" ? (scrollNav ? 'white' : 'black') : 'white'
+                location.pathname === "/home"
+                  ? scrollNav
+                    ? "white"
+                    : "black"
+                  : "white"
               }
             />
           </Button>{" "}

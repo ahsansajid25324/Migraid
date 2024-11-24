@@ -1,11 +1,10 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import SectionHeading from "./SectionHeading";
 import Testimonials from "./Testimonials";
 import tower from "./../../assets/images/tower.png";
 
 import Ptower from "./../../assets/images/Group.png";
-import Rtower from "./../../assets/images/RightTowe.png";
 
 const TestimonialsSection = () => {
   return (
@@ -50,6 +49,8 @@ const TestimonialsSection = () => {
           heading="TESTIMONIALS"
           color="rgba(34, 185, 116, 1)"
           subHeading={true}
+          subHeadingTitle='What Our Customers are Saying'
+
         ></SectionHeading>
       </Box>
       <Box>

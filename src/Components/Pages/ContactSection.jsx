@@ -4,13 +4,14 @@ import Contact from "./../../assets/images/Contact.png";
 import WLine from "../../assets/images/WLine.png";
 import CustomButton from "../UI/CustomButton";
 
-const ContactSection = () => {
+const ContactSection = ({showY}) => {
   return (
     <Flex
       bg="rgba(34, 185, 116, 1)"
-      mt={{ base: 8, lg: 16 }}
+      mt={{ base: 10, lg: 16 }}
       borderRadius="20px"
-      mx={{ base: 0, lg: 2 }}
+      mx={{ base: 4, lg: 12 }}
+      my={showY? { base: 4, lg: 16 }:''}
       alignItems="center"
       flexDirection={{ base: "column", md: "row" }}
       gap={{ base: 4, md: 6 }}

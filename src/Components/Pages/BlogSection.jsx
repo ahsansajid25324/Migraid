@@ -7,11 +7,12 @@ const BlogSection = () => {
     <Flex
       h="auto"
       py={{ base: 8, lg: 20 }}
-      px={{ base: 4, lg: 12 }}
+
+      // px={{ base: 4, lg: 12 }}
       justifyContent={"center"}
       flexDirection="column"
     >
-      <Box>
+      <Box px={{ base: 4, lg: 12 }} >
         <Blogs></Blogs>
       </Box>
       <Box>

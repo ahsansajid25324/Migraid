@@ -181,7 +181,7 @@ export default function Blogs() {
       <Box
         display={{ base: "flex", md: "none" }}
         justifyContent={"center"}
-        mt={8}
+        mt={{base:0,lg:8}}
       >
         <IconButton
           aria-label="Previous"
