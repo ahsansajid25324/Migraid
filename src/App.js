@@ -8,7 +8,6 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll to the top whenever the route changes
     window.scrollTo(0, 0);
   }, [location]);
 

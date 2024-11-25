@@ -41,7 +41,7 @@ const Footer = () => {
         bgSize="cover"
         bgPosition="center"
         bgRepeat="no-repeat"
-        zIndex="1" 
+        zIndex="1"
       />
       <Grid
         direction={{ base: "column", md: "row" }}

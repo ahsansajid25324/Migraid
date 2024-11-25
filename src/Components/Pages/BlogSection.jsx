@@ -6,7 +6,7 @@ const BlogSection = () => {
   return (
     <Flex
       h="auto"
-      py={{ base: 8, lg: 20 }}
+      pt={{ base: 8, lg: 20 }}
 
       // px={{ base: 4, lg: 12 }}
       justifyContent={"center"}
@@ -16,7 +16,7 @@ const BlogSection = () => {
         <Blogs></Blogs>
       </Box>
       <Box>
-        <ContactSection></ContactSection>
+        <ContactSection ></ContactSection>
       </Box>
     </Flex>
   );
