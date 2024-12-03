@@ -3,8 +3,6 @@ import {
   Flex,
   Heading,
   Text,
-  Link,
-  VStack,
   Icon,
   Input,
   Button,
@@ -13,6 +11,8 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import {
   AiOutlineMail,
   AiOutlinePhone,
@@ -22,7 +22,9 @@ import FLine from "../../assets/images/FooterLine.png";
 import Logo from "../../assets/images/Logo.png";
 
 import FooterImage from "../../assets/images/FooterImage.png";
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const nav = useNavigate();
   return (
     <Box
       position="relative"
@@ -164,6 +166,7 @@ const Footer = () => {
       >
         <Text>©2024 Law Aid. All Rights Reserved.</Text>
         <Flex
+          zIndex={"1000"}
           mt={{ base: "4", md: "0" }}
           gap={{ base: 2, lg: 4 }}
           flexDirection={{ base: "column", lg: "row" }}
@@ -181,16 +184,26 @@ const Footer = () => {
             >
               |
             </Text>{" "}
-            {/* Vertical Divider */}
-            <Link href="#">Privacy Policy</Link>
+            <Text
+              cursor="pointer"
+              onClick={() => nav("/privacy-policy")}
+              _hover={{ textDecoration: "underline" }}
+            >
+              Privacy Policy
+            </Text>
             <Text
               display={{ base: "none", lg: "flex" }}
               color="rgba(34, 185, 116, 1)"
             >
               |
             </Text>{" "}
-            {/* Vertical Divider */}
-            <Link href="#">PCI Compliance Policy</Link>
+            <Text
+              cursor="pointer"
+              onClick={() => nav("/pci-compliance")}
+              _hover={{ textDecoration: "underline" }}
+            >
+              PCI Compliance Policy
+            </Text>
           </Stack>
         </Flex>
       </Flex>
