@@ -1,6 +1,5 @@
 import React from "react";
 import OtherPageHeroSection from "../Components/Pages/OtherPageHeroSection";
-import ContactSection from "../Components/Pages/ContactSection";
 import Footer from "../Components/Pages/Footer";
 import BlogSection from "../Components/Pages/BlogSection";
 

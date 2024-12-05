@@ -68,10 +68,10 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
               ))}
             </VStack>
             <Box mt={8}>
-              <CustomButton mb={6} color="white" width="100%" height="56px">
+              <CustomButton mb={6} path="/login" color="white" width="100%" height="56px">
                 Login
               </CustomButton>
-              <CustomButton color="white" width="100%" height="56px">
+              <CustomButton  path="/signup" color="white" width="100%" height="56px">
                 Sing Up
               </CustomButton>
             </Box>

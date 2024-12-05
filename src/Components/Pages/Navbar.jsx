@@ -103,10 +103,10 @@ function Navbar() {
           </Box>
 
           <Box gap={4} display={{ base: "none", lg: "none", xl: "flex" }}>
-            <CustomButton color="white" width="120px" height="45px">
+            <CustomButton path="/login" color="white" width="120px" height="45px">
               Login
             </CustomButton>
-            <CustomButton color="white" width="120px" height="45px">
+            <CustomButton path="/signup" color="white" width="120px" height="45px">
               Signup
             </CustomButton>
           </Box>

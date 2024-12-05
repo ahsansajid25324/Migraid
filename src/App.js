@@ -7,6 +7,10 @@ import Reviews from "./Pages/Reviews";
 import Blogs from "./Pages/Blogs";
 import PciCompliance from "./Pages/PCI";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import Contact from "./Pages/Contact";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
+
 
 function App() {
   const location = useLocation();
@@ -23,8 +27,15 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/pci-compliance" element={<PciCompliance />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+
+        {/* Registration */}
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+
 
       </Routes>
     </div>

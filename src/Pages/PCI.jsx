@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import Footer from "../Components/Pages/Footer";
 import { Box, Text, Flex } from "@chakra-ui/react";
-import Navbar from "../Components/Pages/Navbar";
 import ContactSection from "../Components/Pages/ContactSection";
+import NonImgHeroSection from "../Components/Pages/NonImgHeroSection";
 function PCI() {
   const contentRef = useRef(null);
   const [activeSection, setActiveSection] = useState("Introduction");
@@ -98,35 +98,8 @@ function PCI() {
 
   return (
     <>
-      <Box
-        py={{ base: 20, lg: 8 }}
-        h={{ base: "30vh", lg: "40vh" }}
-        bg="black"
-        display="flex"
-        flexDirection="column"
-      >
-        <Box position="fixed" top={0} left={0} right={0} zIndex={1000}>
-          <Navbar />
-        </Box>
+      <NonImgHeroSection title="PCI Compliance Policy"></NonImgHeroSection>
 
-        <Flex
-          flexDirection={{ base: "column", lg: "row" }}
-          flex="1"
-          alignItems={"center"}
-        >
-          <Box borderRadius="md" m={"auto"}>
-            <Text
-              mt={{ base: "32px", lg: "12px" }}
-              fontSize={{ base: "20px", lg: "28px" }}
-              fontFamily={"Poppins"}
-              fontWeight={"600"}
-              color="white"
-            >
-              PCI COMPLIANCE POLICY{" "}
-            </Text>
-          </Box>
-        </Flex>
-      </Box>
       <Flex Flex p={{ base: "8px", lg: "20px" }}>
         <Box w="20%" p="20px" display={{ base: "none", lg: "flex" }}>
           <ul style={{ listStyleType: "none", padding: 0 }}>

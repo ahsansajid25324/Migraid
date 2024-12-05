@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import Arrow from "../../assets/icons/Arrow";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const CustomButton = ({
   children,
@@ -9,9 +10,16 @@ const CustomButton = ({
   background,
   width,
   height,
+  path,
   showIcon,
+  activeBgColor = "rgba(34, 185, 116, 1)", 
+  inactiveBgColor = "transparent", 
   ...props
 }) => {
+  const nav = useNavigate();
+  const location = useLocation();
+  const isActive = location.pathname === path;
+
   return (
     <Button
       borderRadius="32px"
@@ -19,16 +27,13 @@ const CustomButton = ({
       flexWrap="wrap"
       width={width}
       color={color}
-      fontWeight='medium'
-      // fontWeight={{base:'bold',lg:'medium'}}
-      bg={background || "transparent"}
-      border={
-        showBorder ? "1px solid white" : "1px solid rgba(34, 185, 116, 1)"
-      }
+      fontWeight="medium"
+      bg={isActive ? activeBgColor : background || inactiveBgColor}
+      border={showBorder ? "1px solid white" : "1px solid rgba(34, 185, 116, 1)"}
       _hover={{ bg: "rgba(34, 185, 116, 1)", color: "white" }}
       height={height}
       fontFamily="Poppins"
-      onClick={onClick}
+      onClick={() => nav(path)}
       {...props}
       rightIcon={showIcon ? <Arrow /> : null}
     >
