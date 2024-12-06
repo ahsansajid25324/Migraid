@@ -1,25 +1,14 @@
 import React from "react";
 import OtherPageHeroSection from "../Components/Pages/OtherPageHeroSection";
-import {
-  Box,
-  Button,
-  Grid,
-  Flex,
-  Text,
-  Heading,
-  Icon,
-  Image,
-} from "@chakra-ui/react";
+import { Box, Button, Grid, Flex, Text, Image } from "@chakra-ui/react";
 import { contactData } from "./../data/ContactData";
 import { useForm } from "react-hook-form";
 import FormInput from "./../Components/Pages/FormInput";
 import Footer from "../Components/Pages/Footer";
 import Phone from ".././assets/images/Phone.png";
-import {
-  AiOutlineMail,
-  AiOutlinePhone,
-  AiOutlineEnvironment,
-} from "react-icons/ai";
+
+import Map from ".././assets/images/Map.png";
+
 const Contact = () => {
   const {
     register,
@@ -42,18 +31,31 @@ const Contact = () => {
         flexDirection={{ base: "column", lg: "row" }}
         mx={{ base: 4, lg: 12 }}
         my={{ base: 6, lg: 12 }}
-
+        alignItems="stretch"
       >
-        <Box w={{ base: "100%", lg: "40%" }}>
-          <Box bg="rgba(2, 2, 38, 1)" borderRadius={{base:'18px',lg:'24px'}}>
-            <Flex px={{base:6,lg:8}}  py={{base:8,lg:8}}   direction="column">
+        <Box
+          w={{ base: "100%", lg: "40%" }}
+          display="flex"
+          flexDirection="column"
+        >
+          <Box
+            bg="rgba(2, 2, 38, 1)"
+            borderRadius={{ base: "18px", lg: "24px" }}
+            flex="1" // Ensures this box takes available height
+          >
+            <Flex
+              px={{ base: 6, lg: 8 }}
+              py={{ base: 8, lg: 8 }}
+              direction="column"
+              height="100%"
+            >
               <Box>
                 <Text color="white" fontSize={"24px"}>
                   Contact Information
                 </Text>
               </Box>
 
-              <Box mt={{base:6,lg:10}}>
+              <Box mt={{ base: 6, lg: 10 }}>
                 <Flex gap={4} alignItems={"center"}>
                   <Box>
                     <Image w="62px" h="62px" src={Phone}></Image>
@@ -97,9 +99,11 @@ const Contact = () => {
         <Box
           as="form"
           mx="auto"
-          my={{base:6,lg:0}}
+          my={{ base: 6, lg: 0 }}
           onSubmit={handleSubmit(onSubmit)}
           w={{ base: "100%", lg: "45%" }}
+          display="flex"
+          flexDirection="column"
         >
           <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={3} mb={4}>
             {contactData.map((field, index) => (
@@ -139,6 +143,9 @@ const Contact = () => {
             Submit
           </Button>
         </Box>
+      </Flex>
+      <Flex mx={{ base: 4, lg: 12 }} objectFit={'cover'} my={{ base: 6, lg: 12 }}>
+        <Image src={Map}></Image>
       </Flex>
 
       <Footer></Footer>
