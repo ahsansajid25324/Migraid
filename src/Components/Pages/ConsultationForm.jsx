@@ -18,7 +18,7 @@ const ConsultationForm = () => {
   return (
     <Box
       as="form"
-      bg='rgba(255, 252, 247, 1)'
+      bg="rgba(255, 252, 247, 1)"
       ml="auto"
       borderRadius={"20px"}
       onSubmit={handleSubmit(onSubmit)}

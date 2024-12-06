@@ -6,7 +6,9 @@ import {
   InputRightElement,
   Select,
   Textarea,
+  Checkbox,
   IconButton,
+  Flex,
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
@@ -20,6 +22,7 @@ const FormInput = ({
   register,
   errors,
   validation,
+  checkboxLabel,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -29,8 +32,10 @@ const FormInput = ({
 
   return (
     <>
-      <FormLabel>{label}</FormLabel>
+      {/* Label */}
+      {component !== "checkbox" && <FormLabel>{label}</FormLabel>}
 
+      {/* Password Input */}
       {component === "input" && type === "password" ? (
         <InputGroup>
           <Input
@@ -48,26 +53,33 @@ const FormInput = ({
           </InputRightElement>
         </InputGroup>
       ) : component === "input" ? (
+        // Regular Input (Including Phone Number Field)
         <Input
           type={type}
           placeholder={placeholder}
           {...register(name, validation)}
         />
       ) : component === "select" ? (
-        <Select
-          placeholder={placeholder}
-          {...register(name, validation)}
-        >
-          {options.map((option, index) => (
+        // Dropdown Select
+        <Select placeholder={placeholder} {...register(name, validation)}>
+          {options?.map((option, index) => (
             <option key={index} value={option.value}>
               {option.label}
             </option>
           ))}
         </Select>
       ) : component === "textarea" ? (
+        // Textarea Field
         <Textarea placeholder={placeholder} {...register(name, validation)} />
+      ) : component === "checkbox" ? (
+        <Flex alignItems="center">
+          <Checkbox {...register(name, validation)} colorScheme="green">
+            {checkboxLabel}
+          </Checkbox>
+        </Flex>
       ) : null}
 
+      {/* Error Message */}
       {errors[name] && <p style={{ color: "red" }}>{errors[name].message}</p>}
     </>
   );
