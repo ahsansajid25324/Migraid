@@ -7,8 +7,6 @@ import FormInput from "./../Components/Pages/FormInput";
 import Footer from "../Components/Pages/Footer";
 import Phone from ".././assets/images/Phone.png";
 
-import Map from ".././assets/images/Map.png";
-
 const Contact = () => {
   const {
     register,
@@ -41,7 +39,7 @@ const Contact = () => {
           <Box
             bg="rgba(2, 2, 38, 1)"
             borderRadius={{ base: "18px", lg: "24px" }}
-            flex="1" // Ensures this box takes available height
+            flex="1"
           >
             <Flex
               px={{ base: 6, lg: 8 }}
@@ -144,8 +142,22 @@ const Contact = () => {
           </Button>
         </Box>
       </Flex>
-      <Flex mx={{ base: 4, lg: 12 }} objectFit={'cover'} my={{ base: 6, lg: 12 }}>
-        <Image src={Map}></Image>
+      <Flex
+        mx={{ base: 4, lg: 12 }}
+        my={{ base: 6, lg: 12 }}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38051.69389942457!2d67.08999883191336!3d24.90856892059569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f4eb7183b97%3A0x35709df45c0003aa!2sLucky%20One%20Mall!5e0!3m2!1sen!2s!4v1733940346420!5m2!1sen!2s"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Google Maps showing Lucky One Mall location"
+        ></iframe>
       </Flex>
 
       <Footer></Footer>
