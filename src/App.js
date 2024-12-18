@@ -10,6 +10,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Contact from "./Pages/Contact";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/*" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/reviews" element={<Reviews />} />
@@ -35,6 +36,10 @@ function App() {
         {/* Registration */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+
+
+        {/* User Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
 
 
       </Routes>
