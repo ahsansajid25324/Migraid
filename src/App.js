@@ -11,6 +11,7 @@ import Contact from "./Pages/Contact";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
+import ShowQuestions from "./Pages/ShowQuestions";
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
 
         {/* User Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/showQuestions" element={<ShowQuestions />} />
+
 
 
       </Routes>
