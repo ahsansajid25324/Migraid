@@ -13,7 +13,7 @@ import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import ShowQuestions from "./Pages/ShowQuestions";
 
-
+import Payment from "./Pages/Payment";
 function App() {
   const location = useLocation();
 
@@ -33,18 +33,14 @@ function App() {
         <Route path="/pci-compliance" element={<PciCompliance />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-
         {/* Registration */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
 
-
         {/* User Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/showQuestions" element={<ShowQuestions />} />
-
-
-
+        <Route path="/paymentDetails" element={<Payment />} />
       </Routes>
     </div>
   );

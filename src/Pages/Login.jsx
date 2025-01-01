@@ -7,7 +7,7 @@ import { loginData } from "./../data/SignupData";
 import FormInput from "../Components/Pages/FormInput";
 import Footer from "../Components/Pages/Footer";
 
-import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 const Login = () => {
   const {
     register,
@@ -18,6 +18,8 @@ const Login = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
+
+  const nav = useNavigate();
 
   return (
     <div>
@@ -30,11 +32,9 @@ const Login = () => {
         onSubmit={handleSubmit(onSubmit)}
         maxW={{ base: "90%", lg: "38%" }}
       >
-        <Grid templateColumns={'1fr'} gap={3} mb={4}>
+        <Grid templateColumns={"1fr"} gap={3} mb={4}>
           {loginData.map((field, index) => (
-            <Box
-              key={index}
-            >
+            <Box key={index}>
               <FormInput
                 type={field.type}
                 label={field.label}
@@ -54,6 +54,7 @@ const Login = () => {
           type="submit"
           bg="rgba(34, 185, 116, 1)"
           color="white"
+          onClick={() => nav("/dashboard")}
           w="full"
           borderRadius={"24px"}
         >
@@ -62,7 +63,7 @@ const Login = () => {
 
         <Flex justifyContent="center" alignItems="center" mt={5} gap={4}>
           <Text color="gray">
-            Don't have an account? {" "}
+            Don't have an account?{" "}
             <Link
               as={ReactRouterLink}
               to="/signup"
