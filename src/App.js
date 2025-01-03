@@ -12,8 +12,8 @@ import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
 import ShowQuestions from "./Pages/ShowQuestions";
-
 import Payment from "./Pages/Payment";
+import ScheduleMeeting from "./Pages/ScheduleMeeting";
 function App() {
   const location = useLocation();
 
@@ -41,6 +41,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/showQuestions" element={<ShowQuestions />} />
         <Route path="/paymentDetails" element={<Payment />} />
+        <Route path="/schedulemeeting" element={<ScheduleMeeting />} />
       </Routes>
     </div>
   );
