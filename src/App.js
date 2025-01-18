@@ -14,6 +14,7 @@ import Dashboard from "./Pages/Dashboard";
 import ShowQuestions from "./Pages/ShowQuestions";
 import Payment from "./Pages/Payment";
 import ScheduleMeeting from "./Pages/ScheduleMeeting";
+import AdminDashboard from "./Pages/AdminDashboard";
 function App() {
   const location = useLocation();
 
@@ -41,7 +42,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/showQuestions" element={<ShowQuestions />} />
         <Route path="/paymentDetails" element={<Payment />} />
-        <Route path="/schedulemeeting" element={<ScheduleMeeting />} />
+        <Route path="/scheduleMeeting" element={<ScheduleMeeting />} />
+
+        {/* Admin Dashboard */}
+        <Route path="/adminDashboard" element={<AdminDashboard />} />
       </Routes>
     </div>
   );

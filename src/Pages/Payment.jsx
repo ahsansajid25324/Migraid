@@ -37,10 +37,7 @@ const Payment = () => {
         py={12}
         mx="auto"
       >
-        <Grid
-          templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
-          gap={6}
-        >
+        <Grid templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }} gap={6}>
           {paymentDetails.map((field, index) => (
             <Box key={index}>
               <Text mb={2}>{field.label}</Text>
@@ -57,8 +54,8 @@ const Payment = () => {
           ))}
         </Grid>
 
-        <Flex alignItems= 'center'  gap={2} mt={6}>
-          <Checkbox  colorScheme="green" {...register("saveCard")} />
+        <Flex alignItems="center" gap={2} mt={6}>
+          <Checkbox colorScheme="green" {...register("saveCard")} />
           <Text>Save my card for faster payment in the future.</Text>
         </Flex>
 
@@ -68,7 +65,6 @@ const Payment = () => {
           w={"fit-content"}
           alignSelf={"center"}
           borderRadius={"18px"}
-
           mt={8}
         >
           Confirm Payment
