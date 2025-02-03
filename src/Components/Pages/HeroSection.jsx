@@ -116,6 +116,7 @@ function HeroSection() {
           </Box>
 
           <Box
+          zIndex={'1'}
             display={{ base: "none", lg: "block" }}
             w="100%"
             mt={{ base: 8, lg: 10 }}

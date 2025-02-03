@@ -15,6 +15,7 @@ import ShowQuestions from "./Pages/ShowQuestions";
 import Payment from "./Pages/Payment";
 import ScheduleMeeting from "./Pages/ScheduleMeeting";
 import AdminDashboard from "./Pages/AdminDashboard";
+import AdminCase from "./Pages/AdminCase";
 function App() {
   const location = useLocation();
 
@@ -46,6 +47,8 @@ function App() {
 
         {/* Admin Dashboard */}
         <Route path="/adminDashboard" element={<AdminDashboard />} />
+        <Route path="/adminCase" element={<AdminCase />} />
+
       </Routes>
     </div>
   );
