@@ -8,7 +8,7 @@ import {
   Th,
   Tbody,
   Td,
-} from "@chakra-ui/react";
+ } from "@chakra-ui/react";
 import React from "react";
 
 import { FaUpload, FaEdit, FaTrash } from "react-icons/fa";

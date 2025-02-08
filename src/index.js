@@ -8,12 +8,16 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 
 import customTheme from "././customTheme";
+import { ApolloProvider } from "@apollo/client";
+import client from "./graphql/client";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={customTheme}>
       <BrowserRouter>
-        <App />
+        <ApolloProvider client={client}>
+          <App />
+        </ApolloProvider>
       </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>
