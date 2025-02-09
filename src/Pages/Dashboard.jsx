@@ -1,6 +1,5 @@
 import React from "react";
-import NonImgHeroSection from "../Components/Pages/NonImgHeroSection";
-import Footer from "../Components/Pages/Footer";
+
 import {
   Box,
   Button,
@@ -24,9 +23,6 @@ const Dashboard = () => {
 
   return (
     <div>
-      <NonImgHeroSection title="Dashboard"></NonImgHeroSection>
-
-      {/* Profile Section */}
       <Box
         w={{ base: "100%", md: "80%" }}
         mx="auto"
@@ -84,7 +80,6 @@ const Dashboard = () => {
         </Flex>
       </Box>
 
-      {/* Tabs Section */}
       <Box w="90%" mx="auto" py={{ base: 8, lg: 12 }}>
         <Tabs colorScheme="green " variant={"unstyled"}>
           <TabList
@@ -193,8 +188,6 @@ const Dashboard = () => {
           </TabPanels>
         </Tabs>
       </Box>
-
-      <Footer></Footer>
     </div>
   );
 };

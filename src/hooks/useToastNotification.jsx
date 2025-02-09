@@ -7,12 +7,10 @@ const useToastNotification = () => {
     toast({
       title: message,
       status: status,
-      duration: 3000,
+      duration: 2000,
       isClosable: true,
       position: "top",
-      containerStyle: {
-        paddingTop:2
-      },
+     
 
     });
   };

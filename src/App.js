@@ -18,6 +18,7 @@ import AdminDashboard from "./Pages/AdminDashboard";
 import AdminCase from "./Pages/AdminCase";
 
 import { PublicRoute, PrivateRoute } from "./helpers/auth";
+import AuthLayout from "./layouts/MainLayout";
 
 function App() {
   const location = useLocation();
@@ -38,22 +39,22 @@ function App() {
       <Route path="/pci-compliance" element={<PciCompliance />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-      {/* Public Auth Routes (Prevent access if logged in) */}
       <Route element={<PublicRoute />}>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<AuthLayout />}>
+          <Route path="signup" element={<Signup />} />
+          <Route path="login" element={<Login />} />
+        </Route>
       </Route>
 
-      {/* Private Routes (Require authentication) */}
       <Route element={<PrivateRoute />}>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/showQuestions" element={<ShowQuestions />} />
-        <Route path="/paymentDetails" element={<Payment />} />
-        <Route path="/scheduleMeeting" element={<ScheduleMeeting />} />
-
-        {/* Admin Protected Routes */}
-        <Route path="/adminDashboard" element={<AdminDashboard />} />
-        <Route path="/adminCase" element={<AdminCase />} />
+        <Route path="/" element={<AuthLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="showQuestions" element={<ShowQuestions />} />
+          <Route path="paymentDetails" element={<Payment />} />
+          <Route path="scheduleMeeting" element={<ScheduleMeeting />} />
+          <Route path="adminDashboard" element={<AdminDashboard />} />
+          <Route path="adminCase" element={<AdminCase />} />
+        </Route>
       </Route>
 
       {/* Catch-All Route (Redirects unknown paths to home) */}

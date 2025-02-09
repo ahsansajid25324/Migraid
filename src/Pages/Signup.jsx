@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
-import NonImgHeroSection from "../Components/Pages/NonImgHeroSection";
 import { useForm } from "react-hook-form";
 import { Box, Button, Flex, Link, Grid, Text } from "@chakra-ui/react";
 import { registrationData } from "./../data/SignupData";
 import FormInput from "../Components/Pages/FormInput";
-import Footer from "../Components/Pages/Footer";
 import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { REGISTER_USER } from "../graphql/mutations/registerUser";
-import useToastNotification from "../hooks/useToastNotification"; // Import custom hook
-
+import useToastNotification from "../hooks/useToastNotification";
 const Signup = () => {
   const {
     register,
@@ -22,26 +19,39 @@ const Signup = () => {
 
   const onSubmit = async (formData) => {
     try {
-      await registerUser({ variables: formData });
+      const { data } = await registerUser({ variables: formData });
+
+      if (data?.register?.success) {
+        nav("/login");
+
+        setTimeout(() => {
+          showToast(data.register.message, "success");
+        }, 1000);
+      } else {
+        showToast(
+          data?.register?.message || "Registration failed. Please try again.",
+          "error"
+        );
+      }
     } catch (err) {
       showToast("Internal server error. Please try again.", "error");
     }
   };
 
-  useEffect(() => {
-    if (data?.register?.success && !loading) {
-      showToast(data.register.message, "success");
-      setTimeout(() => {
-        nav("/login");
-      }, 1000); 
-    } else if (data?.register?.message && !loading) {
-      showToast(data.register.message, "error");
-    }
-  }, [data, loading, nav, showToast]);
+  // useEffect(() => {
+  //   if (data?.register?.success && !loading) {
+  //     nav("/login");
+
+  //     setTimeout(() => {
+  //       showToast(data.register.message, "success");
+  //     }, 1500);
+  //   } else if (data?.register?.message && !loading) {
+  //     showToast(data.register.message, "error");
+  //   }
+  // }, [data, loading, nav, showToast]);
 
   return (
     <div>
-      <NonImgHeroSection title="Sign Up" />
       <Box
         as="form"
         m="auto"
@@ -97,7 +107,6 @@ const Signup = () => {
           </Text>
         </Flex>
       </Box>
-      <Footer />
     </div>
   );
 };
