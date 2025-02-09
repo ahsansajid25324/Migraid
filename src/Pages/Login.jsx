@@ -10,6 +10,7 @@ import { Box, Button, Grid, Text, Flex, Link } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { loginData } from "../data/SignupData";
 import FormInput from "../Components/Pages/FormInput";
+import { motion } from "framer-motion";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,11 @@ const Login = () => {
   
 
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+  >
     <Box
       as="form"
       m="auto"
@@ -97,6 +103,7 @@ const Login = () => {
         </Text>
       </Flex>
     </Box>
+    </motion.div>
   );
 };
 

@@ -17,12 +17,17 @@ import {
 import Per from "../assets/images/Per.png";
 import { EditIcon } from "@chakra-ui/icons";
 import QuestionModal from "../Components/Pages/QuestionModal";
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Box
         w={{ base: "100%", md: "80%" }}
         mx="auto"
@@ -188,7 +193,7 @@ const Dashboard = () => {
           </TabPanels>
         </Tabs>
       </Box>
-    </div>
+    </motion.div>
   );
 };
 
