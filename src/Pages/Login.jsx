@@ -37,7 +37,7 @@ const Login = () => {
 
       setTimeout(() => {
         navigate("/dashboard");
-      }, 400);
+      }, 1000);
     } else if (data?.login?.message && !loading) {
       showToast(data.login.message, "error");
     }

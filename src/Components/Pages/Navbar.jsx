@@ -6,9 +6,11 @@ import useDrawer from "../../hooks/useDrawer";
 import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import PLogo from "../../assets/images/PLogo.png";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/slices/authSlice";
 
 const NavLink = ({ href, children }) => {
   const location = useLocation();
@@ -48,6 +50,8 @@ function Navbar() {
     closeDrawer: closeNavbar,
   } = useDrawer();
 
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
   const location = useLocation();
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -65,6 +69,9 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const dispatch = useDispatch();
+  const nav = useNavigate();
   return (
     <>
       <Box
@@ -103,12 +110,48 @@ function Navbar() {
           </Box>
 
           <Box gap={4} display={{ base: "none", lg: "none", xl: "flex" }}>
-            <CustomButton path="/login" color="white" width="120px" height="45px">
-              Login
-            </CustomButton>
-            <CustomButton path="/signup" color="white" width="120px" height="45px">
-              Signup
-            </CustomButton>
+            {isAuthenticated ? (
+              // <Button onClick={()=>dispatch(logout())}>Logout</Button>
+
+              <Button
+                borderRadius="32px"
+                fontSize={{ base: "14px", lg: "18px" }}
+                flexWrap="wrap"
+                color="white"
+                width="120px"
+                height="45px"
+                fontWeight="medium"
+                border={"1px solid rgba(34, 185, 116, 1)"}
+                bg="transparent"
+                _hover={{ bg: "rgba(34, 185, 116, 1)", color: "white" }}
+                onClick={() => {
+                  dispatch(logout());
+                  nav("/login");
+                }}
+                fontFamily="Poppins"
+              >
+                Logout
+              </Button>
+            ) : (
+              <>
+                <CustomButton
+                  path="/login"
+                  color="white"
+                  width="120px"
+                  height="45px"
+                >
+                  Login
+                </CustomButton>
+                <CustomButton
+                  path="/signup"
+                  color="white"
+                  width="120px"
+                  height="45px"
+                >
+                  Signup
+                </CustomButton>
+              </>
+            )}
           </Box>
 
           <Box display={{ base: "none", lg: "flex", xl: "none" }}>
