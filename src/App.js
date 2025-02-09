@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Services from "./Pages/Services";
@@ -16,6 +16,9 @@ import Payment from "./Pages/Payment";
 import ScheduleMeeting from "./Pages/ScheduleMeeting";
 import AdminDashboard from "./Pages/AdminDashboard";
 import AdminCase from "./Pages/AdminCase";
+
+import { PublicRoute, PrivateRoute } from "./helpers/auth";
+
 function App() {
   const location = useLocation();
 
@@ -24,33 +27,38 @@ function App() {
   }, [location]);
 
   return (
-    <div>
-      <Routes>
-        <Route path="/*" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/pci-compliance" element={<PciCompliance />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    <Routes>
+      {/* Public Routes (Accessible to everyone) */}
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/reviews" element={<Reviews />} />
+      <Route path="/blogs" element={<Blogs />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/pci-compliance" element={<PciCompliance />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-        {/* Registration */}
+      {/* Public Auth Routes (Prevent access if logged in) */}
+      <Route element={<PublicRoute />}>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+      </Route>
 
-        {/* User Dashboard */}
+      {/* Private Routes (Require authentication) */}
+      <Route element={<PrivateRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/showQuestions" element={<ShowQuestions />} />
         <Route path="/paymentDetails" element={<Payment />} />
         <Route path="/scheduleMeeting" element={<ScheduleMeeting />} />
 
-        {/* Admin Dashboard */}
+        {/* Admin Protected Routes */}
         <Route path="/adminDashboard" element={<AdminDashboard />} />
         <Route path="/adminCase" element={<AdminCase />} />
+      </Route>
 
-      </Routes>
-    </div>
+      {/* Catch-All Route (Redirects unknown paths to home) */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
