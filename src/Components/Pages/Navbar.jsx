@@ -140,6 +140,7 @@ function Navbar() {
           </Box>
 
           <Box display={{ base: "none", lg: "flex", xl: "none" }}>
+            <NavbarDropDown size="sm"></NavbarDropDown>
             <Button onClick={openNavbar} variant="ghost">
               <HamburgerIcon color="white" />
             </Button>{" "}

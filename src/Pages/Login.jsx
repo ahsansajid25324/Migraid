@@ -27,82 +27,82 @@ const Login = () => {
   const onSubmit = async (formData) => {
     try {
       const { data } = await loginUser({ variables: formData });
-  
+
       if (data?.login?.success) {
         dispatch(loginSuccess(data.login.token));
-        
-        navigate("/dashboard");
+        navigate(`dashboard/${data.login.user.id}`);
         setTimeout(() => {
           showToast(data.login.message, "success");
         }, 1000);
-
       } else {
-        showToast(data?.login?.message || "Login failed. Please try again.", "error");
+        showToast(
+          data?.login?.message || "Login failed. Please try again.",
+          "error"
+        );
       }
     } catch (err) {
       showToast("Internal server error. Please try again.", "error");
     }
   };
-  
 
   return (
     <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-  >
-    <Box
-      as="form"
-      m="auto"
-      py={{ base: 8, lg: 14 }}
-      borderRadius="20px"
-      onSubmit={handleSubmit(onSubmit)}
-      maxW={{ base: "90%", lg: "38%" }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
-      <Grid templateColumns="1fr" gap={3} mb={4}>
-        {loginData.map((field, index) => (
-          <Box key={index}>
-            <FormInput
-              type={field.type}
-              label={field.label}
-              name={field.name}
-              placeholder={field.placeholder}
-              component={field.component}
-              options={field.options || []}
-              register={register}
-              errors={errors}
-              validation={field.validation}
-            />
-          </Box>
-        ))}
-      </Grid>
-
-      <Button
-        type="submit"
-        bg="rgba(34, 185, 116, 1)"
-        color="white"
-        w="full"
-        borderRadius="24px"
-        _hover={{ bg: "rgb(78, 215, 154)", color: "white" }}
-        isLoading={loading}
+      <Box
+        as="form"
+        m="auto"
+        py={{ base: 8, lg: 14 }}
+        borderRadius="20px"
+        onSubmit={handleSubmit(onSubmit)}
+        maxW={{ base: "90%", lg: "38%" }}
       >
-        Login
-      </Button>
+        <Grid templateColumns="1fr" gap={3} mb={4}>
+          {loginData.map((field, index) => (
+            <Box key={index}>
+              <FormInput
+                type={field.type}
+                label={field.label}
+                name={field.name}
+                placeholder={field.placeholder}
+                component={field.component}
+                options={field.options || []}
+                register={register}
+                errors={errors}
+                validation={field.validation}
+              />
+            </Box>
+          ))}
+        </Grid>
 
-      <Flex justifyContent="center" alignItems="center" mt={5} gap={4}>
-        <Text color="gray">
-          Don't have an account?{" "}
-          <Link
-            as={ReactRouterLink}
-            to="/signup"
-            color="rgba(34, 185, 116, 1)"
-            fontWeight="bold"
-          >
-            Signup
-          </Link>
-        </Text>
-      </Flex>
-    </Box>
+        <Button
+          type="submit"
+          bg="rgba(34, 185, 116, 1)"
+          color="white"
+          w="full"
+          borderRadius="24px"
+          _hover={{ bg: "rgb(78, 215, 154)", color: "white" }}
+          isLoading={loading}
+        >
+          Login
+        </Button>
+
+        <Flex justifyContent="center" alignItems="center" mt={5} gap={4}>
+          <Text color="gray">
+            Don't have an account?{" "}
+            <Link
+              as={ReactRouterLink}
+              to="/signup"
+              color="rgba(34, 185, 116, 1)"
+              fontWeight="bold"
+            >
+              Signup
+            </Link>
+          </Text>
+        </Flex>
+      </Box>
     </motion.div>
   );
 };

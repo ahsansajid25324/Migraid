@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import {
   Box,
@@ -16,10 +16,13 @@ import {
 } from "@chakra-ui/react";
 import Per from "../assets/images/Per.png";
 import { EditIcon } from "@chakra-ui/icons";
+import { useQuery } from "@apollo/client";
+
 import QuestionModal from "../Components/Pages/QuestionModal";
 import { motion } from "framer-motion";
-
+import { getUserId } from "../helpers/getUserId";
 import InfoModal from "../Components/Pages/InfoModal";
+import { GET_USER_BY_ID } from "../graphql/queries/GetUserById";
 
 const Dashboard = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,6 +32,12 @@ const Dashboard = () => {
     onOpen: onOpenInfo,
     onClose: onCloseInfo,
   } = useDisclosure();
+
+  const userId = getUserId();
+
+  const { data, loading, error } = useQuery(GET_USER_BY_ID, {
+    variables: { id: userId },
+  });
 
   return (
     <motion.div
