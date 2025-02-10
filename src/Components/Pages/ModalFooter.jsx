@@ -5,7 +5,8 @@ const ModalFooter = ({ onClose, btnText }) => {
     <Flex
       w="100%"
       flexWrap={"wrap"}
-      justifyContent="space-between"
+      justifyContent="flex-end"
+      gap={3}
       alignItems="center"
     >
       <Button

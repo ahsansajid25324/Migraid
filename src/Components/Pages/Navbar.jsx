@@ -1,4 +1,4 @@
-import { Box, Image, Text, Button, Flex, Spacer } from "@chakra-ui/react";
+import { Box, Image, Text, Button, Spacer, Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/images/Logo.png";
 import CustomButton from "../UI/CustomButton";
@@ -6,11 +6,11 @@ import useDrawer from "../../hooks/useDrawer";
 import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import PLogo from "../../assets/images/PLogo.png";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/slices/authSlice";
+import { useSelector } from "react-redux";
+import NavbarDropDown from "./NavbarDropDown";
 
 const NavLink = ({ href, children }) => {
   const location = useLocation();
@@ -70,8 +70,6 @@ function Navbar() {
     };
   }, []);
 
-  const dispatch = useDispatch();
-  const nav = useNavigate();
   return (
     <>
       <Box
@@ -111,27 +109,14 @@ function Navbar() {
 
           <Box gap={4} display={{ base: "none", lg: "none", xl: "flex" }}>
             {isAuthenticated ? (
-              // <Button onClick={()=>dispatch(logout())}>Logout</Button>
-
-              <Button
-                borderRadius="32px"
-                fontSize={{ base: "14px", lg: "18px" }}
-                flexWrap="wrap"
-                color="white"
-                width="120px"
-                height="45px"
-                fontWeight="medium"
-                border={"1px solid rgba(34, 185, 116, 1)"}
-                bg="transparent"
-                _hover={{ bg: "rgba(34, 185, 116, 1)", color: "white" }}
-                onClick={() => {
-                  dispatch(logout());
-                  nav("/login");
-                }}
-                fontFamily="Poppins"
-              >
-                Logout
-              </Button>
+              <Box _hover={{ bg: "transparent" }}>
+                <Flex gap={3} alignItems="center">
+                  <CustomButton path="/login" color="white">
+                    Book a Consultation
+                  </CustomButton>
+                  <NavbarDropDown size="md"></NavbarDropDown>
+                </Flex>
+              </Box>
             ) : (
               <>
                 <CustomButton
@@ -183,6 +168,7 @@ function Navbar() {
         </Box>
         <Spacer></Spacer>
         <Box>
+          <NavbarDropDown size="sm"></NavbarDropDown>
           <Button onClick={openNavbar} variant="ghost">
             <HamburgerIcon
               color={

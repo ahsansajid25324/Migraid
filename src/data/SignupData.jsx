@@ -87,3 +87,36 @@ export const loginData = [
     },
   },
 ];
+
+export const updateData = [
+  {
+    label: "First Name",
+    type: "text",
+    name: "firstName",
+    placeholder: "First Name",
+    component: "input",
+    validation: { required: "First Name is required" },
+  },
+  {
+    label: "Last Name",
+    type: "text",
+    name: "lastName",
+    placeholder: "Last Name",
+    component: "input",
+    validation: { required: "Last Name is required" },
+  },
+  {
+    label: "Email",
+    type: "email",
+    name: "email",
+    placeholder: "Email",
+    component: "input",
+    validation: {
+      required: "Email is required",
+      pattern: {
+        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        message: "Invalid email address",
+      },
+    },
+  },
+];

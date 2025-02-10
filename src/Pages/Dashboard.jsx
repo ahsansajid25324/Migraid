@@ -19,8 +19,16 @@ import { EditIcon } from "@chakra-ui/icons";
 import QuestionModal from "../Components/Pages/QuestionModal";
 import { motion } from "framer-motion";
 
+import InfoModal from "../Components/Pages/InfoModal";
+
 const Dashboard = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const {
+    isOpen: isOpenInfo,
+    onOpen: onOpenInfo,
+    onClose: onCloseInfo,
+  } = useDisclosure();
 
   return (
     <motion.div
@@ -58,6 +66,7 @@ const Dashboard = () => {
                   <Icon
                     as={EditIcon}
                     w={5}
+                    onClick={onOpenInfo}
                     h={5}
                     cursor="pointer"
                     color="gray.500"
@@ -84,6 +93,8 @@ const Dashboard = () => {
           </Box>
         </Flex>
       </Box>
+
+      <InfoModal isOpen={isOpenInfo} onClose={onCloseInfo}></InfoModal>
 
       <Box w="90%" mx="auto" py={{ base: 8, lg: 12 }}>
         <Tabs colorScheme="green " variant={"unstyled"}>
