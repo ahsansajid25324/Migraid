@@ -35,7 +35,7 @@ const Dashboard = () => {
 
   const userId = getUserId();
 
-  const { data, loading, error } = useQuery(GET_USER_BY_ID, {
+  const { data } = useQuery(GET_USER_BY_ID, {
     variables: { id: userId },
   });
 
@@ -70,7 +70,7 @@ const Dashboard = () => {
               <Box>
                 <Flex alignItems="center" gap={4}>
                   <Text mb={1} fontWeight={"600"} fontSize="lg">
-                    Ahsan Sajid
+                    {data?.user?.firstName} {" "} {data?.user?.lastName}
                   </Text>
                   <Icon
                     as={EditIcon}
@@ -82,7 +82,7 @@ const Dashboard = () => {
                   />
                 </Flex>
                 <Text fontSize="sm" color="gray.500">
-                  sajidashan67@gmail.com
+                  {data?.user?.email}
                 </Text>
               </Box>
             </Flex>
@@ -103,7 +103,11 @@ const Dashboard = () => {
         </Flex>
       </Box>
 
-      <InfoModal isOpen={isOpenInfo} onClose={onCloseInfo}></InfoModal>
+      <InfoModal
+        data={data}
+        isOpen={isOpenInfo}
+        onClose={onCloseInfo}
+      ></InfoModal>
 
       <Box w="90%" mx="auto" py={{ base: 8, lg: 12 }}>
         <Tabs colorScheme="green " variant={"unstyled"}>
