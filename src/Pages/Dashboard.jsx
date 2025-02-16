@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-
+import React, { useRef, useState } from "react";
+import { gql, useMutation } from "@apollo/client";
 import {
   Box,
   Button,
@@ -13,31 +13,65 @@ import {
   Tab,
   TabPanel,
   useDisclosure,
+  Skeleton,
+  SkeletonCircle,
+  Stack,
+  HStack,
 } from "@chakra-ui/react";
-import Per from "../assets/images/Per.png";
 import { EditIcon } from "@chakra-ui/icons";
 import { useQuery } from "@apollo/client";
-
-import QuestionModal from "../Components/Pages/QuestionModal";
-import { motion } from "framer-motion";
 import { getUserId } from "../helpers/getUserId";
 import InfoModal from "../Components/Pages/InfoModal";
 import { GET_USER_BY_ID } from "../graphql/queries/GetUserById";
+import { UPDATE_PROFILE_IMAGE } from "../graphql/mutations/AddProfileImage";
+import QuestionModal from "../Components/Pages/QuestionModal";
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const {
     isOpen: isOpenInfo,
     onOpen: onOpenInfo,
     onClose: onCloseInfo,
   } = useDisclosure();
-
   const userId = getUserId();
-
-  const { data } = useQuery(GET_USER_BY_ID, {
+  const { data, refetch, loading } = useQuery(GET_USER_BY_ID, {
     variables: { id: userId },
   });
+  const [updateProfileImage] = useMutation(UPDATE_PROFILE_IMAGE);
+  const fileInputRef = useRef(null);
+
+  const handleButtonClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleImageChange = (e) => {
+    const imageFile = e.target.files[0];
+    if (!imageFile) return;
+
+    const formData = new FormData();
+    formData.append("file", imageFile);
+    formData.append("upload_preset", "migraidImages");
+    formData.append("cloud_name", "dnncyiapr");
+
+    fetch("https://api.cloudinary.com/v1_1/dnncyiapr/image/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const imageUrl = data.secure_url;
+        updateProfileImage({
+          variables: {
+            id: userId,
+            profileImage: imageUrl,
+          },
+        }).then(() => {
+          refetch();
+        });
+      })
+      .catch((err) => console.error("Error uploading image:", err));
+  };
 
   return (
     <motion.div
@@ -51,32 +85,35 @@ const Dashboard = () => {
         px={{ base: 4, lg: 0 }}
         pt={{ base: 10, lg: 12 }}
       >
-        <Flex
-          justifyContent={"space-between"}
-          alignItems={"center"}
-          flexWrap={"wrap"}
-        >
-          <Box>
-            <Flex gap={4} alignItems={"center"}>
+        <Flex gap={4} alignItems={"center"}>
+          {loading ? (
+            // Skeleton View (Shown when loading)
+            <>
+              <SkeletonCircle size="62px" />
               <Box>
-                <Image
-                  w="62px"
-                  h="62px"
-                  borderRadius="full"
-                  src={Per}
-                  alt="Profile"
-                />
+                <Skeleton height="20px" width="150px" mb={2} />
+                <Skeleton height="16px" width="200px" />
               </Box>
+            </>
+          ) : (
+            <>
+              <Image
+                w="62px"
+                h="62px"
+                borderRadius="full"
+                src={data?.user?.profileImage}
+                alt="Profile"
+              />
               <Box>
                 <Flex alignItems="center" gap={4}>
                   <Text mb={1} fontWeight={"600"} fontSize="lg">
-                    {data?.user?.firstName} {" "} {data?.user?.lastName}
+                    {data?.user?.firstName} {data?.user?.lastName}
                   </Text>
                   <Icon
                     as={EditIcon}
                     w={5}
-                    onClick={onOpenInfo}
                     h={5}
+                    onClick={onOpenInfo}
                     cursor="pointer"
                     color="gray.500"
                   />
@@ -85,32 +122,15 @@ const Dashboard = () => {
                   {data?.user?.email}
                 </Text>
               </Box>
-            </Flex>
-          </Box>
-          <Box pt={4} ml={{ base: "auto", lg: "initial" }}>
-            <Button
-              color="rgba(34, 185, 116, 1)"
-              borderRadius={"20px"}
-              height={"52px"}
-              fontSize={{ base: "14px", lg: "16px" }}
-              variant={"outline"}
-              _hover={{ bg: "rgba(34, 185, 116, 1)", color: "white" }}
-              border={"1px solid rgba(34, 185, 116, 1) "}
-            >
-              Upload Profile Picture
-            </Button>
-          </Box>
+            </>
+          )}
         </Flex>
       </Box>
 
-      <InfoModal
-        data={data}
-        isOpen={isOpenInfo}
-        onClose={onCloseInfo}
-      ></InfoModal>
+      <InfoModal data={data} isOpen={isOpenInfo} onClose={onCloseInfo} />
 
       <Box w="90%" mx="auto" py={{ base: 8, lg: 12 }}>
-        <Tabs colorScheme="green " variant={"unstyled"}>
+        <Tabs colorScheme="green" variant={"unstyled"}>
           <TabList
             display="grid"
             gridTemplateColumns={{
@@ -126,7 +146,6 @@ const Dashboard = () => {
               _selected={{
                 fontWeight: "600",
                 color: "rgba(34, 185, 116, 1)",
-                borderColor: "rgba(34, 185, 116, 1)",
                 borderBottom: "2px solid rgba(34, 185, 116, 1)",
               }}
             >
@@ -138,7 +157,6 @@ const Dashboard = () => {
               _selected={{
                 fontWeight: "600",
                 color: "rgba(34, 185, 116, 1)",
-                borderColor: "rgba(34, 185, 116, 1)",
                 borderBottom: "2px solid rgba(34, 185, 116, 1)",
               }}
             >
@@ -150,7 +168,6 @@ const Dashboard = () => {
               _selected={{
                 fontWeight: "600",
                 color: "rgba(34, 185, 116, 1)",
-                borderColor: "rgba(34, 185, 116, 1)",
                 borderBottom: "2px solid rgba(34, 185, 116, 1)",
               }}
             >
@@ -201,7 +218,7 @@ const Dashboard = () => {
                 </Flex>
               </Box>
             </TabPanel>
-            <QuestionModal isOpen={isOpen} onClose={onClose}></QuestionModal>
+            <QuestionModal isOpen={isOpen} onClose={onClose} />
 
             <TabPanel>
               <Box w="80%" mx="auto" mt={4}>

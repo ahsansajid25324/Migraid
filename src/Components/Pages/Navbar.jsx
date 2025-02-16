@@ -139,7 +139,7 @@ function Navbar() {
             )}
           </Box>
 
-          <Box display={{ base: "none", lg: "flex", xl: "none" }}>
+          <Box display={{ base: "flex", lg: "flex", xl: "none" }} flexWrap={'wrap'}>
             <NavbarDropDown size="sm"></NavbarDropDown>
             <Button onClick={openNavbar} variant="ghost">
               <HamburgerIcon color="white" />
@@ -159,27 +159,16 @@ function Navbar() {
         display={{ base: "flex", lg: "none" }}
       >
         <Box>
-          <Image
-            src={
-              location.pathname === "/home" ? (scrollNav ? logo : PLogo) : logo
-            }
-            w="92px"
-            h="16px"
-          ></Image>
+          <Image src={scrollNav ? logo : PLogo} w="92px" h="16px"></Image>
         </Box>
         <Spacer></Spacer>
         <Box>
-          <NavbarDropDown size="sm"></NavbarDropDown>
+          <NavbarDropDown
+            size="sm"
+            
+          ></NavbarDropDown>
           <Button onClick={openNavbar} variant="ghost">
-            <HamburgerIcon
-              color={
-                location.pathname === "/home"
-                  ? scrollNav
-                    ? "white"
-                    : "black"
-                  : "white"
-              }
-            />
+            <HamburgerIcon color={scrollNav ? "white" : "black"} />
           </Button>{" "}
         </Box>
 

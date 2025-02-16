@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/slices/authSlice";
 
-const NavbarDropDown = ({ size }) => {
+const NavbarDropDown = ({ size}) => {
   const dispatch = useDispatch();
   const nav = useNavigate();
 
@@ -28,7 +28,7 @@ const NavbarDropDown = ({ size }) => {
               name="User Name"
               src="https://bit.ly/broken-link"
             />
-            <ChevronDownIcon color="white" boxSize={6} ml={2} />
+            <ChevronDownIcon  boxSize={6} ml={2} />
           </Flex>
         }
         variant="unstyled"

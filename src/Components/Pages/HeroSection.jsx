@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import img from "./../../assets/images/HeroBg.png";
 import Navbar from "./Navbar";
@@ -140,6 +140,5 @@ function HeroSection() {
   );
 }
 
-// export default HeroSection;
 export default React.memo(HeroSection);
 

@@ -21,7 +21,6 @@ import {
 import FLine from "../../assets/images/FooterLine.png";
 import Logo from "../../assets/images/Logo.png";
 
-import FooterImage from "../../assets/images/FooterImage.png";
 import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const nav = useNavigate();
@@ -33,18 +32,6 @@ const Footer = () => {
       py={{ base: "10", xl: "14" }}
       px={{ base: "5", xl: "20" }}
     >
-      <Box
-        position="absolute"
-        top={0}
-        left={0}
-        right={0}
-        bottom={0}
-        bgImage={FooterImage}
-        bgSize="cover"
-        bgPosition="center"
-        bgRepeat="no-repeat"
-        zIndex="1"
-      />
       <Grid
         direction={{ base: "column", md: "row" }}
         justify="space-between"
