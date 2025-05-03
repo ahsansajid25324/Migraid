@@ -15,7 +15,9 @@ function HeroSection() {
   return (
     <>
       <Box
-        py={{ base: 12, lg: 20 }}
+        pt={{ base: 12, lg: 20 }}
+        pb={{ base: 6, lg: 20 }}
+
         bg={{ base: "white", lg: "transparent" }}
         bgImage={{ base: HeroBg, lg: img }}
         bgSize="cover"

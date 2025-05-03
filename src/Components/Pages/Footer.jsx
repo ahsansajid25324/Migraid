@@ -11,6 +11,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 
 import {

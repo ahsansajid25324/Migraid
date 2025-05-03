@@ -52,7 +52,6 @@ function Navbar() {
 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  const location = useLocation();
   const [scrollNav, setScrollNav] = useState(false);
 
   useEffect(() => {
@@ -139,12 +138,12 @@ function Navbar() {
             )}
           </Box>
 
-          <Box display={{ base: "flex", lg: "flex", xl: "none" }} flexWrap={'wrap'}>
+          {/* <Box display={{ base: "flex", lg: "flex", xl: "none" }} flexWrap={'wrap'}>
             <NavbarDropDown size="sm"></NavbarDropDown>
             <Button onClick={openNavbar} variant="ghost">
               <HamburgerIcon color="white" />
             </Button>{" "}
-          </Box>
+          </Box> */}
         </Box>
       </Box>
 
@@ -163,10 +162,10 @@ function Navbar() {
         </Box>
         <Spacer></Spacer>
         <Box>
-          <NavbarDropDown
+          {/* <NavbarDropDown
             size="sm"
             
-          ></NavbarDropDown>
+          ></NavbarDropDown> */}
           <Button onClick={openNavbar} variant="ghost">
             <HamburgerIcon color={scrollNav ? "white" : "black"} />
           </Button>{" "}
