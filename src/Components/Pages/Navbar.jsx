@@ -127,7 +127,7 @@ function Navbar() {
         <Spacer></Spacer>
         <Box>
           <Button onClick={openNavbar} variant="ghost">
-            <HamburgerIcon color={scrollNav ? "white" : "black"} />
+            <HamburgerIcon color="white"  />
           </Button>{" "}
         </Box>
 
