@@ -1,4 +1,4 @@
-import { Box, Image, Text, Button, Spacer, Flex } from "@chakra-ui/react";
+import { Box, Image, Text, Button, Spacer } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/images/Logo.png";
 import CustomButton from "../UI/CustomButton";
@@ -8,9 +8,6 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
 import { Link, useLocation } from "react-router-dom";
 
-import PLogo from "../../assets/images/PLogo.png";
-import { useSelector } from "react-redux";
-import NavbarDropDown from "./NavbarDropDown";
 
 const NavLink = ({ href, children }) => {
   const location = useLocation();
@@ -49,8 +46,6 @@ function Navbar() {
     openDrawer: openNavbar,
     closeDrawer: closeNavbar,
   } = useDrawer();
-
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -94,7 +89,6 @@ function Navbar() {
           justifyContent={{
             base: "space-around",
             lg: "space-between",
-            xl: "space-around",
           }}
         >
           <Box display="flex" alignItems="center" mr={{ lg: 6, xl: 12 }}>
@@ -106,44 +100,14 @@ function Navbar() {
             ))}
           </Box>
 
-          <Box gap={4} display={{ base: "none", lg: "none", xl: "flex" }}>
-            {isAuthenticated ? (
-              <Box _hover={{ bg: "transparent" }}>
-                <Flex gap={3} alignItems="center">
-                  <CustomButton path="/login" color="white">
-                    Book a Consultation
-                  </CustomButton>
-                  <NavbarDropDown size="md"></NavbarDropDown>
-                </Flex>
-              </Box>
-            ) : (
-              <>
-                <CustomButton
-                  path="/login"
-                  color="white"
-                  width="120px"
-                  height="45px"
-                >
-                  Login
-                </CustomButton>
-                <CustomButton
-                  path="/signup"
-                  color="white"
-                  width="120px"
-                  height="45px"
-                >
-                  Signup
-                </CustomButton>
-              </>
-            )}
+          <Box gap={4} display={{ base: "none", lg: "flex" }}>
+            <CustomButton path="/login" color="white">
+              Contact
+            </CustomButton>
+            <CustomButton path="/signup" color="white">
+              Donate
+            </CustomButton>
           </Box>
-
-          {/* <Box display={{ base: "flex", lg: "flex", xl: "none" }} flexWrap={'wrap'}>
-            <NavbarDropDown size="sm"></NavbarDropDown>
-            <Button onClick={openNavbar} variant="ghost">
-              <HamburgerIcon color="white" />
-            </Button>{" "}
-          </Box> */}
         </Box>
       </Box>
 
@@ -158,14 +122,10 @@ function Navbar() {
         display={{ base: "flex", lg: "none" }}
       >
         <Box>
-          <Image src={scrollNav ? logo : PLogo} w="92px" h="16px"></Image>
+          <Image src={logo} w="92px" h="16px"></Image>
         </Box>
         <Spacer></Spacer>
         <Box>
-          {/* <NavbarDropDown
-            size="sm"
-            
-          ></NavbarDropDown> */}
           <Button onClick={openNavbar} variant="ghost">
             <HamburgerIcon color={scrollNav ? "white" : "black"} />
           </Button>{" "}

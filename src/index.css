@@ -1,27 +1,16 @@
-/* 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+}
 
-.css-161pkch {
-  color: gray;
+p, button, input, textarea, select, a {
+  font-family: 'Poppins', Arial, sans-serif;
 }
 
 
 
 
 
-/* Testimonial container */
-/* .testimonial-container {
-  max-width: 800px;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
-} */
 
 .title {
   text-align: center;

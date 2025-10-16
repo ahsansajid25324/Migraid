@@ -26,28 +26,12 @@ const ConsultationForm = () => {
       p={{ base: 4, lg: 6 }}
     >
       <Box mb="2">
-        <Heading
-          fontSize={"26px"}
-          fontFamily="'Plus Jakarta Sans'"
-          fontWeight={"600"}
-          color={"black"}
-        >
+        <Heading fontSize={{base:"20px",lg:"26px"}} fontWeight={"600"} color={"black"}>
           Book Your Free{" "}
           <Text as="span" color="rgba(34, 185, 116, 1)">
             Consultation
           </Text>
         </Heading>
-      </Box>
-      <Box mb="2">
-        <Text
-          fontFamily="Poppins"
-          color="rgba(17, 17, 17, 1);"
-          fontSize={"16px"}
-          fontWeight={"400"}
-        >
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout.
-        </Text>
       </Box>
 
       <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={3} mb={4}>
@@ -78,12 +62,10 @@ const ConsultationForm = () => {
         type="submit"
         bg="rgba(34, 185, 116, 1)"
         color="white"
-        w="102px"
-        fontFamily="'Poppins'"
-        h="46px"
-        borderRadius={"24px"}
+        _hover={{ bg: "rgba(34, 185, 116, 0.8)" }}
+        borderRadius={"16px"}
       >
-        Submit
+        Get Started
       </Button>
     </Box>
   );
