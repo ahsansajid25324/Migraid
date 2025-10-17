@@ -83,7 +83,6 @@ function Navbar() {
         </Box>
 
         <Box
-          // w="70%"
           display="flex"
           alignItems="center"
           justifyContent={{

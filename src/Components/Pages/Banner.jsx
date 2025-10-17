@@ -92,11 +92,11 @@ const Banner = () => {
               href="#consultation"
               bg="rgba(34, 185, 116, 1)"
               color="white"
-              px={{ base: 4, lg: 8 }}
-              py={{ base: 3, lg: 4 }}
+              px={{ base: 4, lg: 4 }}
+              py={{ base: 3, lg: 3 }}
               borderRadius={{ base: "28px", lg: "32px" }}
               fontWeight="600"
-              fontSize={{ base: "14px", md: "lg" }}
+              fontSize={{ base: "14px", md: "18px" }}
               display="inline-flex"
               alignItems="center"
               boxShadow="md"
