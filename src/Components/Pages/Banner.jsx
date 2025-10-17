@@ -1,7 +1,7 @@
 import { Image, Box, Text } from "@chakra-ui/react";
 import Arrow from "../../assets/icons/Arrow";
 import Services from "../../assets/images/Services.png";
-
+import Line from "../../assets/images/Line.png";
 const Banner = () => {
   return (
     <Box
@@ -35,13 +35,12 @@ const Banner = () => {
         justifyItems={{ base: "left", lg: "initial" }}
         textAlign={{ base: "left", lg: "left" }}
       >
-        <Box display="flex" alignItems="center" mb={2}>
-          <Box
+        <Box display="flex" gap={3} alignItems="center" mb={2}>
+          <Image
+            w={{ base: "24px", lg: "30px" }}
             h="3px"
-            w={{ base: "24px", lg: "40px" }}
-            bg="rgba(34, 185, 116, 1)"
-            borderRadius="2px"
-            mr={2}
+            src={Line}
+            alt="Line separator"
           />
 
           <Text
@@ -51,12 +50,11 @@ const Banner = () => {
           >
             BOOK A CONSULTATION
           </Text>
-          <Box
+          <Image
+            w={{ base: "24px", lg: "30px" }}
             h="3px"
-            w={{ base: "24px", lg: "40px" }}
-            bg="rgba(34, 185, 116, 1)"
-            borderRadius="2px"
-            ml={2}
+            src={Line}
+            alt="Line separator"
           />
         </Box>
         <Box>
