@@ -11,6 +11,7 @@ const CustomButton = ({
   width,
   height,
   path,
+  padding,
   showIcon,
   activeBgColor = "rgba(34, 185, 116, 1)",
   inactiveBgColor = "transparent",
@@ -24,7 +25,7 @@ const CustomButton = ({
     <Button
       borderRadius="24px"
       fontSize={{ base: "14px", lg: "16px" }}
-      p={5}
+      padding={padding}
       color={color}
       fontWeight="medium"
       bg={isActive ? activeBgColor : background || inactiveBgColor}

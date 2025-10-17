@@ -6,11 +6,13 @@ import ServicesSection from "../Components/Pages/ServicesSection";
 import TestimonialsSection from "../Components/Pages/TestimonialsSection";
 import BlogSection from "../Components/Pages/BlogSection";
 import Footer from "../Components/Pages/Footer";
+import Banner from "../Components/Pages/Banner";
 
 function Home() {
   return (
     <>
       <HeroSection />
+      <Banner />
       <AboutSection />
       <AnswerQuestionSection />
       <ServicesSection />

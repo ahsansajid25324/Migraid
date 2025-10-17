@@ -83,7 +83,7 @@ function Navbar() {
         </Box>
 
         <Box
-          w="70%"
+          // w="70%"
           display="flex"
           alignItems="center"
           justifyContent={{
@@ -101,7 +101,7 @@ function Navbar() {
           </Box>
 
           <Box gap={4} display={{ base: "none", lg: "flex" }}>
-            <CustomButton path="/login" color="white">
+            <CustomButton padding={4} path="/login" color="white">
               Contact
             </CustomButton>
             <CustomButton path="/signup" color="white">

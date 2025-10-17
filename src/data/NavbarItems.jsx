@@ -1,8 +1,7 @@
 export const links = [
   { href: "/home", label: "Home" },
-  { href: "/about", label: "About Us" },
+  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "clinicsevens", label: "Clinics & Events" },
-  { href: "/resources", label: "Resources" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "clinicsevens", label: "Clinics" },
+    { href: "/contact", label: "Contact" },
 ];

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import img from "./../../assets/images/newBg.png";
+import img from "./../../assets/images/blueBg.png";
 import Navbar from "./Navbar";
 import CustomButton from "../UI/CustomButton";
 import ConsultationForm from "./ConsultationForm";
@@ -61,10 +61,10 @@ function HeroSection() {
             </Text>
 
             <Flex gap={4} mt={4} flexWrap={"wrap"}>
-              <CustomButton color="white" showIcon={true}>
+              <CustomButton padding={6} color="white" showIcon={true}>
                 Book a Free Intake
               </CustomButton>
-              <CustomButton color="white" showIcon={true}>
+              <CustomButton padding={6} color="white" showIcon={true}>
                 Donate
               </CustomButton>
             </Flex>

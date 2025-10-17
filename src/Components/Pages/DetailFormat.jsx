@@ -34,7 +34,7 @@ const DetailFormat = ({
         <Flex gap={3} alignItems={"center"}>
           <Image w="30px" h="3px" src={Line} alt="Line separator" />
           <Text
-            fontSize={"18px"}
+            fontSize={{base:"14px",lg:"18px"}}
             color={"rgba(34, 185, 116, 1)"}
             fontWeight={"500"}
           >
