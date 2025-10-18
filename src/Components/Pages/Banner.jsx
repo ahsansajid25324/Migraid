@@ -1,12 +1,12 @@
 import { Image, Box, Text } from "@chakra-ui/react";
 import Arrow from "../../assets/icons/Arrow";
-import Services from "../../assets/images/Services.png";
+import Services from "../../assets/images/banner.png";
 import Line from "../../assets/images/Line.png";
 const Banner = () => {
   return (
     <Box
       position="relative"
-      borderRadius={{ base: "18px", lg: "28px" }}
+      borderRadius={{ base: "16px", lg: "28px" }}
       overflow="hidden"
       mx={{ base: 4, lg: 8 }}
       mt={{ base: 6, lg: 12 }}

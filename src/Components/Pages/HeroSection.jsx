@@ -35,7 +35,7 @@ function HeroSection() {
           <Box w="100%" borderRadius="md">
             <Heading
               mt={{ base: "12px", lg: "50px" }}
-              lineHeight={{ base: "46px", lg: "66px" }}
+              lineHeight={{ base: "42px", lg: "66px" }}
               fontSize={{ base: "32px", lg: "42px", xl: "46px" }}
               fontWeight={"600"}
               color="#FFFFFF"

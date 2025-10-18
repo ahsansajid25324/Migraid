@@ -16,13 +16,7 @@ const DetailFormat = ({
 
   // Define the full text
   const fullText = `
-    Migraid is a dedicated team of experienced paralegals, business
-    consultants & life coaches that are committed to providing expert
-    support and guidance to individuals navigating the complexities of
-    immigration and resettlement processes. With a deep understanding of
-    local US resources, we strive to empower our clients with accurate
-    information and efficient assistance to achieve their relocation goals
-    with confidence.
+   Migraid is a nonprofit legal aid and resettlement organization dedicated to supporting individuals and families through immigration and adjustment-of-status processes. Our team includes experienced paralegals, accredited immigration advisers, community navigators, and life-coaches who work together to provide practical, compassionate assistance — from paperwork and legal referrals to post-arrival integration support.
   `;
 
   const truncatedTextBase = `${fullText.substring(0, 200)}...`; // For smaller screens
@@ -34,7 +28,7 @@ const DetailFormat = ({
         <Flex gap={3} alignItems={"center"}>
           <Image w="30px" h="3px" src={Line} alt="Line separator" />
           <Text
-            fontSize={{base:"14px",lg:"18px"}}
+            fontSize={{ base: "14px", lg: "18px" }}
             color={"rgba(34, 185, 116, 1)"}
             fontWeight={"500"}
           >
@@ -99,38 +93,59 @@ const DetailFormat = ({
         <Flex
           flexWrap={"wrap"}
           mt={6}
+          flexDirection={"column"}
           columnGap={{ base: 4, lg: 6 }}
           rowGap={3}
         >
-          <Box display="flex" gap={2} alignItems={"center"}>
-            <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
-            <Text
-              fontFamily="'Poppins'"
-              fontSize={{ base: "16px", lg: "20px" }}
-              fontWeight={"500"}
-            >
-              Our Missions
-            </Text>
+          <Box
+            display="flex"
+            flexDirection={"column"}
+            gap={2}
+            alignItems={"center"}
+          >
+            <Box display={"flex"} alignItems={"center"} marginInlineEnd={"auto"} gap={2}>
+              <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
+              <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={"500"}>
+                Our Missions
+              </Text>
+            </Box>
+
+            <Box>
+              <Text>
+                To provide free and low-cost immigration guidance and legal
+                support to individuals and families, empowering them with
+                accurate information, compassionate advocacy, and connection to
+                community resources.
+              </Text>
+            </Box>
           </Box>
-          <Box display="flex" gap={2} alignItems={"center"}>
-            <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
-            <Text
-              fontFamily="'Poppins'"
-              fontSize={{ base: "16px", lg: "20px" }}
-              fontWeight={"500"}
-            >
-              Our Values
-            </Text>
+          <Box
+            display="flex"
+            flexDirection={"column"}
+            gap={2}
+            alignItems={"center"}
+          >
+            <Box display={"flex"} alignItems={"center"} marginInlineEnd={"auto"} gap={2}>
+              <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
+              <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={"500"}>
+                Our Values
+              </Text>
+            </Box>
+
+            <Box>
+              <Text>
+                To provide free and low-cost immigration guidance and legal
+                support to individuals and families, empowering them with
+                accurate information, compassionate advocacy, and connection to
+                community resources.
+              </Text>
+            </Box>
           </Box>
         </Flex>
       )}
 
       <Box mt={margin}>
-        <CustomButton
-          showIcon={true}
-          color="rgba(34, 185, 116, 1)"
-          height="50px"
-        >
+        <CustomButton showIcon={true} color="rgba(34, 185, 116, 1)" p={6}>
           {btn}
         </CustomButton>
       </Box>

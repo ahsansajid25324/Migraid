@@ -72,27 +72,12 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
             </VStack>
 
             <Box mt={8}>
-              {!isAuthenticated ? (
-                <>
-                  <CustomButton
-                    mb={6}
-                    path="/login"
-                    color="white"
-                    width="100%"
-                    height="56px"
-                  >
-                    Login
-                  </CustomButton>
-                  <CustomButton
-                    path="/signup"
-                    color="white"
-                    width="100%"
-                    height="56px"
-                  >
-                    Sign Up
-                  </CustomButton>
-                </>
-              ) : null}
+              <CustomButton mr={2} p={5} color="white">
+                Contact
+              </CustomButton>
+              <CustomButton p={5} color="white">
+                Donate
+              </CustomButton>
             </Box>
           </DrawerBody>
         </DrawerContent>

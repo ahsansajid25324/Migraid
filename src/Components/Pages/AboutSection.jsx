@@ -2,16 +2,18 @@ import React from "react";
 
 import { Box, Image, Flex, Text, Grid } from "@chakra-ui/react";
 import PImage from "../../assets/images/Person.png";
+import Girl from "../../assets/images/girl.png";
+
 import Consult from "../../assets/images/ConsultService.png";
 import DetailFormat from "./DetailFormat";
 function AboutSection() {
   return (
     <Flex
-      py={{ base: 8, lg: 20 }}
+      py={{ base: 8, lg: 12 }}
       px={{ base: 4, lg: 8 }}
-      alignItems="center"
       justifyContent={"space-between"}
       flexDirection={{ base: "column", lg: "row" }}
+      alignItems={"center"}
     >
       <Grid
         templateColumns={"repeat(2, 1fr)"}
@@ -21,7 +23,11 @@ function AboutSection() {
       >
         <Box display="flex" flexDirection="column" alignItems="stretch">
           <Box flex="1">
-            <Image w="100%" borderRadius={{base:"12px",lg:"20px"}} src={PImage} />
+            <Image
+              w="100%"
+              borderRadius={{ base: "12px", lg: "20px" }}
+              src={PImage}
+            />
           </Box>
           <Box
             mt={4}
@@ -29,7 +35,7 @@ function AboutSection() {
             bg="white"
             justifyContent="center"
             border="1px solid rgba(34, 185, 116, 1)"
-           borderRadius={{base:"12px",lg:"20px"}}
+            borderRadius={{ base: "12px", lg: "20px" }}
             gap={2}
             p={{ base: 2, lg: 4 }}
             display="flex"
@@ -57,7 +63,7 @@ function AboutSection() {
             flexDirection="column"
             justifyContent="center"
             border="1px solid rgba(34, 185, 116, 1)"
-           borderRadius={{base:"12px",lg:"20px"}}
+            borderRadius={{ base: "12px", lg: "20px" }}
             gap={2}
             p={{ base: 2, lg: 4 }}
             textAlign="center"
@@ -79,7 +85,11 @@ function AboutSection() {
             </Text>
           </Box>
           <Box flex="1">
-            <Image w="100%" borderRadius={{base:"12px",lg:"20px"}} src={PImage} />
+            <Image
+              w="100%"
+              borderRadius={{ base: "12px", lg: "20px" }}
+              src={Girl}
+            />
           </Box>
         </Box>
       </Grid>
@@ -89,7 +99,7 @@ function AboutSection() {
           title="WHO WE ARE"
           margin="6"
           showValues={true}
-          btn="Read More About Us"
+          btn="Support Our Work"
           SubTitle="About Migraid"
         ></DetailFormat>
       </Box>
