@@ -63,7 +63,7 @@ const ConsultationForm = () => {
         bg="rgba(34, 185, 116, 1)"
         color="white"
         _hover={{ bg: "rgba(34, 185, 116, 0.8)" }}
-        borderRadius={"16px"}
+        borderRadius={"24px"}
       >
         Get Started
       </Button>
