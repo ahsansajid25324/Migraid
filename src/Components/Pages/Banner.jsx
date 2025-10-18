@@ -15,7 +15,7 @@ const Banner = ({
       borderRadius={{ base: "16px", lg: "28px" }}
       overflow="hidden"
       mx={{ base: 4, lg: 8 }}
-      mt={{ base: 6, lg: 12 }}
+      mt={{ base: 8, lg: 12 }}
       display="flex"
       alignItems="center"
       justifyContent={alignment === "left" ? "flex-start" : "flex-end"}
