@@ -39,7 +39,7 @@ const WorkSection = () => {
       bgPosition="center"
       bgRepeat="no-repeat"
     >
-      <Box py={{ base: 6, lg: 16 }} px={{ base: 4, lg: 8 }}>
+      <Box pt={{ base: 6, lg: 16 }} pb={{ base: 0, lg: 16 }} px={{ base: 4, lg: 8 }}>
         <Flex align="center" gap={2}>
           <Image src={Line} w="24px" h="3px" />
           <Text
