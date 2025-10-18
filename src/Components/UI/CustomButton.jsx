@@ -15,6 +15,7 @@ const CustomButton = ({
   showIcon,
   activeBgColor = "rgba(34, 185, 116, 1)",
   inactiveBgColor = "transparent",
+  invertHoverColors = false,
   ...props
 }) => {
   const nav = useNavigate();
@@ -32,7 +33,10 @@ const CustomButton = ({
       border={
         showBorder ? "1px solid white" : "1px solid rgba(34, 185, 116, 1)"
       }
-      _hover={{ bg: "rgba(34, 185, 116, 1)", color: "white" }}
+      _hover={invertHoverColors 
+        ? { bg: "white", color: "rgba(34, 185, 116, 1)" }
+        : { bg: "rgba(34, 185, 116, 1)", color: "white" }
+      }
       fontFamily="Poppins"
       onClick={() => nav(path)}
       {...props}

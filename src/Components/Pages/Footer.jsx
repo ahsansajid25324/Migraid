@@ -13,6 +13,7 @@ import {
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
+import FooterBg from "../../assets/images/footerBg.png";
 
 import {
   AiOutlineMail,
@@ -28,7 +29,10 @@ const Footer = () => {
   return (
     <Box
       position="relative"
-      bg="rgba(2, 2, 38, 1)"
+      bgImage={FooterBg}
+      bgSize="cover"
+      bgPosition="center"
+      bgRepeat="no-repeat"
       color="white"
       py={{ base: "10", xl: "14" }}
       px={{ base: "5", xl: "20" }}

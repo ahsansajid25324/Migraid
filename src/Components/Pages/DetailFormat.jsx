@@ -8,15 +8,17 @@ const DetailFormat = ({
   SubTitle,
   margin,
   showValues,
+  content,
   SubTitleMargin,
   btn,
+  alwaysShowFullContent = false,
 }) => {
-  const [showFullText, setShowFullText] = useState(false);
+  const [showFullText, setShowFullText] = useState(alwaysShowFullContent);
 
   // Define the full text
-  const fullText = `
-   Migraid is a nonprofit legal aid and resettlement organization dedicated to supporting individuals and families through immigration and adjustment-of-status processes. Our team includes experienced paralegals, accredited immigration advisers, community navigators, and life-coaches who work together to provide practical, compassionate assistance — from paperwork and legal referrals to post-arrival integration support.
-  `;
+  const fullText = content
+    ? content
+    : "Migraid is a nonprofit legal aid and resettlement organization dedicated to supporting individuals and families through immigration and adjustment-of-status processes. Our team includes experienced paralegals, accredited immigration advisers, community navigators, and life-coaches who work together to provide practical, compassionate assistance — from paperwork and legal referrals to post-arrival integration support.";
 
   const truncatedTextBase = `${fullText.substring(0, 200)}...`; // For smaller screens
   const truncatedTextLg = `${fullText.substring(0, 400)}...`; // For larger screens
@@ -47,7 +49,7 @@ const DetailFormat = ({
       </Heading>
 
       {/* Container for text with a fade-out effect */}
-      <Box position="relative" mt="10px" color="#444" >
+      <Box position="relative" mt="10px" color="#444">
         <Text>
           {showFullText
             ? fullText
@@ -57,7 +59,7 @@ const DetailFormat = ({
         </Text>
 
         {/* Fade-out overlay */}
-        {!showFullText && (
+        {!showFullText && !alwaysShowFullContent && (
           <Box
             position="absolute"
             bottom="0"
@@ -69,17 +71,19 @@ const DetailFormat = ({
         )}
       </Box>
 
-      <Button
-        onClick={() => setShowFullText(!showFullText)}
-        color="rgba(34, 185, 116, 1)"
-        variant="link"
-        mt="5px"
-        colorScheme="green"
-        _focus={{ boxShadow: "none" }}
-        _active={{ color: "rgba(34, 185, 116, 1)" }}
-      >
-        {showFullText ? "See less" : "See more"}
-      </Button>
+      {!alwaysShowFullContent && (
+        <Button
+          onClick={() => setShowFullText(!showFullText)}
+          color="rgba(34, 185, 116, 1)"
+          variant="link"
+          mt="5px"
+          colorScheme="green"
+          _focus={{ boxShadow: "none" }}
+          _active={{ color: "rgba(34, 185, 116, 1)" }}
+        >
+          {showFullText ? "See less" : "See more"}
+        </Button>
+      )}
 
       {showValues && (
         <Flex
@@ -147,7 +151,7 @@ const DetailFormat = ({
       )}
 
       <Box mt={margin}>
-        <CustomButton showIcon={true} color="rgba(34, 185, 116, 1)" p={6}>
+        <CustomButton showIcon={true} color="rgba(34, 185, 116, 1)" p={5}>
           {btn}
         </CustomButton>
       </Box>

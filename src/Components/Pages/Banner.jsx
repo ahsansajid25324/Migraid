@@ -1,8 +1,14 @@
 import { Image, Box, Text } from "@chakra-ui/react";
 import Arrow from "../../assets/icons/Arrow";
-import Services from "../../assets/images/banner.png";
 import Line from "../../assets/images/Line.png";
-const Banner = () => {
+const Banner = ({
+  img,
+  title,
+  subtitle,
+  content,
+  btncontent,
+  alignment = "right",
+}) => {
   return (
     <Box
       position="relative"
@@ -12,20 +18,33 @@ const Banner = () => {
       mt={{ base: 6, lg: 12 }}
       display="flex"
       alignItems="center"
-      justifyContent="flex-end"
-      py={{ base: 14, lg: 10 }}
+      justifyContent={alignment === "left" ? "flex-start" : "flex-end"}
+      py={{ base: 8, lg: 10 }}
+      _after={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 1,
+        background:
+          alignment === "left"
+            ? "linear-gradient(to left, rgba(0,0,0,0.2), rgba(0,0,0,0.8))"
+            : "linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2))",
+      }}
     >
       <Image
-        src={Services}
+        src={img}
         alt="Airport Immigration"
         objectFit="cover"
         w="100%"
-        filter="brightness(0.6)"
+        filter="brightness(1)"
         position="absolute"
         top={0}
         left={0}
         h="100%"
-        zIndex={1}
+        zIndex={0}
       />
       <Box
         position="relative"
@@ -34,6 +53,7 @@ const Banner = () => {
         color="white"
         justifyItems={{ base: "left", lg: "initial" }}
         textAlign={{ base: "left", lg: "left" }}
+        ml={{ base: 4, lg: 8 }}
       >
         <Box display="flex" gap={3} alignItems="center" mb={2}>
           <Image
@@ -48,7 +68,7 @@ const Banner = () => {
             color="#FFFFF"
             fontWeight={"500"}
           >
-            BOOK A CONSULTATION
+            {title}
           </Text>
           <Image
             w={{ base: "24px", lg: "30px" }}
@@ -60,18 +80,13 @@ const Banner = () => {
         <Box>
           <Box
             as="h1"
+            width={{base: "95%", lg: "100%"}}
             fontWeight="700"
             fontSize={{ base: "26px", md: "3xl", lg: "3.2rem" }}
             lineHeight={{ base: "2.2rem", md: "3.5rem", lg: "4rem" }}
             mb={{ base: 2, lg: 4 }}
           >
-            EMPOWERING EVERY
-            <br />
-            STEP OF YOUR
-            <br />
-            <Box as="span" color="white">
-              IMMIGRATION JOURNEY
-            </Box>
+            {subtitle}
           </Box>
           <Text
             fontSize={{ base: "14px", lg: "16px" }}
@@ -79,9 +94,10 @@ const Banner = () => {
             w={{ base: "95%", lg: "90%" }}
             mb={4}
           >
-            Whether you’re applying for residency, finding local resources, or
+            {/* Whether you’re applying for residency, finding local resources, or
             building a new life, our team provides the information, clarity, and
-            support you need to succeed.
+            support you need to succeed. */}
+            {content}
           </Text>
 
           <Box>
@@ -101,7 +117,7 @@ const Banner = () => {
               _hover={{ bg: "rgba(34, 185, 116, 0.85)" }}
               transition="background 0.2s"
             >
-              Book A Consultation
+              {btncontent}
               <Box as="span" ml={2} display="flex" alignItems="center">
                 <Arrow
                   color="#fff"
