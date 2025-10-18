@@ -20,7 +20,7 @@ const ConsultationForm = () => {
       as="form"
       bg="rgba(255, 252, 247, 1)"
       ml="auto"
-      borderRadius={"20px"}
+      borderRadius={{ base: "16px", lg: "20px" }}
       onSubmit={handleSubmit(onSubmit)}
       maxW={{ base: "100%", lg: "80%" }}
       p={{ base: 4, lg: 6 }}

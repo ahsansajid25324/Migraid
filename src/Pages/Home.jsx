@@ -7,6 +7,7 @@ import TestimonialsSection from "../Components/Pages/TestimonialsSection";
 import BlogSection from "../Components/Pages/BlogSection";
 import Footer from "../Components/Pages/Footer";
 import Banner from "../Components/Pages/Banner";
+import ValuesSection from "../Components/Pages/ValuesSection";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
       <HeroSection />
       <Banner />
       <AboutSection />
+      <ValuesSection />
       <AnswerQuestionSection />
       <ServicesSection />
       <TestimonialsSection />

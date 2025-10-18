@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Line from "../../assets/images/Line.png";
 import Consult from "../../assets/images/ConsultService.png";
 import CustomButton from "../UI/CustomButton";
-import img from "../../assets/images/01.png";
 const DetailFormat = ({
   title,
   SubTitle,
@@ -28,7 +27,7 @@ const DetailFormat = ({
         <Flex gap={3} alignItems={"center"}>
           <Image w="30px" h="3px" src={Line} alt="Line separator" />
           <Text
-            fontSize={{ base: "14px", lg: "18px" }}
+            fontSize={{ base: "14px", lg: "16px" }}
             color={"rgba(34, 185, 116, 1)"}
             fontWeight={"500"}
           >
@@ -40,7 +39,7 @@ const DetailFormat = ({
       )}
 
       <Heading
-        fontFamily="'Plus Jakarta Sans'"
+        fontSize={{ base: "24px", lg: "28px" }}
         fontWeight={"500"}
         mt={SubTitleMargin}
       >
@@ -48,14 +47,7 @@ const DetailFormat = ({
       </Heading>
 
       {/* Container for text with a fade-out effect */}
-      <Box
-        position="relative"
-        mt="10px"
-        fontSize={"16px"}
-        lineHeight={"30px"}
-        fontWeight={"500"}
-        color={"#4A4A4A"}
-      >
+      <Box position="relative" mt="10px" color="#444" >
         <Text>
           {showFullText
             ? fullText
@@ -103,7 +95,12 @@ const DetailFormat = ({
             gap={2}
             alignItems={"center"}
           >
-            <Box display={"flex"} alignItems={"center"} marginInlineEnd={"auto"} gap={2}>
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              marginInlineEnd={"auto"}
+              gap={2}
+            >
               <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
               <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={"500"}>
                 Our Missions
@@ -111,7 +108,7 @@ const DetailFormat = ({
             </Box>
 
             <Box>
-              <Text>
+              <Text color="#444">
                 To provide free and low-cost immigration guidance and legal
                 support to individuals and families, empowering them with
                 accurate information, compassionate advocacy, and connection to
@@ -125,7 +122,12 @@ const DetailFormat = ({
             gap={2}
             alignItems={"center"}
           >
-            <Box display={"flex"} alignItems={"center"} marginInlineEnd={"auto"} gap={2}>
+            <Box
+              display={"flex"}
+              alignItems={"center"}
+              marginInlineEnd={"auto"}
+              gap={2}
+            >
               <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
               <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={"500"}>
                 Our Values
@@ -133,7 +135,7 @@ const DetailFormat = ({
             </Box>
 
             <Box>
-              <Text>
+              <Text color="#444">
                 To provide free and low-cost immigration guidance and legal
                 support to individuals and families, empowering them with
                 accurate information, compassionate advocacy, and connection to

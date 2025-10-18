@@ -9,7 +9,7 @@ import DetailFormat from "./DetailFormat";
 function AboutSection() {
   return (
     <Flex
-      py={{ base: 8, lg: 12 }}
+      py={{ base: 4, lg: 12 }}
       px={{ base: 4, lg: 8 }}
       justifyContent={"space-between"}
       flexDirection={{ base: "column", lg: "row" }}
