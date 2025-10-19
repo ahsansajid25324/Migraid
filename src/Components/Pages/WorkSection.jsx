@@ -98,43 +98,42 @@ const WorkSection = () => {
           </motion.div>
         </Box>
         <Grid
-          templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
+          templateColumns={{ base: "1fr" ,md: `repeat(${steps.length * 2 - 1}, 1fr)` }}
           mt={{ base: 6, lg: 8 }}
           gap={{ base: 4, lg: 0 }}
         >
           {steps.map((step, idx) => (
-            <Box ref={cardRefs.current[idx]} key={idx}>
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={cardInViews[idx] ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                transition={{ duration: 0.8, delay: 0.2 + idx * 0.15 }}
-              >
-                <Flex direction="column">
-                  <Image
-                    src={step.image}
-                    w={{ base: 12, lg: 16 }}
-                    h={{ base: 12, lg: 16 }}
-                    mb={4}
-                  />
-                  <Text textAlign="left" maxW={"300px"} color="#444">
-                    {step.description}
-                  </Text>
-                  {idx < steps.length - 1 && (
-                    <Box
-                      display={{ base: "none", md: "block" }}
-                      position="absolute"
-                      right={0}
-                      top="50%"
-                      transform="translateY(-50%)"
-                      h="80px"
-                      w="1px"
-                      bg="#C6E9D5"
-                      zIndex={1}
+            <React.Fragment key={idx}>
+              <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" ref={cardRefs.current[idx]}>
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={cardInViews[idx] ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                  transition={{ duration: 0.8, delay: 0.2 + idx * 0.15 }}
+                >
+                  <Flex direction="column" align="center" justify="center">
+                    <Image
+                      src={step.image}
+                      w={{ base: 12, lg: 16 }}
+                      h={{ base: 12, lg: 16 }}
+                      mb={4}
                     />
-                  )}
-                </Flex>
-              </motion.div>
-            </Box>
+                    <Text textAlign="center" maxW={"240px"} color="#444">
+                      {step.description}
+                    </Text>
+                  </Flex>
+                </motion.div>
+              </Box>
+              {idx < steps.length - 1 && (
+                <Box
+                    justifySelf="center"
+                  alignSelf="center"
+                  h="80px"
+                  w="1px"
+                  bg="#22B974"
+                  borderRadius="full"
+                />
+              )}
+            </React.Fragment>
           ))}
         </Grid>
       </Box>
