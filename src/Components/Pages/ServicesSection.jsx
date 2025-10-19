@@ -9,7 +9,7 @@ const ServicesSection = () => {
   return (
     <Flex
       h="auto"
-      py={{ base: 8, lg: 20 }}
+      py={{ base: 6, lg: 12 }}
       px={{ base: 4, lg: 12 }}
       alignItems="center"
       bg="#ffff"
@@ -28,8 +28,8 @@ const ServicesSection = () => {
       </Box>
       <Box w={{ base: "100%", lg: "42%" }} mt={{ base: 6, lg: 0 }} ref={imgRef}>
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={imgInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+          initial={{ opacity: 0, y: 100 }}
+          animate={imgInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <Image src={Services} />

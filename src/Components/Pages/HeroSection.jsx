@@ -91,9 +91,9 @@ function HeroSection() {
 
           <motion.div
             style={{ width: "100%" }}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
           >
             <Box
               zIndex={"1"}

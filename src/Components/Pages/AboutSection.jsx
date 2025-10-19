@@ -25,48 +25,48 @@ function AboutSection() {
         gap={4}
         ref={ref}
       >
-        <motion.div
-          style={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "100%" }}
-          initial={{ opacity: 0, x: -60 }}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <Box flex="1">
-            <Image
-              w="100%"
-              borderRadius={{ base: "12px", lg: "20px" }}
-              src={PImage}
-            />
-          </Box>
-          <Box
-            mt={4}
-            alignItems="center"
-            bg="white"
-            justifyContent="center"
-            border="1px solid rgba(34, 185, 116, 1)"
-            borderRadius={{ base: "12px", lg: "20px" }}
-            gap={2}
-            p={{ base: 2, lg: 4 }}
-            display="flex"
-            flexDirection="column"
-            textAlign="center"
+          <motion.div
+            style={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "100%" }}
+            initial={{ opacity: 0, x: -60 }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <Image w="52px" h="52px" src={Consult} />
-            <Text
-              fontFamily="'Poppins'"
-              fontSize={{ base: "1rem", lg: "1.2rem" }}
-              fontWeight="500"
+            <Box flex="1">
+              <Image
+                w="100%"
+                borderRadius={{ base: "12px", lg: "20px" }}
+                src={PImage}
+              />
+            </Box>
+            <Box
+              mt={4}
+              alignItems="center"
+              bg="white"
+              justifyContent="center"
+              border="1px solid rgba(34, 185, 116, 1)"
+              borderRadius={{ base: "12px", lg: "20px" }}
+              gap={2}
+              p={{ base: 2, lg: 4 }}
+              display="flex"
+              flexDirection="column"
+              textAlign="center"
             >
-              Consultation Services
-            </Text>
-          </Box>
-        </motion.div>
+              <Image w="52px" h="52px" src={Consult} />
+              <Text
+                fontFamily="'Poppins'"
+                fontSize={{ base: "1rem", lg: "1.2rem" }}
+                fontWeight="500"
+              >
+                Consultation Services
+              </Text>
+            </Box>
+          </motion.div>
 
         {/* Right Section with Experience and Image */}
         <motion.div
           style={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "100%" }}
-          initial={{ opacity: 0, x: 60 }}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
+          initial={{ opacity: 0, y: 60 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <Box
