@@ -1,4 +1,6 @@
-import React from "react";
+
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 import { Box, Image, Flex, Text, Grid } from "@chakra-ui/react";
 import PImage from "../../assets/images/Person.png";
@@ -7,6 +9,7 @@ import Girl from "../../assets/images/girl.png";
 import Consult from "../../assets/images/ConsultService.png";
 import DetailFormat from "./DetailFormat";
 function AboutSection() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   return (
     <Flex
       py={{ base: 6, lg: 12 }}
@@ -20,8 +23,14 @@ function AboutSection() {
         w={{ base: "100%", lg: "42%" }}
         mt={{ base: 2, lg: 0 }}
         gap={4}
+        ref={ref}
       >
-        <Box display="flex" flexDirection="column" alignItems="stretch">
+        <motion.div
+          style={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "100%" }}
+          initial={{ opacity: 0, x: -60 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <Box flex="1">
             <Image
               w="100%"
@@ -51,10 +60,15 @@ function AboutSection() {
               Consultation Services
             </Text>
           </Box>
-        </Box>
+        </motion.div>
 
         {/* Right Section with Experience and Image */}
-        <Box display="flex" flexDirection="column" alignItems="stretch">
+        <motion.div
+          style={{ display: "flex", flexDirection: "column", alignItems: "stretch", height: "100%" }}
+          initial={{ opacity: 0, x: 60 }}
+          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
           <Box
             mb={4}
             flex="1"
@@ -91,7 +105,7 @@ function AboutSection() {
               src={Girl}
             />
           </Box>
-        </Box>
+        </motion.div>
       </Grid>
 
       <Box w={{ base: "100%", lg: "50%" }} mt={{ base: 8, lg: 0 }}>

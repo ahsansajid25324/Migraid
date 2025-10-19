@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import img from "./../../assets/images/blueBg.png";
 import Navbar from "./Navbar";
 import CustomButton from "../UI/CustomButton";
@@ -33,46 +34,76 @@ function HeroSection() {
           px={{ base: 4, lg: 12 }}
         >
           <Box w="100%" borderRadius="md">
-            <Heading
-              mt={{ base: "12px", lg: "50px" }}
-              lineHeight={{ base: "42px", lg: "66px" }}
-              fontSize={{ base: "32px", lg: "42px", xl: "46px" }}
-              fontWeight={"600"}
-              color="#FFFFFF"
-              width="100%"
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              Compassionate Immigration Help{" "}
-              <span style={{ color: "rgba(34, 185, 116, 1)" }}>
-                Free & Low Cost
-              </span>{" "}
-              Services for Individuals and Families
-            </Heading>
+              <Heading
+                mt={{ base: "12px", lg: "50px" }}
+                lineHeight={{ base: "42px", lg: "66px" }}
+                fontSize={{ base: "32px", lg: "42px", xl: "46px" }}
+                fontWeight={"600"}
+                color="#FFFFFF"
+                width="100%"
+              >
+                Compassionate Immigration Help{" "}
+                <span style={{ color: "rgba(34, 185, 116, 1)" }}>
+                  Free & Low Cost
+                </span>{" "}
+                Services for Individuals and Families
+              </Heading>
+            </motion.div>
 
-            <Text
-              lineHeight={{ base: "32px", lg: "26px" }}
-              mt={2}
-              fontSize={{ base: "14px", lg: "16px" }}
-              fontWeight={"400"}
-              color={{ base: "white", lg: "white" }}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
             >
-              We’re a nonprofit legal aid team guiding people through visas,
-              asylum, family reunification, naturalization, and resettlement.
-              Trusted, confidential, and community-focused.
-            </Text>
+              <Text
+                lineHeight={{ base: "32px", lg: "26px" }}
+                mt={2}
+                fontSize={{ base: "14px", lg: "16px" }}
+                fontWeight={"400"}
+                color={{ base: "white", lg: "white" }}
+              >
+                We’re a nonprofit legal aid team guiding people through visas,
+                asylum, family reunification, naturalization, and resettlement.
+                Trusted, confidential, and community-focused.
+              </Text>
+            </motion.div>
 
-            <Flex gap={4} mt={4} flexWrap={"wrap"}>
-              <CustomButton padding={6} color="white" showIcon={true}>
-                Book a Free Intake
-              </CustomButton>
-              <CustomButton padding={6} color="white" showIcon={true}>
-                Donate
-              </CustomButton>
-            </Flex>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+            >
+              <Flex gap={4} mt={4} flexWrap={"wrap"}>
+                <CustomButton padding={6} color="white" showIcon={true}>
+                  Book a Free Intake
+                </CustomButton>
+                <CustomButton padding={6} color="white" showIcon={true}>
+                  Donate
+                </CustomButton>
+              </Flex>
+            </motion.div>
           </Box>
 
-          <Box zIndex={"1"} w="100%" mt={{ base: 8, lg: 10 }} borderRadius="md">
-            <ConsultationForm></ConsultationForm>
-          </Box>
+          <motion.div
+            style={{ width: "100%" }}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.9 }}
+          >
+            <Box
+              zIndex={"1"}
+              w="100%"
+              mt={{ base: 8, lg: 10 }}
+              borderRadius="md"
+            >
+              <ConsultationForm />
+            </Box>
+          </motion.div>
         </Flex>
       </Box>
     </>
