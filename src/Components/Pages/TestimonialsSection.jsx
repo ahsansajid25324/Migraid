@@ -3,10 +3,13 @@ import { Box } from "@chakra-ui/react";
 import SectionHeading from "./SectionHeading";
 import Testimonials from "./Testimonials";
 import tower from "./../../assets/images/tower.png";
-
 import Ptower from "./../../assets/images/Group.png";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const TestimonialsSection = () => {
+  const { ref: headingRef, inView: headingInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
   return (
     <Box
       h="auto"
@@ -43,18 +46,29 @@ const TestimonialsSection = () => {
         zIndex="0"
       />
 
-      <Box>
-        <SectionHeading
-          subcolor="black"
-          heading="TESTIMONIALS"
-          color="rgba(34, 185, 116, 1)"
-          subHeading={true}
-          subHeadingTitle='What Our Customers are Saying'
-
-        ></SectionHeading>
+      <Box ref={headingRef}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <SectionHeading
+            subcolor="black"
+            heading="TESTIMONIALS"
+            color="rgba(34, 185, 116, 1)"
+            subHeading={true}
+            subHeadingTitle='What Our Customers are Saying'
+          />
+        </motion.div>
       </Box>
-      <Box>
-        <Testimonials></Testimonials>
+      <Box ref={testimonialsRef}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={testimonialsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <Testimonials />
+        </motion.div>
       </Box>
     </Box>
   );
