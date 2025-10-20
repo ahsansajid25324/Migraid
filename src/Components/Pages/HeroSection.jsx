@@ -84,7 +84,12 @@ function HeroSection() {
               transition={{ duration: 1, delay: 0.6 }}
             >
               <Flex gap={4} mt={4} flexWrap={"wrap"}>
-                <CustomButton padding={6} color="white" showIcon={true} onClick={openModal}>
+                <CustomButton
+                  padding={6}
+                  color="white"
+                  showIcon={true}
+                  onClick={openModal}
+                >
                   Book a Free Intake
                 </CustomButton>
                 <CustomButton padding={6} color="white" showIcon={true}>
@@ -93,6 +98,9 @@ function HeroSection() {
               </Flex>
             </motion.div>
           </Box>
+
+
+          {/* sd */}
 
           <motion.div
             style={{ width: "100%" }}
