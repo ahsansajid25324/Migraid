@@ -7,6 +7,7 @@ const SectionHeading = ({
   heading,
   subHeading,
   subHeadingTitle,
+  textTitle,
 }) => {
   return (
     <Box>
@@ -44,8 +45,7 @@ const SectionHeading = ({
           fontWeight={"400"}
           w={{ base: "90%", md: "70%", lg: "80%" }}
         >
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-          veritatis facilis debitis veritatis facilis debitis
+          {textTitle}
         </Heading>
       ) : (
         ""

@@ -8,8 +8,14 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const TestimonialsSection = () => {
-  const { ref: headingRef, inView: headingInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: headingRef, inView: headingInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
     <Box
       h="auto"
@@ -57,14 +63,17 @@ const TestimonialsSection = () => {
             heading="TESTIMONIALS"
             color="rgba(34, 185, 116, 1)"
             subHeading={true}
-            subHeadingTitle='What Our Customers are Saying'
+            subHeadingTitle="What Our Customers are Saying"
+            textTitle="Discover what our valued customers have to say about their experiences with Migraid's relocation services. From seamless immigration processes to personalized guidance, read firsthand testimonials showcasing our commitment to customer satisfaction."
           />
         </motion.div>
       </Box>
       <Box ref={testimonialsRef}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={testimonialsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          animate={
+            testimonialsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+          }
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Testimonials />
