@@ -1,55 +1,50 @@
 export const blogs = [
-    {
-      title: "Navigating Visa Complexities in 2024",
-      date: "October 19, 2023",
-      author: "Admin",
-      image:
-        "https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description:
-        "Lorem ipsum is simply dummy text of the printing and typesetting industry.",
-    },
-    {
-      title: "Understanding Global Work Permits",
-      date: "October 18, 2023",
-      author: "Admin",
-      image:
-      "https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: "The quick brown fox jumps over the lazy dog.",
-    },
-    {
-      title: "How to Apply for Schengen Visa in 2024",
-      date: "October 18, 2023",
-      author: "Admin",
-      image:
-      "https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: "The quick brown fox jumps over the lazy dog.",
-    },
-    {
-      title: "Guide to US Visa Interview Tips",
-      date: "October 17, 2023",
-      author: "Admin",
-      image:
-        "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      description:
-        "Tips to ace your US visa interview and common questions asked.",
-    },
-    {
-      title: "What You Need to Know About H-1B Visa Process",
-      date: "October 16, 2023",
-      author: "Admin",
-      image:
-      "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
-      description:
-        "A detailed guide on the H-1B visa process for US work permits.",
-    },
-    {
-      title: "Top Visa Challenges for 2024 and How to Overcome Them",
-      date: "October 15, 2023",
-      author: "Admin",
-      image:
-      "https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description:
-        "Discover the top visa challenges of 2024 and expert advice on resolving them.",
-    },
-  ];
-  
+  {
+    title: "This Week in Immigration October",
+    author: "Boundless",
+    image: "test1.png",
+    description:
+      "An up-to-date roundup of major U.S. immigration developments (including the latest visa bulletin, H-1B fee litigation and government shutdown impacts).",
+    link: "https://www.boundless.com/blog/boundless-weekly-immigration-news?utm_source=chatgpt.com",
+  },
+  {
+    title: "Visa Bulletin for November 2025",
+    author: "By Boundless",
+    image: "/test2.png",
+    description:
+      "We believe that immigration law is an integral part of America’s past, present and future. We also know that immigration law is complicated.",
+    link: "https://www.boundless.com/blog/visa-bulletin?utm_source=chatgpt.com",
+  },
+  {
+    title: "Will My Child Be a U.S. Citizen?",
+    author: "Lippes Mathias LLP",
+    image: "/test3.png",
+    description:
+      "Legal-analysis piece about how the 14th Amendment’s phrase “and subject to the jurisdiction thereof” is being challenged in the birthright citizenship context.",
+    link: "https://www.lippes.com/insights/the-birthright-citizenship-debate-will-my-child-be-a-u-s-citizen-2945?utm_source=chatgpt.com",
+  },
+  {
+    title: "Entering the U.S. as a Canadian and Understanding",
+    author: "Lippes",
+    image: "/test4.png",
+    description:
+      "Practical guide for Canadian visitors/non-immigrants on why checking their I-94 admission record matters and how mistakes may lead to overstay issues",
+    link: "https://www.lippes.com/insights/the-i-94-question-entering-the-u-s-as-a-canadian-and-understanding-your-obligations-2939?utm_source=chatgpt.com",
+  },
+  {
+    title: "U.S. State Department Visa Policy Updates and Travel Advisory",
+    author: "Lippes",
+    image: "/test5.png",
+    description:
+      "Overview of recent policy changes by the U.S. DOS affecting visa interviews, social media screening, travel advisories.",
+    link: "https://www.lippes.com/insights/u-s-state-department-visa-policy-updates-and-travel-advisory-changes-for-2025-2918?utm_source=chatgpt.com",
+  },
+  {
+    title: "Expedited U.S. Immigration Removal",
+    author: "Lippes",
+    image: "/test6.png",
+    description:
+      "Detailed explanation of the expedited removal process (which bypasses full immigration-court hearing in certain cases) and how it’s applied now",
+    link: "https://www.lippes.com/insights/expedited-u-s-immigration-removal-what-is-it-and-do-you-need-to-be-concerned-2866?utm_source=chatgpt.com",
+  },
+];

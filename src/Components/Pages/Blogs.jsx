@@ -9,15 +9,13 @@ import {
   Flex,
   Heading,
   IconButton,
-  Grid,
+  Button,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import { blogs } from "../../data/BlogsData";
-import CustomButton from "../UI/CustomButton";
-import Calender from "../../assets/images/Calender.png";
 import user from "../../assets/images/user.png";
 import Line from "../../assets/images/Line.png";
-import blogsImage from "../../assets/images/blogImage.png";
+import Arrow from "../../assets/icons/Arrow";
 
 export default function Blogs() {
   const sliderRef = useRef(null);
@@ -124,21 +122,11 @@ export default function Blogs() {
             >
               <Image
                 w="100%"
-                src={blogsImage}
+                src={blog.image}
                 alt={blog.title}
                 borderRadius="20px"
               />
               <Flex mt={4} gap={4}>
-                <Flex gap={2} alignItems={"center"}>
-                  <Image w="18px" h="18px" src={Calender}></Image>
-                  <Text
-                    fontFamily={"Poppins"}
-                    fontSize="sm"
-                    color="rgba(17, 17, 17, 1)"
-                  >
-                    {blog.date}
-                  </Text>
-                </Flex>
                 <Flex gap={2} alignItems={"center"}>
                   <Image w="18px" h="18px" src={user}></Image>
 
@@ -156,6 +144,7 @@ export default function Blogs() {
                 mt={2}
                 fontWeight="bold"
                 fontSize="26px"
+                isTruncated
               >
                 {blog.title}
               </Text>
@@ -164,15 +153,29 @@ export default function Blogs() {
                 fontSize="sm"
                 fontFamily={"Poppins"}
                 color="rgba(17, 17, 17, 1)"
-                isTruncated
               >
                 {blog.description}
               </Text>
 
               <Box mt={4}>
-                <CustomButton color="black" showIcon={true} height="50px">
+                <Button
+                  borderRadius="24px"
+                  fontSize={{ base: "14px", lg: "16px" }}
+                  fontWeight="medium"
+                  bg="transparent"
+                  _hover={{ bg: "rgba(34, 185, 116, 0.9)", color: "#fff" }}
+                  color="rgba(34, 185, 116, 1)"
+                  border="1px solid rgba(34, 185, 116, 1)"
+                  p={{ base: 5, lg: 6 }}
+                  onClick={() => {
+                    if (blog.link) {
+                      window.open(blog.link, "_blank");
+                    }
+                  }}
+                  rightIcon={<Arrow />}
+                >
                   Read More
-                </CustomButton>
+                </Button>
               </Box>
             </Box>
           </Flex>
@@ -181,7 +184,7 @@ export default function Blogs() {
       <Box
         display={{ base: "flex", md: "none" }}
         justifyContent={"center"}
-        mt={{base:0,lg:8}}
+        mt={{ base: 0, lg: 8 }}
       >
         <IconButton
           aria-label="Previous"
