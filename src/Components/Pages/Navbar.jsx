@@ -76,7 +76,7 @@ function Navbar() {
         px={12}
         py={6}
         alignItems={"center"}
-        bg={scrollNav ? "rgba(2, 2, 38, 1)" : "transparent"}
+        bg={scrollNav ? "#004E64" : "transparent"}
         transition="background-color 0.3s ease"
         position="sticky"
         top={0}
@@ -117,7 +117,7 @@ function Navbar() {
       <Box
         p={4}
         alignItems={"center"}
-        bg={scrollNav ? "rgba(2, 2, 38, 1)" : "transparent"}
+        bg={scrollNav ? "#004E64" : "transparent"}
         transition="background-color 0.3s ease"
         position="sticky"
         top={0}

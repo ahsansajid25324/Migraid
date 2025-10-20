@@ -32,7 +32,8 @@ export const reviews = [
     name: "Emily Davis",
     position: "Product Designer",
 
-text:"After moving here, I didn’t know how to bring my daughter safely. Migraid not only helped with the paperwork but also gave me hope. They treated my family like their own."  },
+    text: "After moving here, I didn’t know how to bring my daughter safely. Migraid not only helped with the paperwork but also gave me hope. They treated my family like their own.",
+  },
   {
     id: 5,
     image:

@@ -25,7 +25,7 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
     <div>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent bg="rgba(2, 2, 38, 1)">
+        <DrawerContent bg="#004E64">
           <DrawerCloseButton />
           <DrawerHeader p={0}>
             <Box
