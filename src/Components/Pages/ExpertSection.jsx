@@ -265,22 +265,43 @@ const ExpertSections = () => {
                     }
                     borderRadius="16px"
                   >
-                    <Heading
-                      as="h3"
-                      fontSize="18px"
-                      fontWeight={currentSlide === index ? "600" : "500"}
-                      mb={3}
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={
+                        descInView
+                          ? { opacity: 1, y: 0 }
+                          : { opacity: 0, y: 40 }
+                      }
+                      transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                      {service.title}
-                    </Heading>
-                    <Text
-                      fontSize="14px"
-                      lineHeight="1.8"
-                      fontWeight="400"
-                      opacity={currentSlide === index ? 1 : 0.9}
+                      <Heading
+                        as="h3"
+                        fontSize="18px"
+                        fontWeight={currentSlide === index ? "600" : "500"}
+                        mb={3}
+                      >
+                        {service.title}
+                      </Heading>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={
+                        descInView
+                          ? { opacity: 1, y: 0 }
+                          : { opacity: 0, y: 40 }
+                      }
+                      transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                      {service.description}
-                    </Text>
+                      <Text
+                        fontSize="14px"
+                        lineHeight="1.8"
+                        fontWeight="400"
+                        opacity={currentSlide === index ? 1 : 0.9}
+                      >
+                        {service.description}
+                      </Text>
+                    </motion.div>
                   </Box>
                 </Box>
               </SplideSlide>
