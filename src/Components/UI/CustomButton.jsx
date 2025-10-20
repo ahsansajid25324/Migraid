@@ -38,7 +38,7 @@ const CustomButton = ({
         : { bg: "rgba(34, 185, 116, 1)", color: "white" }
       }
       fontFamily="Poppins"
-      onClick={() => nav(path)}
+  onClick={onClick ? onClick : (path ? () => nav(path) : undefined)}
       {...props}
       rightIcon={showIcon ? <Arrow /> : null}
     >

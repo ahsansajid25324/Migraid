@@ -5,6 +5,7 @@ import Consult from "../../assets/images/ConsultService.png";
 import CustomButton from "../UI/CustomButton";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ConsultationModal from "./ConsultationModal";
 const DetailFormat = ({
   title,
   SubTitle,
@@ -24,13 +25,30 @@ const DetailFormat = ({
 
   const truncatedTextBase = `${fullText.substring(0, 200)}...`; // For smaller screens
   const truncatedTextLg = `${fullText.substring(0, 400)}...`; // For larger screens
-  const { ref: headingRef, inView: headingInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: textRef, inView: textInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: missionRef, inView: missionInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: valuesRef, inView: valuesInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: headingRef, inView: headingInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: textRef, inView: textInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: missionRef, inView: missionInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: valuesRef, inView: valuesInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
-   
+    <>
+      <ConsultationModal isOpen={isModalOpen} onClose={closeModal} />
+
       <Box>
         {title ? (
           <Flex gap={3} alignItems={"center"}>
@@ -55,7 +73,9 @@ const DetailFormat = ({
         >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
-            animate={headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            animate={
+              headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+            }
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {SubTitle}
@@ -67,7 +87,9 @@ const DetailFormat = ({
           <Text ref={textRef}>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
-              animate={textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              animate={
+                textInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+              }
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               {showFullText
@@ -122,12 +144,22 @@ const DetailFormat = ({
             >
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
-                animate={missionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                animate={
+                  missionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+                }
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <Box display={"flex"} alignItems={"center"} marginInlineEnd={"auto"} gap={2}>
+                <Box
+                  display={"flex"}
+                  alignItems={"center"}
+                  marginInlineEnd={"auto"}
+                  gap={2}
+                >
                   <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
-                  <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={"500"}>
+                  <Text
+                    fontSize={{ base: "16px", lg: "20px" }}
+                    fontWeight={"500"}
+                  >
                     Our Missions
                   </Text>
                 </Box>
@@ -150,12 +182,22 @@ const DetailFormat = ({
             >
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
-                animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                animate={
+                  valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+                }
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                <Box display={"flex"} alignItems={"center"} marginInlineEnd={"auto"} gap={2}>
+                <Box
+                  display={"flex"}
+                  alignItems={"center"}
+                  marginInlineEnd={"auto"}
+                  gap={2}
+                >
                   <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
-                  <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={"500"}>
+                  <Text
+                    fontSize={{ base: "16px", lg: "20px" }}
+                    fontWeight={"500"}
+                  >
                     Our Values
                   </Text>
                 </Box>
@@ -173,17 +215,25 @@ const DetailFormat = ({
         )}
 
         <Box mt={margin}>
-           <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              >
-          <CustomButton showIcon={true} color="rgba(34, 185, 116, 1)" p={{base:5,lg:6}}>
-            {btn}
-          </CustomButton>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={
+              valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+            }
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            <CustomButton
+              showIcon={true}
+              color="rgba(34, 185, 116, 1)"
+              p={{ base: 5, lg: 6 }}
+              onClick={openModal}
+            >
+              {btn}
+            </CustomButton>
           </motion.div>
         </Box>
       </Box>
+    </>
   );
 };
 

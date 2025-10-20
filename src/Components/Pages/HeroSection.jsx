@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import img from "./../../assets/images/blueBg.png";
 import Navbar from "./Navbar";
 import CustomButton from "../UI/CustomButton";
 import ConsultationForm from "./ConsultationForm";
+import ConsultationModal from "./ConsultationModal";
 import "./../../App.css";
 
 function HeroSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
     <>
+      <ConsultationModal isOpen={isModalOpen} onClose={closeModal} />
       <Box
         pt={{ base: 12, lg: 20 }}
         pb={{ base: 6, lg: 20 }}
@@ -79,7 +84,7 @@ function HeroSection() {
               transition={{ duration: 1, delay: 0.6 }}
             >
               <Flex gap={4} mt={4} flexWrap={"wrap"}>
-                <CustomButton padding={6} color="white" showIcon={true}>
+                <CustomButton padding={6} color="white" showIcon={true} onClick={openModal}>
                   Book a Free Intake
                 </CustomButton>
                 <CustomButton padding={6} color="white" showIcon={true}>

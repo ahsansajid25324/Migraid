@@ -134,7 +134,6 @@ export default function Blogs() {
                     fontFamily={"Poppins"}
                     fontSize="sm"
                     color="rgba(17, 17, 17, 1)"
-
                   >
                     By {blog.author}
                   </Text>
