@@ -28,7 +28,7 @@ function Home() {
       <AboutSection />
       <ValuesSection />
 
-      {/* <ExpertSection /> */}
+      <ExpertSection />
       <WorkSection />
       <Banner
         img={Women}
