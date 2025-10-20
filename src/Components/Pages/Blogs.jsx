@@ -134,6 +134,7 @@ export default function Blogs() {
                     fontFamily={"Poppins"}
                     fontSize="sm"
                     color="rgba(17, 17, 17, 1)"
+
                   >
                     By {blog.author}
                   </Text>
@@ -153,6 +154,7 @@ export default function Blogs() {
                 fontSize="sm"
                 fontFamily={"Poppins"}
                 color="rgba(17, 17, 17, 1)"
+                isTruncated
               >
                 {blog.description}
               </Text>
@@ -184,7 +186,7 @@ export default function Blogs() {
       <Box
         display={{ base: "flex", md: "none" }}
         justifyContent={"center"}
-        mt={{ base: 0, lg: 8 }}
+        mt={{ base: 6, lg: 8 }}
       >
         <IconButton
           aria-label="Previous"
