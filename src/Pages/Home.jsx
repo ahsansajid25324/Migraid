@@ -11,7 +11,8 @@ import WorkSection from "../Components/Pages/WorkSection";
 import Services from "../assets/images/banner.png";
 import Women from "../assets/images/woman.jpg";
 import ContactSection from "../Components/Pages/ContactSection";
-import { Text,Box  } from "@chakra-ui/react";
+import { Text, Box } from "@chakra-ui/react";
+import ExpertSection from "../Components/Pages/ExpertSection";
 function Home() {
   return (
     <>
@@ -26,24 +27,8 @@ function Home() {
       />
       <AboutSection />
       <ValuesSection />
-      <Box bg="#004E64">
-        <Text>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-          nisi, odio corporis vero tempore voluptatem itaque magni suscipit
-          harum aperiam maiores, nam perferendis consequatur placeat odit
-          doloremque soluta unde alias quia autem quis, aspernatur cumque enim
-          debitis! Ex cum libero a ducimus modi, dolorum illum. Consequatur
-          possimus tempora aut autem labore quia non praesentium! Obcaecati in,
-          nesciunt commodi architecto error tenetur accusamus suscipit tempore
-          velit nostrum temporibus deserunt officia? Minus laborum non id, eaque
-          perspiciatis explicabo doloribus quos pariatur reiciendis incidunt
-          delectus. Odio autem facere, totam veniam eligendi delectus sed. Sed
-          veritatis, beatae molestiae natus ea quisquam assumenda voluptas,
-          perspiciatis nisi eveniet repudiandae veniam soluta qui accusamus
-          atque! Temporibus quisquam asperiores enim at ex iste necessitatibus
-          deserunt quos debitis ut, inventore exercitationem! Aspernatur?
-        </Text>
-      </Box>
+
+      <ExpertSection />
       <WorkSection />
       <Banner
         img={Women}
