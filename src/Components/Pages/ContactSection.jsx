@@ -50,7 +50,7 @@ const ContactSection = ({ showY }) => {
             free or affordable. Support our work by donating, volunteering as a
             community navigator, or offering pro bono legal time.
           </Text>
-          <Box mt={4} display="flex" gap={4} flexWrap={"wrap"}>
+          <Box mt={4} display="flex" gap={2} flexWrap={"wrap"}>
             <CustomButton
               invertHoverColors={true}
               p={5}

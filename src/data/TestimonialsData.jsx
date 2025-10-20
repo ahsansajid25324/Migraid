@@ -2,54 +2,54 @@ export const reviews = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1605462863863-10d9e47e15ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=400&auto=format&fit=facearea&facepad=2.5",
     name: "John Doe",
     position: "Manager",
-    text: "I was extremely pleased with the quality of the product. It exceeded my expectations and provided great value for the price.",
+  text: "Migraid helped me manage my migraines with practical advice and expert support. I finally feel understood and empowered to take control of my health.",
   },
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=400&auto=format&fit=facearea&facepad=2.5",
     name: "Jane Smith",
     position: "CEO",
 
-    text: "The customer service was excellent. They were responsive and helpful throughout the entire process, making it a smooth experience for me.",
+  text: "The team at Migraid was incredibly responsive. They answered all my questions and made the process of finding the right treatment much easier.",
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=400&auto=format&fit=facearea&facepad=2.5",
     name: "Alex Johnson",
     position: "HR Specialist",
 
-    text: "The attention to detail in their work is impressive. Every aspect of the project was handled with precision and care. I highly recommend their services.",
+  text: "I struggled for years with chronic headaches. Migraid's resources and community support gave me hope and real results. Highly recommended!",
   },
   {
     id: 4,
     image:
-      "https://plus.unsplash.com/premium_photo-1671823917954-dc943c1bd9df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=facearea&facepad=2.5",
     name: "Emily Davis",
     position: "Product Designer",
 
-    text: "The team demonstrated a deep understanding of my requirements. They were able to capture the essence of my vision and deliver a product that exceeded my expectations.",
+  text: "Migraid's personalized approach made all the difference. They listened to my story and tailored solutions that actually worked for me.",
   },
   {
     id: 5,
     image:
-      "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=400&auto=format&fit=facearea&facepad=2.5",
     name: "David Miller",
     position: "Software Engineer",
 
-    text: "The product not only met but exceeded my expectations. It's clear that the team is dedicated to delivering high-quality work. I'm a satisfied customer.",
+  text: "After joining Migraid, I noticed a significant improvement in my symptoms. The expert advice and supportive environment are unmatched.",
   },
   {
     id: 6,
     image:
-      "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=facearea&facepad=2.5",
     name: "Jamie Santos",
     position: "Product Designer",
 
-    text: "The product not only met but exceeded my expectations. It's clear that the team is dedicated to delivering high-quality work. I'm a satisfied customer.",
+  text: "Migraid is a game-changer for anyone dealing with migraines. The resources, expert guidance, and community have made a real difference in my life.",
   },
 ];

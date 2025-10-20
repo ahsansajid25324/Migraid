@@ -52,9 +52,9 @@ const Footer = () => {
         <Box align="start" spacing="4">
           <Image src={Logo} alt="Logo" />
           <Text fontSize={{ base: "14px", lg: "16px" }} w={"300px"} mt={4}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+            We believe everyone deserves access to honest, affordable
+            immigration help. Migraid Foundation stands beside you — from your
+            first question to your new beginning.
           </Text>
           <Flex mt="4" gap={3}>
             <Link href="#">
@@ -82,9 +82,9 @@ const Footer = () => {
             <Link href="#">Home</Link>
             <Link href="#">About</Link>
             <Link href="#">Services</Link>
-            <Link href="#">Blogs</Link>
-            <Link href="#">Reviews</Link>
-            <Link href="#">Contact Us</Link>
+            <Link href="#">Clinics</Link>
+            <Link href="#">Contacts</Link>
+            <Link href="#">Values</Link>
           </Flex>
         </Box>
 
@@ -102,7 +102,7 @@ const Footer = () => {
               color="green.400"
             />
             <Text fontSize="16px" w="200px">
-              8300 FM 1960 Rd W, Suite 450, Houston, TX, 77070
+              2600 S Gessner Rd Ste 420, Houston, TX, 77063
             </Text>
           </Flex>
           <Flex align="center" mt={4}>

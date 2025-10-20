@@ -7,42 +7,14 @@ import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
 import { useLocation } from "react-router-dom";
+import { scrollToSection } from "../../helpers/scrollToSection";
 
 const NavLink = ({ href, children }) => {
   const location = useLocation();
-  const isActive = location.hash === href;
 
   const handleClick = (e) => {
     e.preventDefault();
-
-    // If we're not on home page, navigate to home page with hash
-    if (location.pathname !== "/" && location.pathname !== "/home") {
-      window.location.href = `/home${href}`;
-      return;
-    }
-
-    // Get the target section
-    const targetId = href.substring(1); // Remove the # character
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      // Get the navbar height to use as offset
-      const navbar = document.querySelector("[data-navbar='true']");
-      const navbarHeight = navbar ? navbar.offsetHeight : 0;
-
-      // Calculate the element's position
-      const elementPosition =
-        targetElement.getBoundingClientRect().top + window.pageYOffset;
-
-      // Scroll to element with offset for navbar
-      window.scrollTo({
-        top: elementPosition - navbarHeight - 20, // Adding extra 20px margin
-        behavior: "smooth",
-      });
-
-      // Update URL hash without page jump
-      window.history.pushState(null, "", href);
-    }
+    scrollToSection(href, location);
   };
 
   return (
@@ -51,7 +23,7 @@ const NavLink = ({ href, children }) => {
         as="a"
         href={href}
         onClick={handleClick}
-        color={isActive ? "rgba(34, 185, 116, 1)" : "white"}
+        color="#ffff"
         cursor={"pointer"}
         fontFamily={"Poppins"}
         fontSize="16px"
