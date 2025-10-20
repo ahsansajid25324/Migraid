@@ -11,7 +11,6 @@ import WorkSection from "../Components/Pages/WorkSection";
 import Services from "../assets/images/banner.png";
 import Women from "../assets/images/woman.jpg";
 import ContactSection from "../Components/Pages/ContactSection";
-import { Text, Box } from "@chakra-ui/react";
 import ExpertSection from "../Components/Pages/ExpertSection";
 
 function Home() {
