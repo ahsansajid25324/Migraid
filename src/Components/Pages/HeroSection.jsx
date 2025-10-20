@@ -100,7 +100,6 @@ function HeroSection() {
           </Box>
 
 
-          {/* sd */}
 
           <motion.div
             style={{ width: "100%" }}
