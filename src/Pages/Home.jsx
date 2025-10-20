@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "../Components/Pages/HeroSection";
 import AboutSection from "../Components/Pages/AboutSection";
 import ServicesSection from "../Components/Pages/ServicesSection";
@@ -13,10 +13,31 @@ import Women from "../assets/images/woman.jpg";
 import ContactSection from "../Components/Pages/ContactSection";
 import { Text, Box } from "@chakra-ui/react";
 import ExpertSection from "../Components/Pages/ExpertSection";
+
 function Home() {
+  // Handle hash-based scrolling when the page loads
+  useEffect(() => {
+    if (window.location.hash) {
+      // Get the target section
+      const targetId = window.location.hash.substring(1); // Remove the # character
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        setTimeout(() => {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+          });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <>
-      <HeroSection />
+      <div id="home">
+        <HeroSection />
+      </div>
+
       <Banner
         img={Services}
         title="BOOK A CONSULTATION"
@@ -25,11 +46,19 @@ function Home() {
         btncontent="Book A Consultation"
         alignment="right"
       />
-      <AboutSection />
-      <ValuesSection />
 
-      <ExpertSection />
+      <div id="about">
+        <AboutSection />
+      </div>
+      <div id="values">
+        <ValuesSection />
+      </div>
+      <div id="services">
+        <ExpertSection />
+      </div>
+
       <WorkSection />
+
       <Banner
         img={Women}
         title="FINANCIAL ASSITANCE"
@@ -38,12 +67,15 @@ function Home() {
         btncontent="Apply for Financial Assistance"
         alignment="left"
       />
+      <div id="work">
+        <ServicesSection />
+      </div>
 
-      <ServicesSection />
+      <div id="contact">
+        <ContactSection />
+      </div>
 
-      <ContactSection />
       <TestimonialsSection />
-
       <BlogSection />
       <Footer />
     </>

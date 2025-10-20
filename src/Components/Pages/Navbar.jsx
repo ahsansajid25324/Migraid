@@ -6,18 +6,52 @@ import useDrawer from "../../hooks/useDrawer";
 import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
-import { Link, useLocation } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 
 const NavLink = ({ href, children }) => {
   const location = useLocation();
-  const isActive = location.pathname === href;
+  const isActive = location.hash === href;
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    // If we're not on home page, navigate to home page with hash
+    if (location.pathname !== "/" && location.pathname !== "/home") {
+      window.location.href = `/home${href}`;
+      return;
+    }
+
+    // Get the target section
+    const targetId = href.substring(1); // Remove the # character
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      // Get the navbar height to use as offset
+      const navbar = document.querySelector("[data-navbar='true']");
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+      // Calculate the element's position
+      const elementPosition =
+        targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+      // Scroll to element with offset for navbar
+      window.scrollTo({
+        top: elementPosition - navbarHeight - 20, // Adding extra 20px margin
+        behavior: "smooth",
+      });
+
+      // Update URL hash without page jump
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <Box position="relative" display="inline-block" mx={3}>
       <Text
-        as={Link}
+        as="a"
+        href={href}
+        onClick={handleClick}
         color={isActive ? "rgba(34, 185, 116, 1)" : "white"}
-        to={href}
         cursor={"pointer"}
         fontFamily={"Poppins"}
         fontSize="16px"
@@ -77,6 +111,7 @@ function Navbar() {
         zIndex={1000}
         display={{ base: "none", lg: "flex" }}
         justifyContent={"space-between"}
+        data-navbar="true"
       >
         <Box>
           <Image src={logo} alt="Logo" />
@@ -100,10 +135,7 @@ function Navbar() {
           </Box>
 
           <Box gap={4} display={{ base: "none", lg: "flex" }}>
-            <CustomButton padding={4} path="/login" color="white">
-              Contact
-            </CustomButton>
-            <CustomButton path="/signup" color="white">
+            <CustomButton p={5} color="white">
               Donate
             </CustomButton>
           </Box>
@@ -119,6 +151,7 @@ function Navbar() {
         top={0}
         zIndex={1000}
         display={{ base: "flex", lg: "none" }}
+        data-navbar="true"
       >
         <Box>
           <Image src={logo} w="92px" h="16px"></Image>
@@ -126,7 +159,7 @@ function Navbar() {
         <Spacer></Spacer>
         <Box>
           <Button onClick={openNavbar} variant="ghost">
-            <HamburgerIcon color="white"  />
+            <HamburgerIcon color="white" />
           </Button>{" "}
         </Box>
 

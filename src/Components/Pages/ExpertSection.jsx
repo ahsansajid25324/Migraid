@@ -175,6 +175,7 @@ const ExpertSections = () => {
               fontWeight="medium"
               bg="rgba(34, 185, 116, 1)"
               color="white"
+              p={{base:5,lg:6}}
               rightIcon={<Arrow />}
               _hover={{ bg: "rgba(34, 185, 116, 0.9)" }}
             >

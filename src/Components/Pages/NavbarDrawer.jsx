@@ -15,16 +15,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import logo from "../../assets/images/Logo.png";
 import { links } from "../../data/NavbarItems";
 import CustomButton from "../UI/CustomButton";
-import { useSelector } from "react-redux";
 
 function NavbarDrawer({ isOpen, onClose, openNavbar }) {
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
   return (
     <div>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -58,11 +54,37 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
               {links.map((link, index) => (
                 <Box key={index} w="100%">
                   <Text
-                    to={link.href}
+                    as="a"
+                    href={link.href}
                     color="white"
-                    as={Link}
                     fontSize="18px"
                     fontFamily="Poppins"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onClose(); // Close the drawer
+
+                      // If we're not on home page, navigate to home page with hash
+                      if (
+                        window.location.pathname !== "/" &&
+                        window.location.pathname !== "/home"
+                      ) {
+                        window.location.href = `/home${link.href}`;
+                        return;
+                      }
+
+                      // Get the target section
+                      const targetId = link.href.substring(1); // Remove the # character
+                      const targetElement = document.getElementById(targetId);
+
+                      if (targetElement) {
+                        targetElement.scrollIntoView({
+                          behavior: "smooth",
+                        });
+
+                        // Update URL hash without page jump
+                        window.history.pushState(null, "", link.href);
+                      }
+                    }}
                   >
                     {link.label}
                   </Text>
@@ -71,11 +93,8 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
               ))}
             </VStack>
 
-            <Box mt={8}>
-              <CustomButton mr={2} p={5} color="white">
-                Contact
-              </CustomButton>
-              <CustomButton p={5} color="white">
+            <Box mt={4} w="100%" textAlign="center">
+              <CustomButton fontSize="18px" showIcon={true} w="100%" p={5} color="white">
                 Donate
               </CustomButton>
             </Box>

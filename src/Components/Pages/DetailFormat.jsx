@@ -178,7 +178,7 @@ const DetailFormat = ({
                 animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-          <CustomButton showIcon={true} color="rgba(34, 185, 116, 1)" p={5}>
+          <CustomButton showIcon={true} color="rgba(34, 185, 116, 1)" p={{base:5,lg:6}}>
             {btn}
           </CustomButton>
           </motion.div>
