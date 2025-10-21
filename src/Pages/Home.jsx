@@ -74,7 +74,7 @@ function Home() {
         <ContactSection />
       </div>
 
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <BlogSection />
       <Footer />
     </>
