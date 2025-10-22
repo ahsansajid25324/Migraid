@@ -83,8 +83,8 @@ const Footer = () => {
             <Link href="#">About</Link>
             <Link href="#">Services</Link>
             <Link href="#">Clinics</Link>
-            <Link href="#">Contacts</Link>
             <Link href="#">Values</Link>
+            <Link href="#">Contacts</Link>
           </Flex>
         </Box>
 
