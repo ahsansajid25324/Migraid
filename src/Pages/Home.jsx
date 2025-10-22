@@ -70,13 +70,15 @@ function Home() {
         <ServicesSection />
       </div>
 
-      <div id="contact">
+      <div>
         <ContactSection />
       </div>
 
       {/* <TestimonialsSection /> */}
       <BlogSection />
-      <Footer />
+      <div id="contact">
+        <Footer />
+      </div>
     </>
   );
 }
