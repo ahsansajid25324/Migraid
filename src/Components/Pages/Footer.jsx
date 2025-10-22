@@ -107,11 +107,11 @@ const Footer = () => {
           </Flex>
           <Flex align="center" mt={4}>
             <Icon as={AiOutlinePhone} boxSize="6" mr="2" color="green.400" />
-            <Text fontSize="16px">+(888) 512-2168</Text>
+            <Text fontSize="16px">+1 (888) 512-2168</Text>
           </Flex>
           <Flex align="center" mt={4}>
             <Icon as={AiOutlineMail} boxSize="6" mr="3" color="green.400" />
-            <Text fontSize="16px">Hello@Migraid.Us</Text>
+            <Text fontSize="16px">Filling@migraid.co</Text>
           </Flex>
         </Box>
 
