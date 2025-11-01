@@ -1,9 +1,9 @@
 import React from "react";
 import Footer from "../Components/Pages/Footer";
 import OtherPageHeroSection from "../Components/Pages/OtherPageHeroSection";
-import ServicesSection from "../Components/Pages/ServicesSection";
 import TeamSection from "../Components/Pages/TeamSection";
 import ContactSection from "../Components/Pages/ContactSection";
+import AboutSection from "../Components/Pages/AboutSection";
 function About() {
   return (
     <>
@@ -12,7 +12,7 @@ function About() {
         subtitle="We Are Migraid"
         descript="Get with us today to experience a seamless process for your migration!"
       />
-      <ServicesSection />
+      <AboutSection />
       <TeamSection />
       <ContactSection showY={true} />
       <Footer />
