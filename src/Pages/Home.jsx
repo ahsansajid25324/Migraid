@@ -14,21 +14,38 @@ import ContactSection from "../Components/Pages/ContactSection";
 import ExpertSection from "../Components/Pages/ExpertSection";
 
 function Home() {
-  // Handle hash-based scrolling when the page loads
+  // 🧭 Handle hash-based scrolling when the page loads
   useEffect(() => {
     if (window.location.hash) {
-      // Get the target section
-      const targetId = window.location.hash.substring(1); // Remove the # character
+      const targetId = window.location.hash.substring(1);
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
         setTimeout(() => {
-          targetElement.scrollIntoView({
-            behavior: "smooth",
-          });
+          targetElement.scrollIntoView({ behavior: "smooth" });
         }, 100);
       }
     }
+  }, []);
+
+  // 💬 Load Zendesk widget when the page mounts
+  useEffect(() => {
+    // Check if the script is already loaded (to prevent duplicates)
+    if (document.getElementById("ze-snippet")) return;
+
+    const script = document.createElement("script");
+    script.id = "ze-snippet";
+    script.src =
+      "https://static.zdassets.com/ekr/snippet.js?key=407014fb-0de6-47f9-8332-022b890b137d";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup when leaving page (optional)
+      const existingScript = document.getElementById("ze-snippet");
+      if (existingScript) existingScript.remove();
+      delete window.zE; // remove Zendesk global object
+    };
   }, []);
 
   return (
@@ -60,12 +77,13 @@ function Home() {
 
       <Banner
         img={Women}
-        title="FINANCIAL ASSITANCE"
+        title="FINANCIAL ASSISTANCE"
         subtitle="SLIDING SCALE & FINANCE HELP"
         content="We offer sliding-scale fees and pro bono assistance for low-income clients. Donations and grants fund our free clinics and casework. If you need a fee waiver or reduced rate, please tell us at intake — we'll work with you."
         btncontent="Apply for Financial Assistance"
         alignment="left"
       />
+
       <div id="work">
         <ServicesSection />
       </div>
@@ -76,6 +94,7 @@ function Home() {
 
       {/* <TestimonialsSection /> */}
       <BlogSection />
+
       <div id="contact">
         <Footer />
       </div>
