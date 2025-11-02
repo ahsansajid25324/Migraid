@@ -57,18 +57,26 @@ const Footer = () => {
             first question to your new beginning.
           </Text>
           <Flex mt="4" gap={3}>
-            <Link href="#">
-              <Icon as={FaFacebook} boxSize="6" />
-            </Link>
-            <Link href="#">
-              <Icon as={FaInstagram} boxSize="6" />
-            </Link>
-            <Link href="#">
-              <Icon as={FaTwitter} boxSize="6" />
-            </Link>
-            <Link href="#">
-              <Icon as={FaLinkedin} boxSize="6" />
-            </Link>
+              <a
+                href="https://www.facebook.com/share/16QcCtgd9m/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon as={FaFacebook} boxSize="6" />
+              </a>
+              <a
+                href="https://www.instagram.com/migraid.us?igsh=cjEzdHRqajA3M2Zh"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon as={FaInstagram} boxSize="6" />
+              </a>
+              <Link href="#">
+                <Icon as={FaTwitter} boxSize="6" />
+              </Link>
+              <Link href="#">
+                <Icon as={FaLinkedin} boxSize="6" />
+              </Link>
           </Flex>
         </Box>
 
@@ -156,7 +164,7 @@ const Footer = () => {
         align={{ base: "normal", lg: "center" }}
         fontSize="sm"
       >
-        <Text>©2024 Law Aid. All Rights Reserved.</Text>
+        <Text>©2026 Migraid All Rights Reserved.</Text>
         <Flex
           zIndex={"1000"}
           mt={{ base: "4", md: "0" }}
