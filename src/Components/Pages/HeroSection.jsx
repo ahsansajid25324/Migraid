@@ -92,17 +92,24 @@ function HeroSection() {
                 >
                   Book a Free Intake
                 </CustomButton>
-                <CustomButton padding={6} color="white" showIcon={true}>
+                <CustomButton
+                  padding={6}
+                  color="white"
+                  onClick={() =>
+                    window.open(
+                      "https://www.paypal.com/ncp/payment/PHUSY8N28BM2W",
+                      "_blank"
+                    )
+                  }
+                  showIcon={true}
+                >
                   Donate
                 </CustomButton>
               </Flex>
             </motion.div>
 
-
             {/* fsd */}
           </Box>
-
-
 
           <motion.div
             style={{ width: "100%" }}

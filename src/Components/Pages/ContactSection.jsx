@@ -76,6 +76,12 @@ const ContactSection = ({ showY }) => {
                 showBorder={true}
                 color="white"
                 showIcon={true}
+                onClick={() =>
+                  window.open(
+                    "https://www.paypal.com/ncp/payment/PHUSY8N28BM2W",
+                    "_blank"
+                  )
+                }
               >
                 Donate
               </CustomButton>

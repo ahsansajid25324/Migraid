@@ -107,7 +107,16 @@ function Navbar() {
           </Box>
 
           <Box gap={4} display={{ base: "none", lg: "flex" }}>
-            <CustomButton p={5} color="white">
+            <CustomButton
+              p={5}
+              color="white"
+              onClick={() =>
+                window.open(
+                  "https://www.paypal.com/ncp/payment/PHUSY8N28BM2W",
+                  "_blank"
+                )
+              }
+            >
               Donate
             </CustomButton>
           </Box>
