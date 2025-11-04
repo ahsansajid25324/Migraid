@@ -3,18 +3,20 @@ import Footer from "../Components/Pages/Footer";
 import OtherPageHeroSection from "../Components/Pages/OtherPageHeroSection";
 import ServicesSection from "../Components/Pages/ServicesSection";
 import ContactSection from "../Components/Pages/ContactSection";
-import AnswerQuestionSection from "../Components/Pages/AnswersQuestionSection";
+import ExpertSection from "../Components/Pages/ExpertSection";
 function Services() {
   return (
     <>
       <OtherPageHeroSection
-        title="Services"
+        title="SERVICES"
         subtitle="What We Do"
         descript="Helping businesses & individuals make the American dream a reality!"
       />
       <ServicesSection />
-      <AnswerQuestionSection />
-      <ContactSection showY={true} />
+      <ExpertSection />
+
+      {/* <AnswerQuestionSection /> */}
+      <ContactSection showY={true} margin={12} />
       <Footer />
     </>
   );

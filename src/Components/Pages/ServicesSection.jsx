@@ -5,7 +5,10 @@ import { Flex, Box, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 const ServicesSection = () => {
-  const { ref: imgRef, inView: imgInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: imgRef, inView: imgInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
     <Flex
       h="auto"

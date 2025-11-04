@@ -14,7 +14,7 @@ function About() {
       />
       <AboutSection />
       <TeamSection />
-      <ContactSection showY={true} />
+      <ContactSection showY={true} margin={12} />
       <Footer />
     </>
   );

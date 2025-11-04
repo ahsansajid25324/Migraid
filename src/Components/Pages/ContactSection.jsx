@@ -6,7 +6,7 @@ import WLine from "../../assets/images/WLine.png";
 import CustomButton from "../UI/CustomButton";
 import contactBg from "../../assets/images/contactBg.png";
 import ConsultationModal from "./ConsultationModal";
-const ContactSection = ({ showY }) => {
+const ContactSection = ({ showY, margin }) => {
   const { ref: sectionRef, inView: sectionInView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -25,10 +25,10 @@ const ContactSection = ({ showY }) => {
         bgImage={contactBg}
         bgSize="cover"
         bgPosition="center"
+        my={margin || 0}
         bgRepeat="no-repeat"
         borderRadius={{ base: "16px", lg: "20px" }}
         mx={{ base: 4, lg: 12 }}
-        mb={12}
         alignItems="center"
         flexDirection={{ base: "column", md: "row" }}
         gap={{ base: 4, md: 6 }}
