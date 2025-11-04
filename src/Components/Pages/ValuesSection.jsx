@@ -12,25 +12,33 @@ import {
 } from "@chakra-ui/react";
 import Consult from "../../assets/images/ConsultService.png";
 
+import Community from "../../assets/images/community.png";
+import Access from "../../assets/images/access.png";
+import Integrity from "../../assets/images/integrity.png";
+
 import Line from "../../assets/images/Line.png";
 const values = [
   {
     title: "Client-Centered & Compassionate Help",
+    img: Consult,
     description:
       "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
   },
   {
     title: "Accessibility: Multilingual & Low-Cost Options",
+    img: Access,
     description:
       "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
   },
   {
     title: "Integrity & Confidentiality",
+    img: Integrity,
     description:
       "Your story and documents are handled with absolute discretion and honesty. We uphold transparency, ethics, and confidentiality in every client relationship.",
   },
   {
     title: "Community Partnership & Education",
+    img: Community,
     description:
       "We collaborate with local organizations, volunteers, and advocates to expand our reach. Through workshops and outreach, we empower immigrants with knowledge and confidence.",
   },
@@ -40,8 +48,14 @@ const ValuesSection = () => {
   const cardBg = useColorModeValue("#fff", "gray.800");
   const borderColor = useColorModeValue("#E5E7EB", "gray.700");
   const sectionBg = useColorModeValue("#fafbfc", "gray.900");
-  const { ref: headingRef, inView: headingInView } = useInView({ triggerOnce: true, threshold: 0.2 });
-  const { ref: descRef, inView: descInView } = useInView({ triggerOnce: true, threshold: 0.2 });
+  const { ref: headingRef, inView: headingInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+  const { ref: descRef, inView: descInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   // Animation for value cards
   const cardRefs = useRef(values.map(() => React.createRef()));
@@ -52,7 +66,7 @@ const ValuesSection = () => {
       const observer = new window.IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
-            setCardInViews(prev => {
+            setCardInViews((prev) => {
               const updated = [...prev];
               updated[idx] = true;
               return updated;
@@ -65,7 +79,7 @@ const ValuesSection = () => {
       if (ref.current) observer.observe(ref.current);
       return observer;
     });
-    return () => observers.forEach(obs => obs.disconnect());
+    return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
   return (
@@ -75,7 +89,9 @@ const ValuesSection = () => {
           <Image src={Line} w="24px" h="3px"></Image>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
-            animate={headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            animate={
+              headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
+            }
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Text
@@ -108,7 +124,11 @@ const ValuesSection = () => {
             <Box ref={cardRefs.current[idx]} key={val.title}>
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
-                animate={cardInViews[idx] ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                animate={
+                  cardInViews[idx]
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 40 }
+                }
                 transition={{ duration: 0.8, delay: 0.2 + idx * 0.15 }}
               >
                 <Flex
@@ -123,7 +143,12 @@ const ValuesSection = () => {
                   boxShadow="sm"
                   flex={1}
                 >
-                  <Image marginInlineEnd="auto" w="52px" h="52px" src={Consult} />
+                  <Image
+                    marginInlineEnd="auto"
+                    w="52px"
+                    h="52px"
+                    src={val?.img}
+                  />
                   <Box>
                     <Heading
                       as="h3"

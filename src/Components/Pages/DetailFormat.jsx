@@ -1,7 +1,10 @@
 import { Text, Heading, Flex, Image, Box, Button } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import Line from "../../assets/images/Line.png";
+import Mission from "../../assets/images/Mission.png";
+import Vission from "../../assets/images/Vission.png";
 import Consult from "../../assets/images/ConsultService.png";
+
 import CustomButton from "../UI/CustomButton";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -155,7 +158,7 @@ const DetailFormat = ({
                   marginInlineEnd={"auto"}
                   gap={2}
                 >
-                  <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
+                  <Image w="52px" h="52px" src={Mission} alt="Consult icon" />
                   <Text
                     fontSize={{ base: "16px", lg: "20px" }}
                     fontWeight={"500"}
@@ -193,7 +196,7 @@ const DetailFormat = ({
                   marginInlineEnd={"auto"}
                   gap={2}
                 >
-                  <Image w="52px" h="52px" src={Consult} alt="Consult icon" />
+                  <Image w="52px" h="52px" src={Vission} alt="Consult icon" />
                   <Text
                     fontSize={{ base: "16px", lg: "20px" }}
                     fontWeight={"500"}
