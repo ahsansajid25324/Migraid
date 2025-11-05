@@ -45,18 +45,18 @@ export const formData = [
       },
     },
   },
-  {
-    label: "Select Service",
-    name: "service",
-    placeholder: "Select service",
-    component: "select",
-    options: [
-      { label: "Immigration Consultation", value: "immigration" },
-      { label: "Visa Application Assistance", value: "visa" },
-      { label: "Business Setup Abroad", value: "business" },
-    ],
-    validation: { required: "Service selection is required" },
-  },
+  // {
+  //   label: "Select Service",
+  //   name: "service",
+  //   placeholder: "Select service",
+  //   component: "select",
+  //   options: [
+  //     { label: "Immigration Consultation", value: "immigration" },
+  //     { label: "Visa Application Assistance", value: "visa" },
+  //     { label: "Business Setup Abroad", value: "business" },
+  //   ],
+  //   validation: { required: "Service selection is required" },
+  // },
   {
     label: "Message",
     name: "message",
