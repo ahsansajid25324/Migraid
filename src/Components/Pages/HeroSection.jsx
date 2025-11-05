@@ -12,6 +12,7 @@ function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
   return (
     <>
       <ConsultationModal isOpen={isModalOpen} onClose={closeModal} />
@@ -117,12 +118,7 @@ function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <Box
-              zIndex={"1"}
-              w="100%"
-              mt={{ base: 8, lg: 10 }}
-              borderRadius="md"
-            >
+            <Box zIndex={"1"} w="100%" mt={{ base: 8, lg: 10 }}>
               <ConsultationForm />
             </Box>
           </motion.div>
