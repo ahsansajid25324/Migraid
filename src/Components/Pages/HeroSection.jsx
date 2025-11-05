@@ -134,12 +134,20 @@ function HeroSection() {
               </Box>
             )}
             <motion.div
-              style={{ width: "100%", display: isFormLoaded ? "block" : "none" }}
+              style={{
+                width: "100%",
+                display: isFormLoaded ? "block" : "none",
+              }}
               initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: isFormLoaded ? 1 : 0, y: isFormLoaded ? 0 : 100 }}
+              animate={{
+                opacity: isFormLoaded ? 1 : 0,
+                y: isFormLoaded ? 0 : 100,
+              }}
               transition={{ duration: 0.8 }}
             >
-              <ConsultationForm onLoad={() => setIsFormLoaded(true)} />
+              <Box ml={{ base: 0, lg: 8 }}>
+                <ConsultationForm onLoad={() => setIsFormLoaded(true)} />
+              </Box>
             </motion.div>
           </Box>
         </Flex>
