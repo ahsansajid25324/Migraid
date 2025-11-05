@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Spinner } from "@chakra-ui/react";
 import img from "./../../assets/images/blueBg.png";
 import Navbar from "./Navbar";
 import CustomButton from "../UI/CustomButton";
@@ -10,6 +10,7 @@ import "./../../App.css";
 
 function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFormLoaded, setIsFormLoaded] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -112,16 +113,35 @@ function HeroSection() {
             {/* fsd */}
           </Box>
 
-          <motion.div
-            style={{ width: "100%" }}
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <Box zIndex={"1"} w="100%" mt={{ base: 8, lg: 10 }}>
-              <ConsultationForm />
-            </Box>
-          </motion.div>
+          <Box zIndex={"1"} w="100%" mt={{ base: 8, lg: 10 }}>
+            {!isFormLoaded && (
+              <Box
+                height="500px"
+                width="99%"
+                borderRadius="12px"
+                bg="rgba(255, 255, 255, 0.1)"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Spinner
+                  thickness="4px"
+                  speed="0.65s"
+                  emptyColor="rgba(255, 255, 255, 0.2)"
+                  color="rgba(34, 185, 116, 1)"
+                  size="xl"
+                />
+              </Box>
+            )}
+            <motion.div
+              style={{ width: "100%", display: isFormLoaded ? "block" : "none" }}
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: isFormLoaded ? 1 : 0, y: isFormLoaded ? 0 : 100 }}
+              transition={{ duration: 0.8 }}
+            >
+              <ConsultationForm onLoad={() => setIsFormLoaded(true)} />
+            </motion.div>
+          </Box>
         </Flex>
       </Box>
     </>
