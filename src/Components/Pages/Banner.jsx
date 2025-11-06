@@ -12,16 +12,21 @@ const Banner = ({
   content,
   btncontent,
   alignment = "right",
+  show = true,
 }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  // Modal component selection based on 'show' prop
+  const ModalComponent = show
+    ? ConsultationModal
+    : require("./FinancialModal").default;
+
   return (
-  
     <>
-      <ConsultationModal isOpen={isModalOpen} onClose={closeModal} />
+      <ModalComponent isOpen={isModalOpen} onClose={closeModal} />
 
       <Box
         position="relative"

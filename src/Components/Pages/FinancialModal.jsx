@@ -9,7 +9,7 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 
-const ConsultationModal = ({ isOpen, onClose }) => {
+const FinancialModal = ({ isOpen, onClose }) => {
   const [isFormLoaded, setIsFormLoaded] = useState(false);
   const handleLoad = () => setIsFormLoaded(true);
 
@@ -54,7 +54,7 @@ const ConsultationModal = ({ isOpen, onClose }) => {
                 border: "none",
                 borderRadius: "12px",
               }}
-              src="https://forms.zohopublic.com/IDEATORSCUP/form/BOOKAFREECONSULTATIONFORM/formperma/oOZxUgP3hdpyRJ_AZYhMxEeoD4Epq7W2wxa__bmcPz4?zf_rszfm=0"
+              src="https://forms.zohopublic.com/IDEATORSCUP/form/FinancialAssistanceRequestForm/formperma/rvIOAHuW4uuNWUKyPGdMHozAl5vHnh4WUaAOlX4gSeo"
               title="Financial Assistance Request Form"
               onLoad={handleLoad}
             ></iframe>
@@ -65,4 +65,4 @@ const ConsultationModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default ConsultationModal;
+export default FinancialModal;

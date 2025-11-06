@@ -226,12 +226,17 @@ const DetailFormat = ({
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             <CustomButton
-              showIcon={true}
+              padding={6}
               color="rgba(34, 185, 116, 1)"
-              p={{ base: 5, lg: 6 }}
-              onClick={openModal}
+              showIcon={true}
+              onClick={() =>
+                window.open(
+                  "https://www.paypal.com/ncp/payment/PHUSY8N28BM2W",
+                  "_blank"
+                )
+              }
             >
-              {btn}
+              Donate
             </CustomButton>
           </motion.div>
         </Box>
