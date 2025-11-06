@@ -119,7 +119,7 @@ const Footer = () => {
           </Flex>
           <Flex align="center" mt={4}>
             <Icon as={AiOutlineMail} boxSize="6" mr="3" color="green.400" />
-            <Text fontSize="16px">FILING@MIGRAID.CO</Text>
+            <Text fontSize="16px">HELLO@MIGRAID.CO</Text>
           </Flex>
         </Box>
 
