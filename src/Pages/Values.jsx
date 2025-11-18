@@ -51,7 +51,9 @@ function Values() {
             margin="16px"
             alwaysShowFullContent={true}
             SubTitle="Client-Centered & Compassionate Help"
-            content="Every journey is unique. We listen first, with empathy and patience, to understand each client’s goals and challenges. Whether someone is applying for residency, seeking asylum, or reuniting with family, our team walks beside them with care, respect, and honesty."
+            content="At Migraid, our mission is to support and empower individuals and families navigating the complex journey of relocating to the United States. As a nonprofit organization, we are committed to providing free, accessible, and reliable guidance to those seeking a safe, stable, and successful transition.
+             We assist newcomers by helping them understand their settlement options, connecting them with trusted legal resources, and guiding them through essential steps such as documentation support, community integration, and access to local services. Through educational workshops, legal aid clinics, and resource-building initiatives, we strive to remove barriers and ensure that every individual feels informed, supported, and welcomed.
+            Our commitment is rooted in compassion, transparency, and community uplift—ensuring that no one has to navigate the immigration journey alone."
             showButton={true}
             btn="Donate"
           ></DetailFormat>

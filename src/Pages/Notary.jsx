@@ -15,6 +15,7 @@ function Notary() {
       <OtherPageHeroSection
         title="NOTARIZATION"
         subtitle="Notarize Your Documents — Online, Securely, and Legally"
+        btn="Book a Notarization Appointment"
         descript="Migraid’s Online Public Notary service lets you notarize your documents from anywhere — fast, secure, and compliant with U.S. law."
       />
 

@@ -20,9 +20,10 @@ function Clinics() {
         title="HOST A CLINIC"
         subtitle="Host a Clinic in Your Community"
         content="Organizations, schools, and faith groups can request an outreach clinic at their location.<br />Contact us at FILING@MIGRAID.CO to schedule a visit."
-        btncontent="Apply for Financial Assistance"
+        btncontent="Donate"
         alignment="left"
         show={true}
+        btnWork={true}
         margin={12}
       />
       <Footer />

@@ -7,7 +7,7 @@ import img from "./../../assets/images/otherBg.png";
 import Arrow from "../../assets/icons/Arrow";
 import ConsultationModal from "./ConsultationModal";
 
-function OtherPageHeroSection({ title, subtitle, descript }) {
+function OtherPageHeroSection({ title, subtitle, descript, btn }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -94,7 +94,7 @@ function OtherPageHeroSection({ title, subtitle, descript }) {
                 rightIcon={<Arrow />}
                 _hover={{ bg: "rgba(34, 185, 116, 0.9)" }}
               >
-                Book a Free Intake
+                {btn ? btn : "Book a Free Intake"}
               </Button>
             </Flex>
           </Box>

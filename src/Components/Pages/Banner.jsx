@@ -8,6 +8,7 @@ import ConsultationModal from "./ConsultationModal";
 const Banner = ({
   img,
   title,
+  btnWork,
   subtitle,
   content,
   margin,
@@ -157,7 +158,15 @@ const Banner = ({
                   boxShadow="md"
                   _hover={{ bg: "rgba(34, 185, 116, 0.85)" }}
                   transition="background 0.2s"
-                  onClick={openModal}
+                  onClick={
+                    btnWork
+                      ? () =>
+                          window.open(
+                            "https://www.paypal.com/ncp/payment/PHUSY8N28BM2W",
+                            "_blank"
+                          )
+                      : openModal
+                  }
                 >
                   {btncontent}
                   <Box as="span" ml={2} display="flex" alignItems="center">
