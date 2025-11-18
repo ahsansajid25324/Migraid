@@ -57,26 +57,26 @@ const Footer = () => {
             first question to your new beginning.
           </Text>
           <Flex mt="4" gap={3}>
-              <a
-                href="https://www.facebook.com/share/16QcCtgd9m/?mibextid=wwXIfr"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon as={FaFacebook} boxSize="6" />
-              </a>
-              <a
-                href="https://www.instagram.com/migraid.us?igsh=cjEzdHRqajA3M2Zh"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon as={FaInstagram} boxSize="6" />
-              </a>
-              <Link href="#">
-                <Icon as={FaTwitter} boxSize="6" />
-              </Link>
-              <Link href="#">
-                <Icon as={FaLinkedin} boxSize="6" />
-              </Link>
+            <a
+              href="https://www.facebook.com/share/16QcCtgd9m/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon as={FaFacebook} boxSize="6" />
+            </a>
+            <a
+              href="https://www.instagram.com/migraid.us?igsh=cjEzdHRqajA3M2Zh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon as={FaInstagram} boxSize="6" />
+            </a>
+            <Link href="#">
+              <Icon as={FaTwitter} boxSize="6" />
+            </Link>
+            <Link href="#">
+              <Icon as={FaLinkedin} boxSize="6" />
+            </Link>
           </Flex>
         </Box>
 
@@ -87,12 +87,66 @@ const Footer = () => {
           </Heading>
 
           <Flex flexDirection={"column"} rowGap={2}>
-            <Link href="#">Home</Link>
-            <Link href="#">About</Link>
-            <Link href="#">Services</Link>
-            <Link href="#">Clinics</Link>
-            <Link href="#">Values</Link>
-            <Link href="#">Contacts</Link>
+            <Link
+              to="/home"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              About
+            </Link>
+            <Link
+              to="/services"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              Services
+            </Link>
+            <Link
+              to="/clinics"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              Clinics
+            </Link>
+            <Link
+              to="/values"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              Values
+            </Link>
+            <Link
+              to="/contact"
+              style={{
+                color: "inherit",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              Contact
+            </Link>
           </Flex>
         </Box>
 

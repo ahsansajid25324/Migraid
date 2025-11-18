@@ -3,7 +3,7 @@ import { Box, Flex, Heading, Image, Button, Text } from "@chakra-ui/react";
 import Navbar from "./Navbar";
 import Line from "./../../assets/images/Line.png";
 import "./../../App.css";
-import img from "./../../assets/images/blueBg.png";
+import img from "./../../assets/images/otherBg.png";
 import Arrow from "../../assets/icons/Arrow";
 import ConsultationModal from "./ConsultationModal";
 
@@ -40,7 +40,11 @@ function OtherPageHeroSection({ title, subtitle, descript }) {
           justifyContent={"center"}
           textAlign={"center"}
         >
-          <Box borderRadius="md">
+          <Box
+            borderRadius="md"
+            maxW={{ base: "auto", md: "600px", lg: "800px" }}
+            color="white"
+          >
             <Flex gap={2} alignItems={"center"} justifyContent={"center"}>
               <Image w="28px" h="4px" src={Line} />
 

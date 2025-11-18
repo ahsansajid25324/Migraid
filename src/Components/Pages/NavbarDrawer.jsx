@@ -12,15 +12,26 @@ import {
   Button,
   Divider,
   VStack,
-  Text,
 } from "@chakra-ui/react";
 
-import { HamburgerIcon } from "@chakra-ui/icons";
 import logo from "../../assets/images/Logo.png";
+import { Link } from "react-router-dom";
 import { links } from "../../data/NavbarItems";
 import CustomButton from "../UI/CustomButton";
-
+import { HamburgerIcon } from "@chakra-ui/icons";
 function NavbarDrawer({ isOpen, onClose, openNavbar }) {
+  const [activePath, setActivePath] = React.useState(window.location.pathname);
+
+  React.useEffect(() => {
+    const handlePathChange = () => {
+      setActivePath(window.location.pathname);
+    };
+    window.addEventListener("popstate", handlePathChange);
+    return () => {
+      window.removeEventListener("popstate", handlePathChange);
+    };
+  }, []);
+
   return (
     <div>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -51,50 +62,51 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
 
           <DrawerBody>
             <VStack spacing={4} align="stretch">
-              {links.map((link, index) => (
-                <Box key={index} w="100%">
-                  <Text
-                    as="a"
-                    href={link.href}
-                    color="white"
-                    fontSize="18px"
-                    fontFamily="Poppins"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onClose(); // Close the drawer
-
-                      // If we're not on home page, navigate to home page with hash
-                      if (
-                        window.location.pathname !== "/" &&
-                        window.location.pathname !== "/home"
-                      ) {
-                        window.location.href = `/home${link.href}`;
-                        return;
-                      }
-
-                      // Get the target section
-                      const targetId = link.href.substring(1); // Remove the # character
-                      const targetElement = document.getElementById(targetId);
-
-                      if (targetElement) {
-                        targetElement.scrollIntoView({
-                          behavior: "smooth",
-                        });
-
-                        // Update URL hash without page jump
-                        window.history.pushState(null, "", link.href);
-                      }
-                    }}
-                  >
-                    {link.label}
-                  </Text>
-                  <Divider mt="4" borderColor="white" />
-                </Box>
-              ))}
+              {links.map((link, index) => {
+                const isActive = activePath === link.href;
+                return (
+                  <Box key={index} w="100%">
+                    <Link
+                      to={link.href}
+                      style={{
+                        color: isActive ? "#22B974" : "white",
+                        fontSize: "18px",
+                        fontFamily: "Poppins",
+                        textDecoration: "none",
+                        fontWeight: isActive ? "bold" : "normal",
+                        borderBottom: isActive ? "2px solid #22B974" : "none",
+                        transition: "all 0.2s",
+                      }}
+                      onClick={onClose}
+                      onMouseEnter={(e) => {
+                        if (!isActive) {
+                          e.target.style.color = "#22B974";
+                          e.target.style.borderBottom = "3px solid #22B974";
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!isActive) {
+                          e.target.style.color = "white";
+                          e.target.style.borderBottom = "none";
+                        }
+                      }}
+                    >
+                      {link.label}
+                    </Link>
+                    <Divider mt="4" borderColor="white" />
+                  </Box>
+                );
+              })}
             </VStack>
 
             <Box mt={4} w="100%" textAlign="center">
-              <CustomButton fontSize="18px" showIcon={true} w="100%" p={5} color="white">
+              <CustomButton
+                fontSize="18px"
+                showIcon={true}
+                w="100%"
+                p={6}
+                color="white"
+              >
                 Donate
               </CustomButton>
             </Box>

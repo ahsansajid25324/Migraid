@@ -3,14 +3,19 @@ import React from "react";
 import Navbar from "./Navbar";
 import HeroLine from "../../assets/images/HeroLine.png";
 
+import img from "./../../assets/images/blueBg.png";
+
 const NonImgHeroSection = ({ title }) => {
   return (
     <Box
       py={{ base: 20, lg: 8 }}
       h={{ base: "30vh", lg: "40vh" }}
-      bg="rgba(2, 2, 38, 1)"
       display="flex"
       flexDirection="column"
+      bgImage={img}
+      bgSize="cover"
+      bgPosition="center"
+      bgRepeat="no-repeat"
       position="relative"
     >
       <Box position="fixed" top={0} left={0} right={0} zIndex={1000}>

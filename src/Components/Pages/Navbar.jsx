@@ -6,16 +6,30 @@ import useDrawer from "../../hooks/useDrawer";
 import NavbarDrawer from "./NavbarDrawer";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { links } from "../../data/NavbarItems";
-import { useLocation } from "react-router-dom";
-import { scrollToSection } from "../../helpers/scrollToSection";
+
+import { useNavigate } from "react-router-dom";
 
 const NavLink = ({ href, children }) => {
-  const location = useLocation();
+  const navigate = useNavigate();
+  const [activePath, setActivePath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    const handlePathChange = () => {
+      setActivePath(window.location.pathname);
+    };
+    window.addEventListener("popstate", handlePathChange);
+    return () => {
+      window.removeEventListener("popstate", handlePathChange);
+    };
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
-    scrollToSection(href, location);
+    navigate(href);
+    setActivePath(href);
   };
+
+  const isActive = activePath === href;
 
   return (
     <Box position="relative" display="inline-block" mx={3}>
@@ -23,22 +37,29 @@ const NavLink = ({ href, children }) => {
         as="a"
         href={href}
         onClick={handleClick}
-        color="#ffff"
+        color={isActive ? "#22B974" : "#ffff"}
+        fontWeight={isActive ? "bold  " : "normal"}
+        borderBottom={isActive ? "3px solid #22B974" : "none"}
         cursor={"pointer"}
         fontFamily={"Poppins"}
         fontSize="16px"
-        _hover={{
-          color: "white",
-          "&::after": {
-            content: '""',
-            position: "absolute",
-            bottom: "-5px",
-            left: 0,
-            right: 0,
-            height: "3px",
-            backgroundColor: "rgba(34, 185, 116, 1)",
-          },
-        }}
+        transition="all 0.2s"
+        _hover={
+          isActive
+            ? { color: "#22B974" }
+            : {
+                color: "white",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  bottom: "-5px",
+                  left: 0,
+                  right: 0,
+                  height: "3px",
+                  backgroundColor: "rgba(34, 185, 116, 1)",
+                },
+              }
+        }
       >
         {children}
       </Text>
@@ -118,6 +139,10 @@ function Navbar() {
               }
             >
               Donate
+            </CustomButton>
+
+            <CustomButton p={5} color="white" path="/notary">
+              Notarization
             </CustomButton>
           </Box>
         </Box>

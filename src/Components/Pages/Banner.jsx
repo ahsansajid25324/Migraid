@@ -10,6 +10,7 @@ const Banner = ({
   title,
   subtitle,
   content,
+  margin,
   btncontent,
   alignment = "right",
   show = true,
@@ -33,6 +34,7 @@ const Banner = ({
         borderRadius={{ base: "16px", lg: "28px" }}
         overflow="hidden"
         mx={{ base: 4, lg: 8 }}
+        mb={margin ? margin : 0}
         mt={{ base: 8, lg: 12 }}
         display="flex"
         alignItems="center"
@@ -130,9 +132,8 @@ const Banner = ({
                 color="white"
                 w={{ base: "95%", lg: "90%" }}
                 mb={4}
-              >
-                {content}
-              </Text>
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
             </motion.div>
 
             <motion.div

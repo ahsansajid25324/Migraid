@@ -3,6 +3,7 @@ import Footer from "../Components/Pages/Footer";
 import { Box, Text, Flex } from "@chakra-ui/react";
 import ContactSection from "../Components/Pages/ContactSection";
 import NonImgHeroSection from "../Components/Pages/NonImgHeroSection";
+
 function PCI() {
   const contentRef = useRef(null);
   const [activeSection, setActiveSection] = useState("Introduction");
@@ -137,7 +138,7 @@ function PCI() {
           ))}
         </Box>
       </Flex>
-      <ContactSection showY={true} />
+      <ContactSection showY={true} margin={12} />
 
       <Footer />
     </>

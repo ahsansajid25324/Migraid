@@ -1,61 +1,49 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import {
   Box,
   Flex,
   Text,
-  Image,
   Heading,
   Grid,
   useColorModeValue,
 } from "@chakra-ui/react";
 import Consult from "../../assets/images/ConsultService.png";
-
+import Expert from "../../assets/images/valuesBg.png";
 import Community from "../../assets/images/community.png";
 import Access from "../../assets/images/access.png";
 import Integrity from "../../assets/images/integrity.png";
-import Expert from "../../assets/images/valuesBg.png";
-import Line from "../../assets/images/Line.png";
+
 const values = [
   {
-    title: "Client-Centered & Compassionate Help",
+    title: "Equity & Empowerment",
     img: Consult,
     description:
-      "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
+      "Every person, regardless of status, origin, or circumstance, deserves equal opportunity and respect. MigRaid stands against discrimination in all forms and actively works to ensure inclusion in every service we provide.<br/>We don’t just help clients complete paperwork, we help them rebuild confidence, independence, and hope.",
   },
   {
-    title: "Accessibility: Multilingual & Low-Cost Options",
+    title: "Our Guiding Philosophy",
     img: Access,
     description:
-      "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
+      "Migration is not just movement — it’s transformation.<br/>Migraid was founded on the belief that when people are given fair guidance, compassion, and opportunity, they don’t just survive — they thrive.<br/>Together, we build a future where every immigrant feels safe, supported, and seen.",
+  },
+  {
+    title: "What this means in practice",
+    img: Integrity,
+    description:
+      "One-on-one attention during every intake and case review.<br/>Clear, accessible explanations (no confusing legal jargon).<br/>Emotional support through difficult steps in the process.",
   },
   {
     title: "Integrity & Confidentiality",
-    img: Integrity,
-    description:
-      "Your story and documents are handled with absolute discretion and honesty. We uphold transparency, ethics, and confidentiality in every client relationship.",
-  },
-  {
-    title: "Community Partnership & Education",
     img: Community,
     description:
-      "We collaborate with local organizations, volunteers, and advocates to expand our reach. Through workshops and outreach, we empower immigrants with knowledge and confidence.",
+      "Trust is the foundation of everything we do. <br/>Clients share some of the most personal details of their lives — and we protect that trust fiercely.",
   },
 ];
 
-const ValuesSection = () => {
+const ValuesEmpowerment = () => {
   const borderColor = useColorModeValue("#E5E7EB", "gray.700");
-  const { ref: headingRef, inView: headingInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
-  const { ref: descRef, inView: descInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
 
-  // Animation for value cards
   const cardRefs = useRef(values.map(() => React.createRef()));
   const [cardInViews, setCardInViews] = useState(values.map(() => false));
 
@@ -83,46 +71,18 @@ const ValuesSection = () => {
   return (
     <Box
       as="section"
+      display="flex"
       flexDirection="column"
       bgImage={Expert}
       bgSize="cover"
       bgRepeat="no-repeat"
     >
       <Box py={{ base: 6, lg: 16 }} px={{ base: 4, lg: 8 }}>
-        <Flex align="center" gap={2} ref={headingRef}>
-          <Image src={Line} w="24px" h="3px"></Image>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={
-              headingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
-            }
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <Text
-              fontSize={{ base: "16px", lg: "18px" }}
-              color={"rgba(34, 185, 116, 1)"}
-              fontWeight={"500"}
-            >
-              CORE VALUES
-            </Text>
-          </motion.div>
-        </Flex>
-        <Box ref={descRef}>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={descInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <Text fontSize={{ base: "12px", lg: "14px" }} mt={2} maxW="700px">
-              We center people — not profit. Our services prioritize safety,
-              dignity, and a realistic pathway to a stable life in the U.S.
-            </Text>
-          </motion.div>
-        </Box>
         <Grid
-          templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
           gap={{ base: 4, lg: 6 }}
           mt={{ base: 6, lg: 8 }}
+          flex={"1"}
         >
           {values.map((val, idx) => (
             <Box ref={cardRefs.current[idx]} key={val.title}>
@@ -147,12 +107,6 @@ const ValuesSection = () => {
                   boxShadow="sm"
                   flex={1}
                 >
-                  <Image
-                    marginInlineEnd="auto"
-                    w="52px"
-                    h="52px"
-                    src={val?.img}
-                  />
                   <Box>
                     <Heading
                       as="h3"
@@ -162,7 +116,12 @@ const ValuesSection = () => {
                     >
                       {val.title}
                     </Heading>
-                    <Text color="#444">{val.description}</Text>
+                    <Text color="#444">
+                      <Text
+                        color="#444"
+                        dangerouslySetInnerHTML={{ __html: val.description }}
+                      />
+                    </Text>
                   </Box>
                 </Flex>
               </motion.div>
@@ -174,4 +133,4 @@ const ValuesSection = () => {
   );
 };
 
-export default ValuesSection;
+export default ValuesEmpowerment;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Grid, GridItem, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Image, Text } from "@chakra-ui/react";
 import SectionHeading from "./SectionHeading";
 import { teamData } from "../../data/TeamData";
 

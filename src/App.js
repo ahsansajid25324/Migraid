@@ -16,9 +16,11 @@ import Payment from "./Pages/Payment";
 import ScheduleMeeting from "./Pages/ScheduleMeeting";
 import AdminDashboard from "./Pages/AdminDashboard";
 import AdminCase from "./Pages/AdminCase";
-
+import Clinics from "./Pages/Clinics";
 import { PublicRoute, PrivateRoute } from "./helpers/auth";
 import AuthLayout from "./layouts/MainLayout";
+import Values from "./Pages/Values";
+import Notary from "./Pages/Notary";
 
 function App() {
   const location = useLocation();
@@ -35,9 +37,13 @@ function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/reviews" element={<Reviews />} />
       <Route path="/blogs" element={<Blogs />} />
+      <Route path="/values" element={<Values />} />
+      <Route path="/notary" element={<Notary />} />
+
       <Route path="/contact" element={<Contact />} />
       <Route path="/pci-compliance" element={<PciCompliance />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/clinics" element={<Clinics />} />
 
       <Route element={<PublicRoute />}>
         <Route path="/" element={<AuthLayout />}>

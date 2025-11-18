@@ -138,7 +138,7 @@ function PrivacyPolicy() {
           ))}
         </Box>
       </Flex>
-      <ContactSection showY={true} />
+      <ContactSection showY={true} margin={12} />
 
       <Footer />
     </>

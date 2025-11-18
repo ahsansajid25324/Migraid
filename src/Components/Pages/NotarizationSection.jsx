@@ -14,37 +14,28 @@ import Consult from "../../assets/images/ConsultService.png";
 
 import Community from "../../assets/images/community.png";
 import Access from "../../assets/images/access.png";
-import Integrity from "../../assets/images/integrity.png";
 import Expert from "../../assets/images/valuesBg.png";
 import Line from "../../assets/images/Line.png";
 const values = [
   {
-    title: "Client-Centered & Compassionate Help",
+    title: "Book Appointment",
     img: Consult,
-    description:
-      "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
+    description: "Choose your preferred time with a certified public notary.",
   },
   {
-    title: "Accessibility: Multilingual & Low-Cost Options",
+    title: "Pay Securely",
     img: Access,
-    description:
-      "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
+    description: "Confirm your booking with fully encrypted payment.",
   },
   {
-    title: "Integrity & Confidentiality",
-    img: Integrity,
-    description:
-      "Your story and documents are handled with absolute discretion and honesty. We uphold transparency, ethics, and confidentiality in every client relationship.",
-  },
-  {
-    title: "Community Partnership & Education",
+    title: "Meet on Teams",
     img: Community,
     description:
-      "We collaborate with local organizations, volunteers, and advocates to expand our reach. Through workshops and outreach, we empower immigrants with knowledge and confidence.",
+      "Join your secure Microsoft Teams session to complete notarization.",
   },
 ];
 
-const ValuesSection = () => {
+const NoatrizationSection = () => {
   const borderColor = useColorModeValue("#E5E7EB", "gray.700");
   const { ref: headingRef, inView: headingInView } = useInView({
     triggerOnce: true,
@@ -103,7 +94,7 @@ const ValuesSection = () => {
               color={"rgba(34, 185, 116, 1)"}
               fontWeight={"500"}
             >
-              CORE VALUES
+              SECURE 3 - STEP PROCESS
             </Text>
           </motion.div>
         </Flex>
@@ -113,14 +104,18 @@ const ValuesSection = () => {
             animate={descInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <Text fontSize={{ base: "12px", lg: "14px" }} mt={2} maxW="700px">
-              We center people — not profit. Our services prioritize safety,
-              dignity, and a realistic pathway to a stable life in the U.S.
-            </Text>
+            <Heading
+              fontSize={{ base: "20px", lg: "28px" }}
+              fontWeight={"600"}
+              mt={2}
+              maxW="700px"
+            >
+              How It Works
+            </Heading>
           </motion.div>
         </Box>
         <Grid
-          templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          templateColumns={{ base: "1fr", md: "1fr 1fr 1fr  " }}
           gap={{ base: 4, lg: 6 }}
           mt={{ base: 6, lg: 8 }}
         >
@@ -174,4 +169,4 @@ const ValuesSection = () => {
   );
 };
 
-export default ValuesSection;
+export default NoatrizationSection;

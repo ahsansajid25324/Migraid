@@ -14,6 +14,7 @@ const DetailFormat = ({
   SubTitle,
   margin,
   showValues,
+  showButton=false,
   content,
   SubTitleMargin,
   btn,
@@ -217,29 +218,31 @@ const DetailFormat = ({
           </Flex>
         )}
 
-        <Box mt={margin}>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={
-              valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
-            }
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            <CustomButton
-              padding={6}
-              color="rgba(34, 185, 116, 1)"
-              showIcon={true}
-              onClick={() =>
-                window.open(
-                  "https://www.paypal.com/ncp/payment/PHUSY8N28BM2W",
-                  "_blank"
-                )
+        {showButton && (
+          <Box mt={margin}>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={
+                valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }
               }
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Donate
-            </CustomButton>
-          </motion.div>
-        </Box>
+              <CustomButton
+                padding={6}
+                color="rgba(34, 185, 116, 1)"
+                showIcon={true}
+                onClick={() =>
+                  window.open(
+                    "https://www.paypal.com/ncp/payment/PHUSY8N28BM2W",
+                    "_blank"
+                  )
+                }
+              >
+                Donate
+              </CustomButton>
+            </motion.div>
+          </Box>
+        )}
       </Box>
     </>
   );

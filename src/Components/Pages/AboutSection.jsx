@@ -115,6 +115,7 @@ function AboutSection() {
           showValues={true}
           btn="Support Our Work"
           SubTitle="About Migraid"
+          showButton={true}
         ></DetailFormat>
       </Box>
     </Flex>

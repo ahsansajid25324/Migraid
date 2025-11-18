@@ -11,40 +11,46 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Consult from "../../assets/images/ConsultService.png";
-
+import Expert from "../../assets/images/valuesBg.png";
 import Community from "../../assets/images/community.png";
 import Access from "../../assets/images/access.png";
 import Integrity from "../../assets/images/integrity.png";
-import Expert from "../../assets/images/valuesBg.png";
+
 import Line from "../../assets/images/Line.png";
 const values = [
   {
-    title: "Client-Centered & Compassionate Help",
+    title: "Naturalization & Citizenship Clinics",
     img: Consult,
     description:
-      "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
+      "Get help preparing your N-400 forms, interview coaching, and civics test materials.",
   },
   {
-    title: "Accessibility: Multilingual & Low-Cost Options",
+    title: "DACA & Youth Support Sessions",
     img: Access,
     description:
-      "We listen with empathy and treat every individual and family with respect, dignity, and care. Our approach ensures that every client feels heard, supported, and guided through every step.",
+      "Assistance with renewal paperwork, status checks, and youth-centered resources.",
   },
   {
-    title: "Integrity & Confidentiality",
+    title: "Asylum & Humanitarian Clinics",
     img: Integrity,
     description:
-      "Your story and documents are handled with absolute discretion and honesty. We uphold transparency, ethics, and confidentiality in every client relationship.",
+      "Screening for eligibility, humanitarian referrals, and document assistance.",
   },
   {
-    title: "Community Partnership & Education",
+    title: "Family Reunification & Visa Help",
     img: Community,
     description:
-      "We collaborate with local organizations, volunteers, and advocates to expand our reach. Through workshops and outreach, we empower immigrants with knowledge and confidence.",
+      "Guidance on petitions, documentation, consular procedures, family sponsorship, adjustment of status, visa application support, and legal referrals for complex cases.",
+  },
+  {
+    title: "Know-Your-Rights Workshops",
+    img: Community,
+    description:
+      "Community education events to help you understand your rights and responsibilities in the U.S.",
   },
 ];
 
-const ValuesSection = () => {
+const ClinicsSection = () => {
   const borderColor = useColorModeValue("#E5E7EB", "gray.700");
   const { ref: headingRef, inView: headingInView } = useInView({
     triggerOnce: true,
@@ -83,6 +89,7 @@ const ValuesSection = () => {
   return (
     <Box
       as="section"
+      display="flex"
       flexDirection="column"
       bgImage={Expert}
       bgSize="cover"
@@ -103,7 +110,7 @@ const ValuesSection = () => {
               color={"rgba(34, 185, 116, 1)"}
               fontWeight={"500"}
             >
-              CORE VALUES
+              OUR PROCESS
             </Text>
           </motion.div>
         </Flex>
@@ -114,13 +121,12 @@ const ValuesSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <Text fontSize={{ base: "12px", lg: "14px" }} mt={2} maxW="700px">
-              We center people — not profit. Our services prioritize safety,
-              dignity, and a realistic pathway to a stable life in the U.S.
+              Types of Clinics
             </Text>
           </motion.div>
         </Box>
         <Grid
-          templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
           gap={{ base: 4, lg: 6 }}
           mt={{ base: 6, lg: 8 }}
         >
@@ -146,6 +152,7 @@ const ValuesSection = () => {
                   flexDirection={{ base: "column", md: "row" }}
                   boxShadow="sm"
                   flex={1}
+                  height={{ base: "auto", md: "auto", lg: "140px" }}
                 >
                   <Image
                     marginInlineEnd="auto"
@@ -174,4 +181,4 @@ const ValuesSection = () => {
   );
 };
 
-export default ValuesSection;
+export default ClinicsSection;

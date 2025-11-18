@@ -60,7 +60,6 @@ export default function Blogs() {
         <Box
           mx={{ base: 0, lg: 2 }}
 
-          //  pl={{ base: 0, md: 2 }}
         >
           <Flex alignItems={"center"} gap={2}>
             <Image w="30px" h="3px" src={Line}></Image>
