@@ -87,7 +87,7 @@ const Contact = () => {
                     <Text color="rgba(192, 192, 192, 1)">Email</Text>
 
                     <Text fontSize="16px" color="white">
-                      filing@migraid.co{" "}
+                      HELLO@MIGRAID.CO
                     </Text>
                   </Box>
                 </Flex>
@@ -98,7 +98,11 @@ const Contact = () => {
                   <Box>
                     <Text color="rgba(192, 192, 192, 1)">Location</Text>
 
-                    <Text fontSize="16px" color="white" w={{base:'200px', lg: 'auto'}}>
+                    <Text
+                      fontSize="16px"
+                      color="white"
+                      w={{ base: "200px", lg: "auto" }}
+                    >
                       PO BOX 770161, HOUSTON, TX, 77215{" "}
                     </Text>
                   </Box>
