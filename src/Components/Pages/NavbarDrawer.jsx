@@ -109,6 +109,18 @@ function NavbarDrawer({ isOpen, onClose, openNavbar }) {
               >
                 Donate
               </CustomButton>
+              <Box mt={4}>
+                <CustomButton
+                  fontSize="18px"
+                  w="100%"
+                  p={6}
+                  color="white"
+                  path="/notary"
+                  showIcon={true}
+                >
+                  Notarization
+                </CustomButton>
+              </Box>
             </Box>
           </DrawerBody>
         </DrawerContent>
