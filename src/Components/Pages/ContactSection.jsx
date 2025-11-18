@@ -25,7 +25,7 @@ const ContactSection = ({ showY, margin }) => {
         bgImage={contactBg}
         bgSize="cover"
         bgPosition="center"
-        my={margin || 0}
+        my={margin ? { base: 8, lg: margin } : 0}
         bgRepeat="no-repeat"
         borderRadius={{ base: "16px", lg: "20px" }}
         mx={{ base: 4, lg: 12 }}

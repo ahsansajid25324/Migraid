@@ -39,15 +39,10 @@ function Values() {
         py={{ base: 6, lg: 12 }}
         px={{ base: 4, lg: 12 }}
         alignItems="center"
-        bg="#ffff"
         justifyContent={"space-between"}
         flexDirection={{ base: "column", lg: "row" }}
       >
-        <Box
-          w={{ base: "100%", lg: "42%" }}
-          ref={imgRef}
-          mb={{ base: 8, lg: 0 }}
-        >
+        <Box w={{ base: "100%", lg: "42%" }} mb={{ base: 8, lg: 0 }}>
           <Image src={Services} />
         </Box>
         <Box w={{ base: "100%", lg: "50%" }}>
@@ -56,8 +51,9 @@ function Values() {
             margin="16px"
             alwaysShowFullContent={true}
             SubTitle="Client-Centered & Compassionate Help"
-            showButton={true}
             content="Every journey is unique. We listen first, with empathy and patience, to understand each client’s goals and challenges. Whether someone is applying for residency, seeking asylum, or reuniting with family, our team walks beside them with care, respect, and honesty."
+            showButton={true}
+            btn="Donate"
           ></DetailFormat>
         </Box>
       </Flex>
