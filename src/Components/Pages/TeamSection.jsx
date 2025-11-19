@@ -9,12 +9,12 @@ import Joseph from "../../assets/images/joseph.jpeg";
 export const teamData = [
   {
     name: "Hurr Murtaza",
-    role: "Immigration Specialist",
+    role: "President",
     image: Hurr,
   },
   {
     name: "Joseph Soliz",
-    role: "AO/ Immigration Specialist",
+    role: "Attorney at Law",
     image: Joseph,
   },
 ];
