@@ -103,7 +103,7 @@ const Contact = () => {
                       color="white"
                       w={{ base: "200px", lg: "auto" }}
                     >
-                      PO BOX 770161, HOUSTON, TX, 77215{" "}
+                     2600 S Gessner Rd, Ste 420, Houston, TX, 77063{" "}
                     </Text>
                   </Box>
                 </Flex>
